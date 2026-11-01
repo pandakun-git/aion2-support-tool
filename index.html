@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AION2 総合サポートツール v2.7</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AION2 総合サポートツール v2.8</title><style>
 :root{--bg:#09121c;--side:#0e1d2c;--pane:#112435;--line:#264054;--text:#eaf2f8;--sub:#a7bacb;--gold:#f4c97b;--mint:#62e2c4;--blue:#6fb8fa;--red:#ff887d}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,'Yu Gothic','Meiryo',sans-serif;font-size:14px}
 header{height:72px;border-bottom:1px solid #254259;background:linear-gradient(105deg,#122738,#0c1928);display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:12px}h1{font-size:20px;margin:0;font-weight:850;letter-spacing:.02em}h1 span{color:var(--gold)}.eyebrow{font-size:10px;color:var(--mint);font-weight:800;letter-spacing:.2em}.topbadges{display:flex;gap:8px;flex-wrap:wrap}.badge{border:1px solid #31506a;border-radius:30px;padding:7px 12px;background:#122b3d;color:#b9d5e5;font-size:12px}.badge b{color:white}.layout{display:grid;grid-template-columns:minmax(270px,318px) minmax(440px,1fr) minmax(285px,325px);height:calc(100vh - 72px);min-height:610px}.side{background:var(--side);overflow:auto;padding:18px 16px;border-right:1px solid var(--line)}.right{border-right:none;border-left:1px solid var(--line)}h2{font-size:14px;color:#fff;margin:0 0 12px}.section{padding:0 0 19px;margin:0 0 18px;border-bottom:1px solid #253e50}.section:last-child{border:none}.hint{color:var(--sub);font-size:12px;line-height:1.65}.muted{color:#83a1b6}.strong{font-size:25px;font-weight:800}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}button,select,input[type=text],input[type=number]{border:1px solid #315268;background:#162d41;color:#eef7ff;border-radius:9px;font:inherit;min-height:36px;padding:7px 10px}select,input[type=text]{width:100%}button{cursor:pointer;font-weight:700;transition:background .15s,transform .15s}button:hover{background:#244963}button:disabled{opacity:.35;cursor:not-allowed}.primary{background:#1b7f72;border-color:#2aa793;color:#f0fffc}.primary:hover{background:#289a89}.gold{background:#916b2f;border-color:#b8904b}.gold:hover{background:#a87f3f}.danger{color:#ffbbb4}.tiny{font-size:11px;padding:4px 7px;min-height:27px}.activeMode{background:#216d82!important;border:1px solid #5dddf2!important;box-shadow:inset 0 0 0 1px #5dddf277}.kpi{padding:9px 11px;background:#142c3c;border:1px solid #2b4659;border-radius:10px;min-width:70px;flex:1}.kpi .num{font-size:21px;font-weight:850}.kpi .label{color:#9cb7c7;font-size:11px}.datastatus{padding:10px 12px;border:1px solid #426a6b;background:#163638;border-radius:9px;color:#c4f7e6;font-size:12px;line-height:1.6}.alert{background:#3a2c22;border-color:#795c3c;color:#ffdda9}.checks{max-height:150px;overflow:auto;margin-top:10px;border:1px solid #2a4151;border-radius:9px;background:#0a1c2a}.checkitem{display:flex;gap:8px;align-items:center;padding:8px 10px;border-bottom:1px solid #203748;font-size:12px;cursor:pointer}.checkitem:last-child{border-bottom:0}.checkitem input{accent-color:#5bd7be}.chip{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:4px}.mapwrap{position:relative;min-width:0;background:#0e1b27;overflow:hidden}.viewport{position:absolute;inset:0;cursor:grab;overflow:hidden;touch-action:none;background:radial-gradient(ellipse,#2f4351 0,#111d26 70%)}.viewport:active{cursor:grabbing}.mapstage{width:1000px;height:1000px;position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}.baseimage{position:absolute;width:100%;height:100%;object-fit:fill;top:0;left:0;user-select:none;pointer-events:none}.mapoverlay{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:2;display:block}.fallbackmap{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 49px,#ffffff15 50px),repeating-linear-gradient(90deg,transparent 0 49px,#ffffff15 50px),radial-gradient(circle at 65% 60%,#73684b99,transparent 20%),radial-gradient(circle at 40% 40%,#59705c88,transparent 30%),#29475a}.mapHud{position:absolute;pointer-events:none;inset:0}.mapTop{position:absolute;top:15px;left:14px;right:14px;display:flex;align-items:start;justify-content:space-between;gap:12px}.mapPill{pointer-events:auto;color:white;background:#081723df;backdrop-filter:blur(7px);border:1px solid #466077;padding:10px 12px;border-radius:12px;font-size:12px;box-shadow:0 8px 25px #0008}.mapPill strong{font-size:14px}.zoomtools{display:flex;flex-direction:column;gap:5px;pointer-events:auto}.zoomtools button{width:37px;height:37px;font-size:20px;padding:0;background:#0e2431e8}.mapBottom{position:absolute;bottom:16px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:end;gap:12px}.footerhint{background:#081723df;border:1px solid #40586b;border-radius:10px;padding:9px 12px;max-width:420px;font-size:12px;line-height:1.5;color:#c2d7e4}.link{color:#8bcfff;text-decoration:none}.link:hover{text-decoration:underline}.navcard{border:1px solid #3c6674;background:linear-gradient(150deg,#12384b,#112d3e);border-radius:15px;padding:17px;margin-bottom:14px}.compassrow{display:flex;align-items:center;gap:16px;margin:15px 0}.arrowdial{width:92px;height:92px;border:2px solid #5b7a90;border-radius:50%;flex:none;background:radial-gradient(circle,#193a4e,#092233);position:relative;display:grid;place-items:center}.arrowdial:before{content:'N';position:absolute;top:5px;font-size:10px;color:#a6d0dd}.pointer{display:block;font-size:46px;font-weight:800;color:#f7d38c;line-height:1;transform:rotate(0deg);text-shadow:0 3px 20px #ffc57f77;transition:transform .2s}.dirtext{font-size:28px;font-weight:850;color:var(--gold)}.subline{font-size:12px;color:#c0d5df;line-height:1.5}.targetId{word-break:break-all;color:#b5d1dc;font-family:ui-monospace,Consolas,monospace;font-size:11px}.stepList{display:flex;flex-direction:column;gap:5px;max-height:270px;overflow:auto;margin-top:10px}.step{display:grid;grid-template-columns:26px 1fr auto;gap:7px;align-items:center;text-align:left;border-radius:9px;padding:6px 8px;border:1px solid #2c4355;background:#122b3c;font-size:12px;min-height:36px}.step.now{border-color:#e4bc6d;background:#45391f}.step.done{opacity:.48}.step .idx{width:23px;height:23px;background:#284a61;border-radius:50%;display:grid;place-items:center}.smalllabel{font-size:11px;color:#aac2d1}.footer{padding:17px;background:#0a1823;font-size:11px;color:#a3b7c8;line-height:1.7}.divider{height:1px;background:#32495a;margin:10px 0}input[type=checkbox]{accent-color:#50d9c1}input[type=range]{width:100%}.credit{font-size:11px;color:#9db6c6}.toast{position:absolute;left:50%;bottom:82px;transform:translateX(-50%);background:#163c41;color:#e6fff7;border:1px solid #61c6bb;padding:10px 18px;border-radius:10px;z-index:10;opacity:0;transition:opacity .25s;pointer-events:none;max-width:80%;text-align:center;box-shadow:0 9px 30px #0009}.toast.show{opacity:1}
@@ -214,7 +214,22 @@ body:not([data-tab="enhance"]) #enhancePanel{display:none!important}
 .enhanceDisclaimer{margin-top:15px;padding:12px;background:#102331;border-radius:8px;border-left:3px solid #b48b48}.enhanceDisclaimer a{color:#8cd6ff}
 .syncLabel{display:block;font-size:12px;font-weight:800;color:#b8e8de;margin:10px 0 5px}#syncCodePanel textarea{width:100%;border:1px solid #426e85;color:#eafff9;background:#0b2738;border-radius:8px;padding:10px;font-size:13px;line-height:1.5;min-height:85px;overflow-wrap:anywhere;resize:vertical}.syncRow{display:flex;gap:8px;align-items:center;margin:9px 0;color:#cde8f4;font-size:12px}.syncRow select{flex:1;margin:0}.syncStatus{font-size:12px;margin-top:9px;padding:8px 10px;border-radius:7px;background:#102d37;color:#a8e6d7;border:1px solid #35676e;line-height:1.6}
 @media(max-width:720px){.enhancePanel{padding:12px 10px 25px}.enhanceHero{padding:14px}.enhanceHero h2{font-size:20px}.enhanceGrid{grid-template-columns:1fr}.enhanceFields{grid-template-columns:1fr 1fr}.enhanceFields label:first-child{grid-column:1/-1}.enhanceCard{padding:11px}.enhanceCompareCards{grid-template-columns:1fr 1fr}.enhanceActions button{flex:1;min-width:140px}.enhanceCosts strong{font-size:17px}.syncRow{flex-wrap:wrap}.syncRow select{width:100%;flex:none}}
-</style></head><body data-tab="home"><header><div><div class="eyebrow">閲覧中心の外部マップ · ゲーム連携なし</div><h1><span>AION2</span> 総合サポートツール <span style="font-size:11px;color:#a3c0cf">v2.7</span></h1></div><div class="topbadges"><div class="badge">🛡️ ゲーム内部へのアクセスなし</div><div class="badge">🗺️ 出現地点の確認専用</div><div class="badge" id="factionBadge">魔族・アルトガルド</div></div></header>
+
+/* v2.8: help, changelog, user feedback, first-run guide */
+body[data-tab="help"] .layout,body[data-tab="help"] #enhancePanel,body[data-tab="help"] #homeDashboard{display:none!important}
+body:not([data-tab="help"]) #helpPanel{display:none!important}
+.helpPanel{max-width:1250px;margin:0 auto;padding:23px 20px 44px}
+.helpHero{border:1px solid #48748c;background:linear-gradient(120deg,#153d50,#182b3e);border-radius:16px;padding:24px;margin-bottom:16px}
+.helpHero h2{font-size:25px;margin:9px 0}.helpHero p,.helpFoot{color:#c1d6e2;font-size:12px;line-height:1.75}.helpHero button{margin-top:13px}
+.helpGrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+.helpCard{background:#112738;border:1px solid #35596d;border-radius:14px;padding:18px;min-width:0}.helpCard h3{font-size:17px;color:#f6dfa9;margin:0 0 15px}
+.helpHow,.updateItem{border-top:1px solid #305169;padding:12px 0}.helpHow:first-of-type,.updateItem:first-of-type{border-top:0;padding-top:0}.helpHow b,.updateItem strong{font-size:13px;color:#f7faff}.helpHow p,.updateItem p,.helpHint{font-size:12px;color:#bad1e0;line-height:1.8;margin:7px 0 11px}
+.helpHow button{min-height:34px;font-size:11px;background:#184559;border:1px solid #427b8f}.updateBadge{display:inline-block;padding:4px 9px;border-radius:999px;border:1px solid #48748c;color:#bde8f6;font-size:10px;font-weight:850;margin-bottom:6px}.updateItem.latest .updateBadge{background:#255e56;color:#a5ffe2;border-color:#48aa98}
+.helpFeedback{grid-column:1/-1;max-width:850px;width:100%;margin:0 auto}.helpFeedback label{display:block;color:#bfe0e9;font-size:12px;font-weight:750;margin:12px 0 6px}.helpFeedback input,.helpFeedback textarea,.helpFeedback select{display:block;width:100%;background:#0d1e2d;color:#ecf6fa;border:1px solid #45687c;border-radius:9px;padding:11px;min-height:43px;font-size:14px}.helpFeedback textarea{min-height:132px;resize:vertical}.feedbackPrivacy{background:#382a1e;border:1px solid #82684b;border-radius:9px;padding:11px;color:#ffdfb4;font-size:12px;line-height:1.7}
+.reportLink{display:flex;align-items:center;justify-content:center;min-height:45px;padding:10px;border:1px solid #79cdb8;background:#206f60;color:#fff;text-decoration:none;font-weight:800;border-radius:9px;text-align:center}.reportLink:hover{filter:brightness(1.12)}.feedbackMessage{color:#aed6de;font-size:12px;line-height:1.7;margin:10px 0}.helpIssueLink{display:inline-block;color:#91c9f7;font-size:12px;margin-top:6px}.helpFoot{text-align:center;margin-top:20px}
+.welcomeOverlay{position:fixed;inset:0;background:#020911dc;z-index:9999;display:grid;place-items:center;padding:15px;overscroll-behavior:contain}.welcomeDialog{width:min(100%,530px);max-height:min(90vh,700px);overflow:auto;border:1px solid #66a8ac;background:linear-gradient(155deg,#18394a,#0e2030);border-radius:19px;padding:23px;box-shadow:0 30px 100px #0009;outline:none}.welcomeTop,.welcomeActions{display:flex;align-items:center;justify-content:space-between;gap:8px}.welcomeTop button{min-width:36px}.welcomeKicker{color:#9cf7dd;font-size:11px;font-weight:900;letter-spacing:.13em}.welcomeDialog h2{font-size:27px;color:#fae1b7;margin:15px 0 4px}.welcomeLead{font-size:12px;color:#bdd9e5;margin:0 0 20px;line-height:1.6}.welcomeSteps{background:#0c2536;border:1px solid #3b6477;border-radius:13px;padding:20px 17px;min-height:230px}.welcomeIcon{font-size:43px;margin-bottom:6px}.welcomeStep h3{margin:7px 0 9px;font-size:20px;color:#fff}.welcomeStep p{font-size:14px;line-height:1.85;color:#c6dfe9;margin:0}.welcomeProgress{text-align:center;letter-spacing:.35em;color:#6fdeb9;margin:18px 0}.welcomeActions button{min-height:42px;padding:10px 12px}.welcomeActions #welcomeSkip{margin-right:auto}.welcomeActions #welcomePrev{margin-left:auto}
+@media(max-width:750px){.helpPanel{padding:12px 10px 24px}.helpHero{padding:15px}.helpHero h2{font-size:20px}.helpGrid{grid-template-columns:1fr;gap:10px}.helpCard{padding:14px}.helpFeedback{grid-column:auto}.welcomeDialog{padding:17px}.welcomeDialog h2{font-size:23px}.welcomeSteps{min-height:245px;padding:16px 14px}.welcomeStep p{font-size:13px}.welcomeActions button{font-size:12px;padding:8px 10px}}
+</style></head><body data-tab="home"><header><div><div class="eyebrow">閲覧中心の外部マップ · ゲーム連携なし</div><h1><span>AION2</span> 総合サポートツール <span style="font-size:11px;color:#a3c0cf">v2.8</span></h1></div><div class="topbadges"><div class="badge">🛡️ ゲーム内部へのアクセスなし</div><div class="badge">🗺️ 出現地点の確認専用</div><div class="badge" id="factionBadge">魔族・アルトガルド</div></div></header>
 <div id="appBootNotice" role="status" style="margin:10px 14px;padding:12px 14px;border:1px solid #d99a3b;background:#44331e;color:#ffe3b5;border-radius:10px;font-size:13px;line-height:1.65">⚠️ まだアプリが起動していません。iPhoneの「ファイル」アプリやChatGPT内のHTMLプレビューではJavaScriptが動かず、項目が「読込中」のままになることがあります。通常のSafariからアクセスできるHTTPSページで開いてください。</div>
 <nav id="appTabs" class="appTabs" aria-label="上部メニュー">
  <button type="button" data-tab="home">🏠 ホーム</button>
@@ -224,6 +239,7 @@ body:not([data-tab="enhance"]) #enhancePanel{display:none!important}
  <button type="button" data-tab="events">⏱️ イベント</button>
  <button type="button" data-tab="benefits">🎁 クーポン・Drops</button>
  <button type="button" data-tab="settings">⚙️ 設定</button>
+ <button type="button" data-tab="help">❔ ヘルプ</button>
 </nav>
 <section id="homeDashboard" class="homeDashboard" aria-label="総合ホーム画面">
  <div class="homeHero"><div><div class="eyebrow">AION2 COMMAND CENTER</div><h2>今日のプレイ情報</h2><p>イベント・クーポン・Drops・魂確保状況をまとめて確認。</p></div><div class="homeNow" id="homeNow">日本時間 —</div></div>
@@ -254,6 +270,38 @@ body:not([data-tab="enhance"]) #enhancePanel{display:none!important}
  </div>
  <p class="enhanceDisclaimer">📌 強化確率：+1〜+10は100%、+11〜+15は65/50/35/25/20%。失敗で成功率+5ポイント・段階は維持、材料消費あり。強化補助剤・継承・突破・ルーン等は対象外。<br>出典：<a href="https://wikily.gg/ja/aion-2/enhancement/15-unique" target="_blank" rel="noopener noreferrer">AION2 Wiki（成功率）</a> ／ <a href="https://wikily.gg/ja/aion-2/weapons/abyssal-mace/enhancement" target="_blank" rel="noopener noreferrer">深淵のメイス IL86（費用）</a> ／ <a href="https://aion2data.com/tools/enchant" target="_blank" rel="noopener noreferrer">Aion2Data IL102（費用・ゲームファイル）</a>。価格・仕様は更新で変わる場合があります。ゲーム画面の値を優先してください。</p>
 </section>
+
+<section id="helpPanel" class="helpPanel" aria-label="使い方・更新履歴・ご意見">
+ <div class="helpHero"><div class="eyebrow">WELCOME / WHAT'S NEW / FEEDBACK</div><h2>❔ 使い方・更新履歴・ご意見</h2><p>初めての方も、いつも使っている方も。操作案内と更新情報をここにまとめました。</p><button id="reopenGuide" class="primary" type="button">📖 初回ガイドをもう一度見る</button></div>
+ <div class="helpGrid">
+  <section class="helpCard"><h3>🧭 基本の使い方</h3>
+   <div class="helpHow"><b>1. マップ</b><p>陣営を選んでキューブ候補やペットの生息場所を確認。PCはドラッグ・ホイール、スマホはドラッグ・二本指ズーム。マーカーをタップすると名称を表示できます。</p><button data-go="map" type="button">🗺️ マップを開く →</button></div>
+   <div class="helpHow"><b>2. 魂確保</b><p>ペット名を検索して確保Lv（未確保・Lv1・Lv2・Lv3）を記録。アルトガルド／ベルテロンの片方にだけ載っている種類も絞り込めます。</p><button data-go="pets" type="button">🐾 魂確保を開く →</button></div>
+   <div class="helpHow"><b>3. 武器強化</b><p>武器の条件を設定すると、強化成功率に従うランダムな挑戦とギーナ・強化石の累計を試算できます。実際の成功を保証するものではありません。</p><button data-go="enhance" type="button">⚒️ 強化シミュレーター →</button></div>
+   <div class="helpHow"><b>4. PC↔スマホの確保記録</b><p>設定で同期コードを作り、別端末の設定で貼り付けて取り込みます。ログイン不要ですが、自動同期ではありません。</p><button data-go="settings" type="button">🔄 同期コードを使う →</button></div>
+  </section>
+  <section class="helpCard"><h3>🆕 更新履歴</h3>
+   <div class="updateItem latest"><div class="updateBadge">NEW · v2.8</div><strong>初回ガイド・更新履歴・意見受付</strong><p>初回だけ表示する操作ガイド、いつでも見られるヘルプ、GitHub Issuesへつなぐ不具合・要望フォームを追加。</p></div>
+   <div class="updateItem"><div class="updateBadge">v2.7</div><strong>魂確保の同期コード／武器強化</strong><p>クラウドなしの手動同期と、唯一（金）武器の強化シミュレーターを追加。</p></div>
+   <div class="updateItem"><div class="updateBadge">v2.6</div><strong>スマホ操作とペット一覧の改良</strong><p>二本指ズーム、マーカー詳細の固定、密集表示の緩和、2マップ間で片方にしかいないペットの強調。</p></div>
+   <div class="updateItem"><div class="updateBadge">v2.5</div><strong>密集マーカーの分離</strong><p>拡大時に候補地点を個別表示。取得できないフィールドボスタイマーを撤去。</p></div>
+   <div class="updateItem"><div class="updateBadge">v2.3〜v2.4</div><strong>ホーム・上部タブ・スマホ表示</strong><p>イベント、クーポン・Drops、収集率のまとめ表示と、画面幅に合わせた表示を追加。</p></div>
+  </section>
+  <section class="helpCard helpFeedback" id="feedbackPanel"><h3>💬 ご意見・不具合報告</h3>
+   <p class="helpHint">要望や不具合をこちらから報告できます。<b>「GitHubの投稿画面を開く」を押すまで外部に送信しません。</b> 開いたGitHubで内容を確認して投稿してください。</p>
+   <label for="feedbackKind">報告の種類</label><select id="feedbackKind"><option value="bug">🐛 不具合報告</option><option value="idea">💡 機能追加・改善要望</option><option value="other">💬 その他の意見</option></select>
+   <label for="feedbackTitle">件名</label><input id="feedbackTitle" type="text" maxlength="80" placeholder="例：iPhoneでマップが表示されない" autocomplete="off">
+   <label for="feedbackBody">内容（400文字まで）</label><textarea id="feedbackBody" maxlength="400" rows="6" placeholder="どの画面で・何をしたとき・どうなったか／こうしてほしい、などを具体的に記入"></textarea>
+   <label for="feedbackPlatform">利用端末（任意）</label><select id="feedbackPlatform"><option value="未記入">選択しない</option><option value="iPhone / Safari">iPhone / Safari</option><option value="Android / Chrome">Android / Chrome</option><option value="Windows / Chrome">Windows / Chrome</option><option value="Windows / Edge">Windows / Edge</option><option value="Mac / Safari">Mac / Safari</option><option value="その他">その他</option></select>
+   <p class="feedbackPrivacy">⚠️ GitHub Issuesは<b>一般公開</b>されます。名前・メールアドレス・ログイン情報・魂確保の同期コードなどは記載しないでください。投稿には無料のGitHubアカウントが必要です。</p>
+   <a id="feedbackSubmit" class="reportLink" href="https://github.com/pandakun-git/aion2-support-tool/issues/new" target="_blank" rel="noopener noreferrer">📨 GitHubの投稿画面を開く ↗</a>
+   <div id="feedbackMessage" class="feedbackMessage" role="status" aria-live="polite">このフォームで記入した内容を、GitHubの新しいIssueに引き継ぎます。投稿の確定はGitHub上で行います。</div>
+   <a class="helpIssueLink" href="https://github.com/pandakun-git/aion2-support-tool/issues" target="_blank" rel="noopener noreferrer">寄せられた報告・要望を見る ↗</a>
+  </section>
+ </div>
+ <p class="helpFoot">非公式ファンツールです。マップ・確率・イベント情報は公開データに基づいており、ゲーム内情報と異なる場合はゲーム内を優先してください。</p>
+</section>
+
 <div class="layout"><aside class="side left">
 <section class="section factionSection"><h2>🌐 陣営・マップ切替</h2><select id="factionSelect"><option value="asmo">🟣 魔族｜アルトガルド</option><option value="elyos">🟡 天族｜ベルテロン</option></select><p class="hint">天族はペット専用。魔族はキューブとペットを切り替えて表示できます。</p></section>
 <section class="soulPanel"><h2>🐾 魂確保管理・収集率</h2><div class="soulStats"><div class="soulStat"><span>魔族（アルトガルド）</span><strong id="statAsmo">— / —</strong></div><div class="soulStat"><span>天族（ベルテロン）</span><strong id="statElyos">— / —</strong></div><div class="soulStat overall"><span>合計</span><strong id="statTotal">— / —</strong></div><div class="soulStat overall"><span>収集率</span><strong id="statRate">— %</strong></div></div><div class="progressTrack"><div id="soulProgress" class="progressFill" style="width:0%"></div></div><p class="hint" id="statNote">ペットのデータを読込中…</p></section>
@@ -349,6 +397,22 @@ body:not([data-tab="enhance"]) #enhancePanel{display:none!important}
 </section>
 
 <section class="section" id="usageHelpPanel"><h2>💡 見方</h2><p class="hint">キューブの候補地点はすべて黄色の◆で表示。出現中かどうかの判定はしません。<br>ペットは一覧から地図に表示する種類を選び、魂を確保したらLvを記録してください。<br>ゲームを操作・監視する機能はありません。</p></section><section class="section" id="privacyInfoPanel"><h2>🛡️ プライバシー</h2><p class="hint">本ツールがアクセスするのは公開のマップ・ペット・日本語名データだけです。ゲームのプロセス、メモリ、通信、画面、操作入力は読み取りません。利用許可やBANリスクゼロを保証するものではありません。</p></section></aside></div><footer class="footer"><b>非公式ファンツール。</b> AION2 © NCSOFT。キューブ・地図・ペット座標：<a href="https://github.com/problem-xyz/aion2-map-overlay" target="_blank" rel="noopener" class="link">problem-xyz/aion2-map-overlay</a>。キューブ情報の元データ：<a href="https://github.com/aion2-interactive-map/aion2-interactive-map" target="_blank" rel="noopener" class="link">aion2-interactive-map</a>（CC BY-NC 4.0、詳しくは上記GitHubのNOTICE）。日本語ペット名：<a href="https://github.com/MikeZeen/aion2-pet-tracker" target="_blank" rel="noopener" class="link">MikeZeen/aion2-pet-tracker</a>の公開言語データ参照。実際の出現や魂獲得は保証しません。</footer>
+
+<div id="welcomeOverlay" class="welcomeOverlay" hidden>
+ <section class="welcomeDialog" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" aria-describedby="welcomeLead" tabindex="-1">
+  <div class="welcomeTop"><span class="welcomeKicker">AION2 · START GUIDE</span><button id="welcomeClose" type="button" aria-label="ガイドを閉じる">✕</button></div>
+  <h2 id="welcomeTitle">ようこそ！</h2><p id="welcomeLead" class="welcomeLead">はじめての方へ、使い方を4ステップでご案内します。</p>
+  <div class="welcomeSteps" aria-live="polite">
+   <div class="welcomeStep" data-guide-step="0"><div class="welcomeIcon">🗺️</div><h3>探索マップを見る</h3><p>上の「マップ」タブから魔族・天族のマップを選べます。キューブの候補地点やペットの位置を確認。スマホは二本指で拡大縮小できます。</p></div>
+   <div class="welcomeStep" data-guide-step="1" hidden><div class="welcomeIcon">🐾</div><h3>魂確保を記録する</h3><p>「魂確保」タブでペットを検索し、未確保／Lv1／Lv2／Lv3を登録。記録は今使っているブラウザ内に保存されます。</p></div>
+   <div class="welcomeStep" data-guide-step="2" hidden><div class="welcomeIcon">⚒️</div><h3>武器強化を試す</h3><p>「武器強化」タブで+15までの強化をランダムにシミュレーション。消費するギーナと強化石の目安を比較できます。</p></div>
+   <div class="welcomeStep" data-guide-step="3" hidden><div class="welcomeIcon">🔄</div><h3>端末間で記録を移す</h3><p>PCとスマホの魂確保データは自動同期されません。「設定」タブの同期コードをコピー＆貼り付けすると移行できます。不具合やご意見はヘルプから送れます。</p></div>
+  </div>
+  <div id="welcomeProgress" class="welcomeProgress" aria-label="4ステップ中の進捗">● ○ ○ ○</div>
+  <div class="welcomeActions"><button id="welcomeSkip" type="button">スキップ</button><button id="welcomePrev" type="button">戻る</button><button id="welcomeNext" type="button" class="primary">次へ →</button></div>
+ </section>
+</div>
+
 <script>
 window.addEventListener('error',function(e){var b=document.getElementById('appBootNotice');if(b){b.style.display='block';b.hidden=false;b.textContent='⚠️ 起動エラー：'+String(e.message||'処理を実行できません')+'。HTMLプレビューではなく通常のブラウザで開いてください。';}});
 (()=>{'use strict';
@@ -1006,7 +1070,7 @@ el('enhanceOne').onclick=()=>{runAttempt(state,true);paint();};el('enhanceAll').
 (()=>{'use strict';
  const el=id=>document.getElementById(id);
  const TAB_KEY='aion2_active_tab_v23';
- const validTabs=new Set(['home','map','pets','enhance','events','benefits','settings']);
+ const validTabs=new Set(['home','map','pets','enhance','events','benefits','settings','help']);
  let tab='home';try{const saved=localStorage.getItem(TAB_KEY);if(validTabs.has(saved))tab=saved;}catch(e){}
  function tabGo(next){if(!validTabs.has(next))return;tab=next;document.body.dataset.tab=next;
   document.querySelectorAll('#appTabs button').forEach(b=>{const selected=b.dataset.tab===tab;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;});
@@ -1030,6 +1094,29 @@ el('enhanceOne').onclick=()=>{runAttempt(state,true);paint();};el('enhanceAll').
  }
  tabGo(tab);update();setInterval(update,1000);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)update();});
+})();
+</script>
+
+<script>
+/* v2.8: first-run guide and GitHub issues bridge; no automatic network requests */
+(()=>{'use strict';
+ const $=id=>document.getElementById(id);
+ const GUIDE_KEY='aion2_onboarding_seen_v28';
+ const modal=$('welcomeOverlay'),dialog=modal.querySelector('.welcomeDialog'),slides=[...modal.querySelectorAll('[data-guide-step]')];
+ let step=0,previousFocus=null;
+ function paintGuide(){slides.forEach((s,i)=>s.hidden=i!==step);$('welcomeProgress').textContent=slides.map((_,i)=>i===step?'●':'○').join('  ');$('welcomePrev').hidden=step===0;$('welcomeNext').textContent=step===slides.length-1?'使い始める ✓':'次へ →';}
+ function openGuide(){previousFocus=document.activeElement;step=0;paintGuide();modal.hidden=false;document.body.style.overflow='hidden';dialog.focus();}
+ function closeGuide(){modal.hidden=true;document.body.style.overflow='';try{localStorage.setItem(GUIDE_KEY,'1');}catch(e){}if(previousFocus?.isConnected)previousFocus.focus();}
+ $('reopenGuide').addEventListener('click',openGuide);$('welcomeClose').addEventListener('click',closeGuide);$('welcomeSkip').addEventListener('click',closeGuide);
+ $('welcomePrev').addEventListener('click',()=>{if(step>0)step--;paintGuide()});
+ $('welcomeNext').addEventListener('click',()=>{if(step<slides.length-1){step++;paintGuide()}else closeGuide()});
+ document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape'){e.preventDefault();closeGuide()}if(e.key==='Tab'){const tabbables=[...modal.querySelectorAll('button:not([hidden])')].filter(b=>b.getClientRects().length);const first=tabbables[0],last=tabbables[tabbables.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+ try{if(!localStorage.getItem(GUIDE_KEY))setTimeout(openGuide,450)}catch(e){/* local preview */}
+ const kind=$('feedbackKind'),title=$('feedbackTitle'),body=$('feedbackBody'),platform=$('feedbackPlatform'),link=$('feedbackSubmit'),message=$('feedbackMessage');
+ const base='https://github.com/pandakun-git/aion2-support-tool/issues/new';
+ function populate(){const t=title.value.trim(),b=body.value.trim();const kindName={bug:'不具合',idea:'機能要望',other:'ご意見'}[kind.value]||'ご意見';const desc=['## 内容',b||'（詳細を記入してください）','','## 利用端末',platform.value,'','## ツールのバージョン','v2.8','','※この報告は公開されます。'].join('\n');const params=new URLSearchParams({title:`[${kindName}] ${t||'件名を入力してください'}`,body:desc});link.href=base+'?'+params.toString();}
+ [kind,title,body,platform].forEach(e=>e.addEventListener('input',populate));populate();
+ link.addEventListener('click',e=>{if(!title.value.trim()||!body.value.trim()){e.preventDefault();message.textContent='⚠️ 件名と内容の両方を入力してください。';(!title.value.trim()?title:body).focus();return;}if(title.value.trim().length>80||body.value.trim().length>400){e.preventDefault();message.textContent='⚠️ 入力文字数が多すぎます。';return;}populate();message.textContent='✅ GitHubの投稿画面を開きます。内容を確認し、GitHub上で「Submit new issue」を押すと公開されます。';});
 })();
 </script>
 </body></html>
