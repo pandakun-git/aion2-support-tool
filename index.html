@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AION2 探索マップ・魂確保管理・武器強化シミュレーター｜総合サポートツール</title>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AION2 探索マップ・魂確保管理・武器強化・ダンジョン攻略｜総合サポートツール</title>
 <meta name="google-site-verification" content="DdaA07dU4inn1bF9PNhdNlLZDJ0oPIqvxg0ufLt_kpo" />
 <meta name="description" content="AION2の非公式・無料サポートツール。魔族アルトガルド・天族ベルテロンの探索マップ、キューブ候補地点、ペット魂確保Lv管理、武器強化シミュレーター、イベントタイマーをPC・スマホで利用できます。">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -254,13 +254,42 @@ body:not([data-tab="help"]) #helpPanel{display:none!important}
 #analyticsConsentBox p{margin:8px 0 11px;font-size:12px}#analyticsConsentBox strong{font-size:14px}
 #analyticsConsentBox .row{justify-content:flex-end}#analyticsConsentBox button{min-width:110px}
 @media(max-width:720px){.publicOverviewGrid{grid-template-columns:1fr}.publicOverview{padding:13px 14px}#analyticsConsentBox{left:12px;right:12px;bottom:12px;max-width:none}}
-</style></head><body data-tab="home"><header><div><div class="eyebrow">閲覧中心の外部マップ · ゲーム連携なし</div><h1><span>AION2</span> 総合サポートツール <span style="font-size:11px;color:#a3c0cf">v2.9</span></h1></div><div class="topbadges"><div class="badge">🛡️ ゲーム内部へのアクセスなし</div><div class="badge">🗺️ 出現地点の確認専用</div><div class="badge" id="factionBadge">魔族・アルトガルド</div></div></header>
+
+/* v3.0: favorite pets, budget, guide, installable web app */
+.petFavorite{font-size:11px;min-height:29px;padding:4px 7px;background:#283449;border-color:#686078;color:#fce6ad}
+.petFavorite[aria-pressed="true"]{background:#5a4927;border-color:#f4bf54;color:#fff1bd}
+.favoriteOnly{display:block;margin:5px 0 10px;color:#f3dfb4;font-size:12px;font-weight:750}
+.homeFavoriteNames{color:#d0e7ed;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+.favoriteHome{margin-top:16px}
+.budgetFields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:10px 0}
+.budgetFields label{font-size:12px;color:#bcd3df}.budgetFields input{display:block;width:100%;margin-top:5px}
+.budgetResult{margin-top:12px;padding:14px;border:1px solid #355b70;border-radius:10px;background:#0a2131;line-height:1.65;color:#b6d3de}
+.budgetBig{font-size:15px}.budgetBig strong{font-size:25px;color:#82ecc3}.budgetBig small{font-size:12px;color:#e6deae}
+.budgetGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.budgetGrid div{background:#123346;padding:10px;border-radius:8px;font-size:11px;color:#aac7d4}.budgetGrid b{display:block;font-size:18px;color:#fff0cd}
+.dungeonPanel{display:none;max-width:1080px;margin:0 auto;padding:20px 22px 46px}
+body[data-tab="dungeons"] .dungeonPanel{display:block}
+body[data-tab="dungeons"] .layout,body[data-tab="dungeons"] .homeDashboard,body[data-tab="dungeons"] #enhancePanel,body[data-tab="dungeons"] #helpPanel{display:none!important}
+.dungeonSelect{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:14px}
+.dungeonSelect label,.dungeonNotes label{font-size:12px;color:#b9d6e0;font-weight:800}.dungeonSelect select{margin-top:6px}
+.dungeonGuide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:15px}
+.dungeonTile{background:#122b3e;border:1px solid #35556b;border-radius:12px;padding:15px;line-height:1.65}
+.dungeonTile h3{font-size:15px;color:#f5daa8;margin:0 0 8px}
+.dungeonTile p{font-size:13px;color:#d0e1ec;margin:6px 0}
+.dungeonTile .small{font-size:11px;color:#9eb9c8}
+.dungeonTile ul{padding-left:20px;font-size:13px;color:#c8e1e9}
+.dungeonTile a{color:#8fcfff}
+.dungeonNotes{border:1px solid #45697a;background:#102c3a;padding:17px;border-radius:12px}
+.dungeonNotes textarea{width:100%;resize:vertical;margin:7px 0 10px;background:#0b2130;border:1px solid #477085;color:#eef8ff;border-radius:8px;padding:10px;font:inherit}
+@media(max-width:720px){.dungeonPanel{padding:12px 11px 30px}.dungeonSelect,.dungeonGuide{grid-template-columns:1fr}.budgetFields{grid-template-columns:1fr}}
+</style><link rel="manifest" href="./manifest.webmanifest"><meta name="theme-color" content="#10283a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" href="./icon-180.png"></head><body data-tab="home"><header><div><div class="eyebrow">閲覧中心の外部マップ · ゲーム連携なし</div><h1><span>AION2</span> 総合サポートツール <span style="font-size:11px;color:#a3c0cf">v3.0</span></h1></div><div class="topbadges"><div class="badge">🛡️ ゲーム内部へのアクセスなし</div><div class="badge">🗺️ 出現地点の確認専用</div><div class="badge" id="factionBadge">魔族・アルトガルド</div></div></header>
 <div id="appBootNotice" role="status" style="margin:10px 14px;padding:12px 14px;border:1px solid #d99a3b;background:#44331e;color:#ffe3b5;border-radius:10px;font-size:13px;line-height:1.65">⚠️ まだアプリが起動していません。iPhoneの「ファイル」アプリやChatGPT内のHTMLプレビューではJavaScriptが動かず、項目が「読込中」のままになることがあります。通常のSafariからアクセスできるHTTPSページで開いてください。</div>
 <nav id="appTabs" class="appTabs" aria-label="上部メニュー">
  <button type="button" data-tab="home">🏠 ホーム</button>
  <button type="button" data-tab="map">🗺️ マップ</button>
  <button type="button" data-tab="pets">🐾 魂確保</button>
   <button type="button" data-tab="enhance">⚒️ 武器強化</button>
+ <button type="button" data-tab="dungeons">⚔️ ダンジョン</button>
  <button type="button" data-tab="events">⏱️ イベント</button>
  <button type="button" data-tab="benefits">🎁 クーポン・Drops</button>
  <button type="button" data-tab="settings">⚙️ 設定</button>
@@ -273,7 +302,8 @@ body:not([data-tab="help"]) #helpPanel{display:none!important}
   <article class="homeCard"><h3>🎁 特典チェック</h3><div class="homeRows"><div>🎟️ クーポン <b id="homeCoupons">読込中…</b></div><div>📺 Twitch Drops <b id="homeDrops">読込中…</b></div></div><p class="homeSub">最新の公式情報は「情報を取得」ボタンで手動確認。</p><button type="button" data-go="benefits">特典を確認 ↗</button></article>
   <article class="homeCard"><h3>🐾 魂確保の進捗</h3><div class="homeMetric" id="homeSoulRate">—%</div><div class="homeRows"><div>🟣 魔族 <b id="homeAsmo">— / —</b></div><div>🟡 天族 <b id="homeElyos">— / —</b></div><div>合計 <b id="homeTotal">— / —</b></div></div><button type="button" data-go="pets">魂確保一覧へ ↗</button></article>
  </div>
- <section class="publicOverview" aria-label="AION2探索ツールの主な機能">
+ <article class="homeCard favoriteHome"><h3>⭐ 注目ペット</h3><div id="homeFavoriteNames" class="homeFavoriteNames">お気に入りを読み込み中…</div><button data-go="pets" type="button">🐾 ペット一覧で探す →</button><p class="homeSub">お気に入りに⭐を付けると、ここに表示されます。記録はこの端末に保存されます。</p></article>
+<section class="publicOverview" aria-label="AION2探索ツールの主な機能">
   <h2>AION2の探索・魂確保・武器強化をまとめて管理</h2>
   <p>ゲームをプレイしながらブラウザで使える、非公式の無料サポートツールです。<strong>魔族アルトガルド・天族ベルテロンの探索マップ</strong>でペットの生息候補を確認し、魔族側ではキューブの出現候補地点も表示できます。キューブの出現状況を自動検知する機能ではありません。</p>
   <div class="publicOverviewGrid">
@@ -300,19 +330,30 @@ body:not([data-tab="help"]) #helpPanel{display:none!important}
   <div class="enhanceCard"><h3>🏁 現在の強化状況</h3><div class="enhanceLv" id="enhanceCurrentLv">+0 <span>→ +15</span></div><div class="enhanceChance" id="enhanceChance">次の成功率：100%</div><div class="enhanceProgress"><b id="enhanceProgressFill"></b></div><p id="enhanceResult" class="enhanceResult" role="status">いつでも強化を開始できます。</p></div>
   <div class="enhanceCard"><h3>💰 累計消費</h3><div class="enhanceCosts"><div><span>ギーナ</span><strong id="enhanceGoldTotal">0</strong></div><div><span>強化石</span><strong id="enhanceStoneTotal">0</strong></div><div><span>試行 / 成功 / 失敗</span><strong id="enhanceAttemptTotal">0 / 0 / 0</strong></div></div></div>
   <div class="enhanceCard enhanceWide"><h3>📜 強化の試行履歴</h3><div class="enhanceLog" id="enhanceLog">強化前です。開始すると挑戦履歴が表示されます。</div></div>
-  <div class="enhanceCard enhanceWide"><h3>📊 多数回の比較（参考値）</h3><p class="enhanceExplanation">「毎回同じ確率で+15まで強化したら」を3,000回試して、運による費用の幅を確認できます。画面に表示する試行履歴とは別の抽選です。</p><div class="enhanceActions"><button id="enhanceCompare" type="button">🎲 3,000回の比較実験</button></div><div id="enhanceComparison" class="enhanceCompareResult">比較すると平均・中央値・運の良い10%／悪い10%の費用を表示します。</div></div>
+  <div class="enhanceCard enhanceWide"><h3>💰 予算から+目標までの到達率を予測</h3>
+<p class="enhanceExplanation">設定中の武器・強化値・目標値を使って、ギーナと強化石が足りる範囲で3,000回試行します。ランダム試算なので結果にはばらつきがあります。失敗による確率上昇も考慮します。</p>
+<div class="budgetFields"><label>所持ギーナ<input id="budgetGina" type="number" min="0" max="10000000000" step="10000" value="5000000" inputmode="numeric"></label><label>所持強化石<input id="budgetStones" type="number" min="0" max="10000000" step="100" value="200000" inputmode="numeric"></label></div>
+<div class="enhanceActions"><button type="button" id="budgetCalculate" class="primary">📊 3,000回で到達率を試算</button></div>
+<div id="budgetResult" class="budgetResult" role="status" aria-live="polite">予算と目標値を選択して「試算」を押してください。</div></div>
+<div class="enhanceCard enhanceWide"><h3>📊 多数回の比較（参考値）</h3><p class="enhanceExplanation">「毎回同じ確率で+15まで強化したら」を3,000回試して、運による費用の幅を確認できます。画面に表示する試行履歴とは別の抽選です。</p><div class="enhanceActions"><button id="enhanceCompare" type="button">🎲 3,000回の比較実験</button></div><div id="enhanceComparison" class="enhanceCompareResult">比較すると平均・中央値・運の良い10%／悪い10%の費用を表示します。</div></div>
   <details class="enhanceCard enhanceWide" id="enhanceCostDetails"><summary>🧮 段階ごとの費用・成功率を見る / 自分の武器の費用を編集</summary><p class="enhanceExplanation">各強化段階へ挑む際の<b>1回あたり</b>ギーナ・強化石です。「自分の武器」で数値を書き換えられます。変更すると実行中の試行はリセットされます。</p><div class="enhanceTableWrap"><table class="enhanceTable"><thead><tr><th>強化</th><th>基本成功率</th><th>1回のギーナ</th><th>1回の強化石</th></tr></thead><tbody id="enhanceCostRows"></tbody></table></div></details>
  </div>
  <p class="enhanceDisclaimer">📌 強化確率：+1〜+10は100%、+11〜+15は65/50/35/25/20%。失敗で成功率+5ポイント・段階は維持、材料消費あり。強化補助剤・継承・突破・ルーン等は対象外。<br>出典：<a href="https://wikily.gg/ja/aion-2/enhancement/15-unique" target="_blank" rel="noopener noreferrer">AION2 Wiki（成功率）</a> ／ <a href="https://wikily.gg/ja/aion-2/weapons/abyssal-mace/enhancement" target="_blank" rel="noopener noreferrer">深淵のメイス IL86（費用）</a> ／ <a href="https://aion2data.com/tools/enchant" target="_blank" rel="noopener noreferrer">Aion2Data IL102（費用・ゲームファイル）</a>。価格・仕様は更新で変わる場合があります。ゲーム画面の値を優先してください。</p>
 </section>
 
+<section id="dungeonPanel" class="dungeonPanel" aria-label="ダンジョン攻略カンペ">
+<div class="helpHero"><div class="eyebrow">EXPEDITION QUICK GUIDE</div><h2>⚔️ ダンジョン攻略カンペ</h2><p>遠征の簡易予習と、自分用のメモ。主な入場条件は公開攻略情報を参考にしています。パッチや難易度で異なる場合はゲーム内表示を優先してください。</p></div>
+<div class="dungeonSelect"><label>ダンジョン<select id="dungeonName"><option value="vakron">バクロンの空中島</option><option value="urgugu">ウルググ峡谷</option><option value="fire">炎の神殿</option><option value="kurao">クラオ洞窟</option><option value="draupnir">ドラウプニル</option><option value="cave">獰猛な角岩窟</option></select></label><label>自分のクラス<select id="dungeonClass"><option value="gladiator">グラディエーター</option><option value="templar">テンプラー</option><option value="assassin">アサシン</option><option value="ranger">レンジャー</option><option value="chanter">チャンター</option><option value="cleric">クレリック</option><option value="sorcerer">ソーサラー</option><option value="spiritmaster">スピリットマスター</option></select></label></div>
+<div id="dungeonGuide" class="dungeonGuide" aria-live="polite"></div>
+<section class="dungeonNotes"><label for="dungeonNote">📝 自分用メモ（ダンジョン別・端末内保存）</label><textarea id="dungeonNote" rows="5" maxlength="3000" placeholder="要注意ギミック、パーティーの役割、立ち位置、周回メモなど"></textarea><div class="row"><button id="dungeonNoteSave" class="primary" type="button">💾 メモを保存</button><span id="dungeonNoteStatus" class="hint">保存前</span></div><p class="hint">攻略本文は出典を付けた簡易メモです。ゲーム内部の自動取得・操作・リアルタイム判定はしません。個人メモは自動同期されません。</p></section>
+</section>
 <section id="helpPanel" class="helpPanel" aria-label="使い方・更新履歴・ご意見">
  <div class="helpHero"><div class="eyebrow">WELCOME / WHAT'S NEW / FEEDBACK</div><h2>❔ 使い方・更新履歴・ご意見</h2><p>初めての方も、いつも使っている方も。操作案内と更新情報をここにまとめました。</p><button id="reopenGuide" class="primary" type="button">📖 初回ガイドをもう一度見る</button></div>
  <div class="helpGrid">
   <section class="helpCard"><h3>🧭 基本の使い方</h3>
    <div class="helpHow"><b>1. マップ</b><p>陣営を選んでキューブ候補やペットの生息場所を確認。PCはドラッグ・ホイール、スマホはドラッグ・二本指ズーム。マーカーをタップすると名称を表示できます。</p><button data-go="map" type="button">🗺️ マップを開く →</button></div>
    <div class="helpHow"><b>2. 魂確保</b><p>ペット名を検索して確保Lv（未確保・Lv1・Lv2・Lv3）を記録。アルトガルド／ベルテロンの片方にだけ載っている種類も絞り込めます。</p><button data-go="pets" type="button">🐾 魂確保を開く →</button></div>
-   <div class="helpHow"><b>3. 武器強化</b><p>武器の条件を設定すると、強化成功率に従うランダムな挑戦とギーナ・強化石の累計を試算できます。実際の成功を保証するものではありません。</p><button data-go="enhance" type="button">⚒️ 強化シミュレーター →</button></div>
+   <div class="helpHow"><b>3. 武器強化・予算計算</b><p>武器の条件を設定すると、強化成功率に従うランダムな挑戦とギーナ・強化石の累計を試算できます。実際の成功を保証するものではありません。</p><button data-go="enhance" type="button">⚒️ 強化シミュレーター →</button></div>
    <div class="helpHow"><b>4. PC↔スマホの確保記録</b><p>設定で同期コードを作り、別端末の設定で貼り付けて取り込みます。ログイン不要ですが、自動同期ではありません。</p><button data-go="settings" type="button">🔄 同期コードを使う →</button></div>
   </section>
   <section class="helpCard"><h3>🔐 プライバシーとアクセス解析</h3>
@@ -321,7 +362,8 @@ body:not([data-tab="help"]) #helpPanel{display:none!important}
    <div class="row"><button type="button" id="analyticsConsentHelp">解析の同意設定を開く</button><span class="smalllabel" id="analyticsHelpStatus">解析は未設定です</span></div>
   </section>
   <section class="helpCard"><h3>🆕 更新履歴</h3>
-   <div class="updateItem latest"><div class="updateBadge">NEW · v2.9</div><strong>検索対策・アクセス解析の準備</strong><p>検索用タイトル・説明文・構造化データ・サイトマップを追加。GA4は同意制で、測定IDが設定されるまではアクセス情報を送信しません。</p></div>
+   <div class="updateItem latest"><div class="updateBadge">NEW · v3.0</div><strong>強化予算・お気に入り・PWA・攻略カンペ</strong><p>予算内での強化到達率を推定、注目ペットの⭐管理、ホーム画面アプリ対応、遠征の要点と個人メモを追加。</p></div>
+   <div class="updateItem"><div class="updateBadge">v2.9</div><strong>検索対策・アクセス解析の準備</strong><p>検索用タイトル・説明文・構造化データ・サイトマップを追加。GA4は同意制で、測定IDが設定されるまではアクセス情報を送信しません。</p></div>
    <div class="updateItem"><div class="updateBadge">v2.8</div><strong>初回ガイド・更新履歴・意見受付</strong><p>初回だけ表示する操作ガイド、いつでも見られるヘルプ、GitHub Issuesへつなぐ不具合・要望フォームを追加。</p></div>
    <div class="updateItem"><div class="updateBadge">v2.7</div><strong>魂確保の同期コード／武器強化</strong><p>クラウドなしの手動同期と、唯一（金）武器の強化シミュレーターを追加。</p></div>
    <div class="updateItem"><div class="updateBadge">v2.6</div><strong>スマホ操作とペット一覧の改良</strong><p>二本指ズーム、マーカー詳細の固定、密集表示の緩和、2マップ間で片方にしかいないペットの強調。</p></div>
@@ -350,7 +392,7 @@ body:not([data-tab="help"]) #helpPanel{display:none!important}
 <div id="cubeDataSection"><h3 style="font-size:12px;margin:12px 0 4px">💎 キューブ候補データ</h3><div id="dataStatus" class="sourceStatus">読込中…</div><div class="spacedBtns"><button id="reloadData">↻ キューブ更新</button><button id="pickJson">JSON手動読込</button></div><input type="file" id="jsonFile" accept=".json,application/json" hidden><div id="areaDataHint" class="formCaption"></div><details><summary style="cursor:pointer;font-size:12px;color:#f1d2a0">候補グループの表示を切り替える</summary><div id="groupList" class="checks cubeGroups"></div></details><p class="hint">読込できないときは<a class="link" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/problem-xyz/aion2-map-overlay/main/assets/object-sets/altgard.json">公開キューブJSON</a>をダウンロードして読み込めます。</p></div></section>
 <section class="section" id="petControlsPanel"><h2>🐾 ペットの出現地点</h2><div id="petStatus" class="sourceStatus">ペットデータ読込中…</div><div class="spacedBtns"><button id="reloadPets" class="primary">↻ ペット更新</button><button id="petPickJson">JSON手動読込</button></div><input id="petJsonFile" type="file" accept=".json,application/json" hidden><p class="hint"><a id="petSourceLink" class="link" target="_blank" rel="noopener">ペット位置JSONの入手先 ↗</a></p><div id="translationStatus">日本語名データ読込中…</div><details><summary class="hint" style="cursor:pointer">日本語辞書を手動で読み込む</summary><div class="spacedBtns" style="margin-top:6px"><button id="pickLocale">辞書JSONを読み込む</button><a class="link" href="https://raw.githubusercontent.com/MikeZeen/aion2-pet-tracker/master/src/data/pet_names.json" target="_blank" rel="noopener">辞書ファイル ↗</a></div><input type="file" id="localeJson" accept=".json,application/json" hidden></details>
 <div class="petSearchRow"><input id="petSearch" type="search" placeholder="日本語のペット名・対象モンスター名で検索" autocomplete="off" aria-label="ペットを検索"><button id="clearPetSearch" class="tiny" title="検索語をクリア">✕ 消去</button></div><div id="petSearchSummary" class="petSearchSummary" role="status" aria-live="polite">検索文字を入力すると一覧が絞られます。</div><select id="petGenus" style="margin-top:7px"><option value="all">全系統</option><option value="fera">野性</option><option value="natura">自然</option><option value="cogni">知性</option><option value="varian">変形</option></select>
-<div class="petToolbar"><div class="row"><span class="hint">🐾 魂確保Lv一覧</span><b id="ownedStats" class="ownedStats">確保済み —</b></div><label class="exclusiveToggle"><input type="checkbox" id="uniquePetsOnly"> 🟣🟡 この2マップで片方にしかいないペットだけ表示</label><div id="uniquePetStats" class="uniquePetStats">両陣営のデータを比較中…</div><select id="petListFilter"><option value="all">すべて</option><option value="unowned">未確保のみ</option><option value="owned">確保済みのみ</option><option value="lv1">Lv1のみ</option><option value="lv2">Lv2のみ</option><option value="lv3">Lv3のみ</option></select></div><div id="petList" class="checks petList"><p class="hint">データ読込中…</p></div>
+<div class="petToolbar"><label class="favoriteOnly"><input type="checkbox" id="favoritePetsOnly"> ⭐ お気に入りだけを表示</label><div class="row"><span class="hint">🐾 魂確保Lv一覧</span><b id="ownedStats" class="ownedStats">確保済み —</b></div><label class="exclusiveToggle"><input type="checkbox" id="uniquePetsOnly"> 🟣🟡 この2マップで片方にしかいないペットだけ表示</label><div id="uniquePetStats" class="uniquePetStats">両陣営のデータを比較中…</div><select id="petListFilter"><option value="all">すべて</option><option value="unowned">未確保のみ</option><option value="owned">確保済みのみ</option><option value="lv1">Lv1のみ</option><option value="lv2">Lv2のみ</option><option value="lv3">Lv3のみ</option></select></div><div id="petList" class="checks petList"><p class="hint">データ読込中…</p></div>
 <div class="hint" style="margin-top:7px">検索中は一致するペットの出現地点を最大5種類まで一時表示します。検索を消すと通常表示へ戻ります。<br>☑ 通常表示するペットを最大5種類選べます。選択中：<b id="petSelectedCount">0/5</b></div><label class="checkitem" style="margin-top:8px"><input id="hideOwnedPets" type="checkbox" checked>確保済み（Lv1～3）は地図から隠す</label><div class="spacedBtns"><button id="clearPets">選択解除</button><button id="resetPetsOwned" class="danger">確保Lvをリセット</button></div></section>
 <section class="section" id="backupControlsPanel"><h2>💾 確保記録の保存</h2><div class="grid2"><button id="exportBtn">↥ 記録を書き出す</button><button id="importBtn">↧ 記録を読み込む</button></div><input id="saveFile" type="file" accept=".json,application/json" hidden><p class="hint">以前のv1.6記録も読込できます。ブラウザの保存領域は環境によって版ごとに分かれるため、旧版からはJSONを書き出して引き継いでください。</p></section>
 <section class="section" id="syncCodePanel"><h2>🔄 魂確保の同期コード（手動）</h2>
@@ -471,6 +513,11 @@ const PET_CACHE='aion2_manual_pet_public_v13_';
 const CUBE_CACHE='aion2_manual_nav_public_data_v1';
 const OLD_SAVE='aion2_manual_nav_user_v13';
 const SAVE='aion2_reference_map_v17';
+const FAVORITE_KEY='aion2_pet_favorites_v30';
+const FAVORITE_ONLY_KEY='aion2_pet_favorites_only_v30';
+let favoritePets=new Set(),favoriteOnly=false;
+try{const f=JSON.parse(localStorage.getItem(FAVORITE_KEY)||'[]');if(Array.isArray(f))favoritePets=new Set(f.filter(v=>/^\d+$/.test(String(v))).map(String));favoriteOnly=localStorage.getItem(FAVORITE_ONLY_KEY)==='1';}catch(e){}
+function saveFavorites(){try{localStorage.setItem(FAVORITE_KEY,JSON.stringify([...favoritePets]));localStorage.setItem(FAVORITE_ONLY_KEY,favoriteOnly?'1':'0');}catch(e){}}
 const REGIONS={asmo:{name:'アルトガルド',label:'魔族・アルトガルド',pet:RAW+'pets/altgard.json',map:[RAW+'maps/altgard/reference.webp','https://aion2.app/map-images/World_D_A.webp'],detail:RAW+'maps/altgard/detail.webp'},elyos:{name:'ベルテロン',label:'天族・ベルテロン',pet:RAW+'pets/verteron.json',map:[RAW+'maps/verteron/reference.webp'],detail:RAW+'maps/verteron/detail.webp'}};
 const GENUS_COLORS={fera:'#fb977c',natura:'#7be4ae',cogni:'#8eaefe',varian:'#c6a0ff'};
 const GENUS_NAMES={fera:'野性',natura:'自然',cogni:'知性',varian:'変形'};
@@ -499,7 +546,7 @@ function mapExclusive(p){
  const other=faction==='asmo'?'elyos':'asmo';
  return pets[other].length>0 && !pets[other].some(x=>x.id===p.id);
 }
-function filteredPets(){const g=$('petGenus').value,f=$('petListFilter').value,q=searchKey($('petSearch').value);return pets[faction].filter(p=>{const lv=levelFor(p);return (g==='all'||p.genus===g)&&(f==='all'||f==='owned'&&lv>0||f==='unowned'&&lv===0||f.startsWith('lv')&&+f[2]===lv)&&(!uniquePetsOnly||mapExclusive(p))&&petMatchesQuery(p,q);}).sort((a,b)=>Number(selectedPets[faction].has(b.id))-Number(selectedPets[faction].has(a.id))||levelFor(a)-levelFor(b)||jpSorted(petJP(a),petJP(b)));}
+function filteredPets(){const g=$('petGenus').value,f=$('petListFilter').value,q=searchKey($('petSearch').value);return pets[faction].filter(p=>{const lv=levelFor(p);return (g==='all'||p.genus===g)&&(f==='all'||f==='owned'&&lv>0||f==='unowned'&&lv===0||f.startsWith('lv')&&+f[2]===lv)&&(!uniquePetsOnly||mapExclusive(p))&&(!favoriteOnly||favoritePets.has(p.id))&&petMatchesQuery(p,q);}).sort((a,b)=>Number(favoritePets.has(b.id))-Number(favoritePets.has(a.id))||Number(selectedPets[faction].has(b.id))-Number(selectedPets[faction].has(a.id))||levelFor(a)-levelFor(b)||jpSorted(petJP(a),petJP(b)));}
 // 検索中だけ一致ペットの出現地点を最大5種類プレビュー。既存のチェック選択を変更しない。
 function visiblePetIds(){if(!searchKey($('petSearch').value))return selectedPets[faction];return new Set(filteredPets().filter(p=>!hideOwned||!levelFor(p)).slice(0,5).map(p=>p.id));}
 
@@ -530,8 +577,10 @@ $('ownedStats').textContent=`確保済み ${p.filter(x=>levelFor(x)>0).length} /
 const other=faction==='asmo'?'elyos':'asmo',comparable=p.length>0&&pets[other].length>0;
 const exclusiveCount=comparable?p.filter(x=>mapExclusive(x)).length:0;
 $('uniquePetStats').textContent=comparable?`⭐ ${REGIONS[faction].name}だけに登録：${exclusiveCount}種類（この2マップ間の比較）`:'⚠ 両陣営のペットデータ取得後に限定表示を判定します';
-$('uniquePetsOnly').disabled=!comparable;
-$('petSelectedCount').textContent=selectedPets[faction].size+'/5';$('petList').innerHTML=`<div class="petListStatus">表示 ${ps.length} / 全${p.length}種類　／　${isSearching?'検索結果を地図に一時表示中':'☑で地図に表示'}</div>`+ps.map(x=>{const lv=levelFor(x),sel=selectedPets[faction].has(x.id),exclusive=mapExclusive(x);const mon=x.monsters.map(m=>monJP(m.name)).filter(Boolean);const meta=mon.length?[...new Set(mon)].slice(0,2).join('・')+' · '+x.spots.length+'地点':`出現地点 ${x.spots.length}か所 ／ 対象モンスター ${x.monsters.length}種類`;return `<div class="petRow ${lv?'owned':''} ${exclusive?'mapExclusive':''}"><label class="petMain"><input class="petCheck" data-pet="${safe(x.id)}" type="checkbox" ${sel?'checked':''} ${lv&&hideOwned?'disabled':''}><span class="chip" style="background:${GENUS_COLORS[x.genus]||'#9de8e4'}"></span><span><strong class="petName">${safe(petJP(x))}</strong>${exclusive?`<span class="exclusiveBadge ${faction==='elyos'?'elyos':''}" title="この2マップの比較結果">${faction==='asmo'?'🟣 魔族マップのみ':'🟡 天族マップのみ'}</span>`:''}<br><span class="petMeta">${safe(meta)}</span></span></label><div class="petActions"><select class="soulLevel" data-pet="${safe(x.id)}" aria-label="${safe(petJP(x))}の魂確保レベル"><option value="0" ${!lv?'selected':''}>未確保</option><option value="1" ${lv===1?'selected':''}>Lv1確保</option><option value="2" ${lv===2?'selected':''}>Lv2確保</option><option value="3" ${lv===3?'selected':''}>Lv3確保</option></select><button class="petMapBtn" data-pet="${safe(x.id)}">🗺️ 地図へ</button></div></div>`;}).join('');if(!p.length)$('petList').innerHTML='<p class="hint">ペットデータを読み込めていません。</p>';else if(!ps.length)$('petList').innerHTML='<p class="hint">検索条件に合うペットがありません。</p>';
+$('uniquePetsOnly').disabled=!comparable;$('favoritePetsOnly').checked=favoriteOnly;
+const homeFav=$('homeFavoriteNames');if(homeFav){const chosen=[...favoritePets];const names=chosen.map(id=>pets.asmo.find(p=>p.id===id)||pets.elyos.find(p=>p.id===id)).filter(Boolean).map(p=>petJP(p));homeFav.textContent=chosen.length?`${chosen.length}種類：${names.slice(0,5).join('・')||'登録済み（データ読み込み中）'}${chosen.length>5?' ほか':''}`:'まだ登録がありません。ペット一覧の☆から追加できます。';}
+$('petSelectedCount').textContent=selectedPets[faction].size+'/5';$('petList').innerHTML=`<div class="petListStatus">表示 ${ps.length} / 全${p.length}種類　／　${isSearching?'検索結果を地図に一時表示中':'☑で地図に表示'}</div>`+ps.map(x=>{const lv=levelFor(x),sel=selectedPets[faction].has(x.id),exclusive=mapExclusive(x);const mon=x.monsters.map(m=>monJP(m.name)).filter(Boolean);const meta=mon.length?[...new Set(mon)].slice(0,2).join('・')+' · '+x.spots.length+'地点':`出現地点 ${x.spots.length}か所 ／ 対象モンスター ${x.monsters.length}種類`;return `<div class="petRow ${lv?'owned':''} ${exclusive?'mapExclusive':''}"><label class="petMain"><input class="petCheck" data-pet="${safe(x.id)}" type="checkbox" ${sel?'checked':''} ${lv&&hideOwned?'disabled':''}><span class="chip" style="background:${GENUS_COLORS[x.genus]||'#9de8e4'}"></span><span><strong class="petName">${safe(petJP(x))}</strong>${exclusive?`<span class="exclusiveBadge ${faction==='elyos'?'elyos':''}" title="この2マップの比較結果">${faction==='asmo'?'🟣 魔族マップのみ':'🟡 天族マップのみ'}</span>`:''}<br><span class="petMeta">${safe(meta)}</span></span></label><div class="petActions"><button type="button" class="petFavorite" data-pet="${safe(x.id)}" aria-pressed="${favoritePets.has(x.id)}" title="お気に入りを切り替える">${favoritePets.has(x.id)?'⭐ 登録済み':'☆ 注目する'}</button><select class="soulLevel" data-pet="${safe(x.id)}" aria-label="${safe(petJP(x))}の魂確保レベル"><option value="0" ${!lv?'selected':''}>未確保</option><option value="1" ${lv===1?'selected':''}>Lv1確保</option><option value="2" ${lv===2?'selected':''}>Lv2確保</option><option value="3" ${lv===3?'selected':''}>Lv3確保</option></select><button class="petMapBtn" data-pet="${safe(x.id)}">🗺️ 地図へ</button></div></div>`;}).join('');if(!p.length)$('petList').innerHTML='<p class="hint">ペットデータを読み込めていません。</p>';else if(!ps.length)$('petList').innerHTML='<p class="hint">検索条件に合うペットがありません。</p>';
+$('petList').querySelectorAll('.petFavorite').forEach(x=>x.onclick=()=>{const id=x.dataset.pet;if(favoritePets.has(id))favoritePets.delete(id);else favoritePets.add(id);saveFavorites();renderPets();notice(favoritePets.has(id)?'⭐ お気に入りに追加しました':'お気に入りを解除しました');});
 $('petList').querySelectorAll('.petCheck').forEach(x=>x.onchange=()=>{const set=selectedPets[faction];if(x.checked&&set.size>=5){x.checked=false;notice('同時表示は5種類までです');return;}if(x.checked)set.add(x.dataset.pet);else set.delete(x.dataset.pet);if(faction==='asmo'&&layer==='cube'&&x.checked){layer='both';$('layerMode').value='both';}save();renderPets();renderMap();});
 $('petList').querySelectorAll('.soulLevel').forEach(x=>x.onchange=()=>{const v=+x.value;if(v===0)delete petLevels[x.dataset.pet];else petLevels[x.dataset.pet]=v;if(v&&hideOwned)selectedPets[faction].delete(x.dataset.pet);save();paintAll();notice(v?'魂確保Lvを更新しました':'未確保に戻しました');});
 $('petList').querySelectorAll('.petMapBtn').forEach(x=>x.onclick=()=>{const p0=p.find(p=>p.id===x.dataset.pet);if(!p0?.spots.length)return;const set=selectedPets[faction];if(hideOwned&&levelFor(p0)>0){notice('確保済み非表示を解除すると地図に表示できます');return;}if(!set.has(p0.id)){if(set.size>=5){notice('地図に表示できるのは5種類までです');return;}set.add(p0.id);}if(faction==='asmo'&&layer==='cube'){layer='both';$('layerMode').value='both';}area='all';$('areaSelect').value='all';const best=p0.spots.reduce((a,b)=>b[2]>a[2]?b:a);focus(best[0],best[1],3.8);save();renderGroups();renderPets();renderMap();});}
@@ -702,7 +751,7 @@ function loadBackground(){
 }
 function switchFaction(f){if(!REGIONS[f])return;mapManual=false;imageLoaded='';mapLoading='';faction=f;if(f==='elyos'){area='all';layer='pet';}else area='all';$('factionSelect').value=f;$('areaSelect').value=area;$('areaSelect').hidden=f==='elyos';$('layerMode').hidden=f==='elyos';$('layerMode').value=layer;$('cubeDataSection').hidden=f==='elyos';$('cubeLegend').hidden=f==='elyos';$('factionBadge').textContent=REGIONS[f].label;$('mapTitle').textContent='🗺️ '+REGIONS[f].name;$('baseimage').alt=REGIONS[f].name+'の全域マップ';$('petSourceLink').href=REGIONS[f].pet;disableCube.clear();$('petSearch').value='';save();paintAll();focus(50,50,.72);loadBackground();if(!pets[f].length)loadPets(f);}
 function downloadJson(obj,name){const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),15000);}
-function setup(){try{clusterEnabled=localStorage.getItem(CLUSTER_KEY)!=='false';}catch(e){}$('clusterEnabled').checked=clusterEnabled;$('clusterEnabled').onchange=e=>{clusterEnabled=e.target.checked;try{localStorage.setItem(CLUSTER_KEY,String(clusterEnabled));}catch(err){}renderMap();};restore();try{mapQuality=localStorage.getItem(MAP_QUALITY_KEY)||'auto';}catch(e){}if(!['auto','detail','reference'].includes(mapQuality))mapQuality='auto';$('mapQuality').value=mapQuality;$('mapQuality').onchange=e=>{mapQuality=e.target.value;mapManual=false;imageLoaded='';try{localStorage.setItem(MAP_QUALITY_KEY,mapQuality);}catch(err){}loadBackground();};try{uniquePetsOnly=localStorage.getItem(UNIQUE_PETS_KEY)==='true';}catch(e){}$('uniquePetsOnly').checked=uniquePetsOnly;$('uniquePetsOnly').onchange=e=>{uniquePetsOnly=e.target.checked;try{localStorage.setItem(UNIQUE_PETS_KEY,String(uniquePetsOnly));}catch(err){}renderPets();renderMap();};$('hideOwnedPets').checked=hideOwned;$('petListFilter').value=['all','unowned','owned','lv1','lv2','lv3'].includes(petFilter)?petFilter:'all';$('factionSelect').onchange=e=>switchFaction(e.target.value);$('areaSelect').onchange=e=>{area=e.target.value;disableCube.clear();save();paintAll();const p={west:[64,61,4.2],faf:[70,56,4],dred:[45,39,3.2],nameless:[31,38,4.2],all:[50,50,.72]}[area];focus(...p);};$('layerMode').onchange=e=>{layer=e.target.value;save();renderMap();};$('petSearch').oninput=()=>{renderPets();renderMap();};$('clearPetSearch').onclick=()=>{$('petSearch').value='';renderPets();renderMap();$('petSearch').focus();};$('petGenus').onchange=()=>{renderPets();renderMap();};$('petListFilter').onchange=e=>{petFilter=e.target.value;save();renderPets();renderMap();};$('hideOwnedPets').onchange=e=>{hideOwned=e.target.checked;save();paintAll();};$('clearPets').onclick=()=>{selectedPets[faction].clear();save();paintAll();};$('resetPetsOwned').onclick=()=>{if(confirm('魔族・天族の魂確保Lvをすべて削除しますか？')){petLevels={};save();paintAll();}};
+function setup(){try{clusterEnabled=localStorage.getItem(CLUSTER_KEY)!=='false';}catch(e){}$('clusterEnabled').checked=clusterEnabled;$('clusterEnabled').onchange=e=>{clusterEnabled=e.target.checked;try{localStorage.setItem(CLUSTER_KEY,String(clusterEnabled));}catch(err){}renderMap();};restore();try{mapQuality=localStorage.getItem(MAP_QUALITY_KEY)||'auto';}catch(e){}if(!['auto','detail','reference'].includes(mapQuality))mapQuality='auto';$('mapQuality').value=mapQuality;$('mapQuality').onchange=e=>{mapQuality=e.target.value;mapManual=false;imageLoaded='';try{localStorage.setItem(MAP_QUALITY_KEY,mapQuality);}catch(err){}loadBackground();};try{uniquePetsOnly=localStorage.getItem(UNIQUE_PETS_KEY)==='true';}catch(e){}$('favoritePetsOnly').checked=favoriteOnly;$('favoritePetsOnly').onchange=e=>{favoriteOnly=e.target.checked;saveFavorites();renderPets();renderMap();};$('uniquePetsOnly').checked=uniquePetsOnly;$('uniquePetsOnly').onchange=e=>{uniquePetsOnly=e.target.checked;try{localStorage.setItem(UNIQUE_PETS_KEY,String(uniquePetsOnly));}catch(err){}renderPets();renderMap();};$('hideOwnedPets').checked=hideOwned;$('petListFilter').value=['all','unowned','owned','lv1','lv2','lv3'].includes(petFilter)?petFilter:'all';$('factionSelect').onchange=e=>switchFaction(e.target.value);$('areaSelect').onchange=e=>{area=e.target.value;disableCube.clear();save();paintAll();const p={west:[64,61,4.2],faf:[70,56,4],dred:[45,39,3.2],nameless:[31,38,4.2],all:[50,50,.72]}[area];focus(...p);};$('layerMode').onchange=e=>{layer=e.target.value;save();renderMap();};$('petSearch').oninput=()=>{renderPets();renderMap();};$('clearPetSearch').onclick=()=>{$('petSearch').value='';renderPets();renderMap();$('petSearch').focus();};$('petGenus').onchange=()=>{renderPets();renderMap();};$('petListFilter').onchange=e=>{petFilter=e.target.value;save();renderPets();renderMap();};$('hideOwnedPets').onchange=e=>{hideOwned=e.target.checked;save();paintAll();};$('clearPets').onclick=()=>{selectedPets[faction].clear();save();paintAll();};$('resetPetsOwned').onclick=()=>{if(confirm('魔族・天族の魂確保Lvをすべて削除しますか？')){petLevels={};save();paintAll();}};
 $('reloadPets').onclick=()=>loadPets(faction,true);$('petPickJson').onclick=()=>$('petJsonFile').click();$('petJsonFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>10e6)throw Error('JSONが大きすぎます');const j=JSON.parse(await f.text());const expected=faction==='asmo'?'altgard':'verteron';if(j.map&&j.map!==expected)throw Error('現在の陣営と違うデータです');pets[faction]=parsePets(j);try{localStorage.setItem(PET_CACHE+faction,JSON.stringify(j));}catch(x){}paintAll();notice('ペットデータを読み込みました');}catch(e){notice('読込失敗：'+e.message);}e.target.value='';};
 $('reloadData').onclick=()=>loadCubes(true);$('pickJson').onclick=()=>$('jsonFile').click();$('jsonFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>12e6)throw Error('JSONが大きすぎます');const j=JSON.parse(await f.text());cubes=parseCube(j);cubeNumberCache.clear();try{localStorage.setItem(CUBE_CACHE,JSON.stringify(j));}catch(x){}setCubeStatus('手動読込');paintAll();notice('キューブの地点を読み込みました');}catch(err){notice('キューブJSONの読込失敗：'+err.message);}e.target.value='';};
 $('pickLocale').onclick=()=>$('localeJson').click();$('localeJson').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>2e6)throw Error('辞書ファイルが大きすぎます');applyLocale(JSON.parse(await f.text()),'手動読込');notice('日本語辞書を読み込みました');}catch(err){notice('辞書の読込失敗：'+err.message);}e.target.value='';};
@@ -1095,13 +1144,48 @@ let preset='86',custom={gold:[...PRESETS['86'].gold],stone:[...PRESETS['86'].sto
 const cost=()=>preset==='custom'?custom:PRESETS[preset];
 const chance=(level,fails)=>Math.min(100,BASE[level]+(level>=10?fails*5:0));
 function rand(){return Math.random()*100;}
-function reset(){start=+el('enhanceStart').value;target=+el('enhanceTarget').value;if(target<=start){target=start+1;el('enhanceTarget').value=String(target);}state={lv:start,tries:0,success:0,fail:0,gold:0,stone:0,failedForStep:0,history:[]};el('enhanceComparison').textContent='比較すると平均・中央値・運の良い10%／悪い10%の費用を表示します。';paint();}
+function reset(){start=+el('enhanceStart').value;target=+el('enhanceTarget').value;if(target<=start){target=start+1;el('enhanceTarget').value=String(target);}state={lv:start,tries:0,success:0,fail:0,gold:0,stone:0,failedForStep:0,history:[]};el('budgetResult').textContent='予算と目標値を選択して「試算」を押してください。';el('enhanceComparison').textContent='比較すると平均・中央値・運の良い10%／悪い10%の費用を表示します。';paint();}
 function runAttempt(s,history=false){if(s.lv>=target)return null;const level=s.lv,idx=level,prob=chance(level,s.failedForStep),ok=rand()<prob,c=cost();s.gold+=c.gold[idx];s.stone+=c.stone[idx];s.tries++;if(ok){s.lv++;s.success++;s.failedForStep=0;}else{s.fail++;s.failedForStep++;}if(history)s.history.unshift({from:level,to:level+1,prob,ok,gold:c.gold[idx],stone:c.stone[idx],n:s.tries});return ok;}
 function paint(){const s=state;el('enhanceCurrentLv').innerHTML='+'+s.lv+' <span>→ +'+target+'</span>';el('enhanceChance').textContent=s.lv===target?'目標達成！':'次の成功率：'+chance(s.lv,s.failedForStep)+'%（+ '+(s.lv+1)+' に挑戦）';el('enhanceProgressFill').style.width=(Math.max(0,s.lv-start)/Math.max(1,target-start)*100)+'%';el('enhanceGoldTotal').textContent=fmt(s.gold);el('enhanceStoneTotal').textContent=fmt(s.stone);el('enhanceAttemptTotal').textContent=`${s.tries} / ${s.success} / ${s.fail}`;const msg=el('enhanceResult');const latest=s.history[0];msg.className='enhanceResult'+(s.lv===target?' success':latest?(latest.ok?' success':' failed'):'');msg.textContent=s.lv===target?`🎉 +${target}到達！ ${s.tries}回挑戦、失敗${s.fail}回。`:latest?(latest.ok?`✅ +${latest.to} 成功！ 次は+${s.lv+1}`:`❌ +${latest.to}に失敗。現在+${s.lv}を維持、次は成功率+5ポイント。`):'⚒️ 1回ずつ挑戦するか、目標まで一気に試してください。';el('enhanceOne').disabled=s.lv>=target;el('enhanceAll').disabled=s.lv>=target;el('enhanceLog').innerHTML=s.history.length?s.history.map(h=>`<div class="enhanceLine ${h.ok?'ok':'ng'}">#${h.n}　+${h.from} → +${h.to}（${h.prob}%）　${h.ok?'✅ 成功':'❌ 失敗・段階維持'}　−${fmt(h.gold)}ギーナ / −${fmt(h.stone)}石</div>`).join(''):'強化前です。開始すると挑戦履歴が表示されます。';}
 function renderCostRows(){const c=cost(),disabled=preset!=='custom';el('enhanceCostRows').innerHTML=BASE.map((b,i)=>`<tr><td>+${i+1}</td><td>${b}%${i>=10?'（失敗+5pt）':''}</td><td><input aria-label="+${i+1}のギーナ" type="number" min="0" step="1" max="1000000000" value="${c.gold[i]}" data-index="${i}" data-field="gold" ${disabled?'disabled':''}></td><td><input aria-label="+${i+1}の強化石" type="number" min="0" step="1" max="1000000000" value="${c.stone[i]}" data-index="${i}" data-field="stone" ${disabled?'disabled':''}></td></tr>`).join('');el('enhanceCostInfo').textContent=preset==='custom'?'自分の武器：表の費用をゲーム内表示に合わせて編集できます（確率は唯一武器の共通値）。':`確認済み参考費用：${PRESETS[preset].name}。1回あたりの金額・個数です。装備によって異なります。`;
 }
 function persist(){try{localStorage.setItem(STORAGE,JSON.stringify({preset,custom,start,target}));}catch(e){}}
 function runBatch(){const samples=[];for(let i=0;i<3000;i++){const s={lv:start,tries:0,success:0,fail:0,gold:0,stone:0,failedForStep:0};while(s.lv<target&&s.tries<300){runAttempt(s,false);}samples.push(s);}const ordered=[...samples].sort((a,b)=>a.gold-b.gold);const q=p=>ordered[Math.min(ordered.length-1,Math.max(0,Math.floor((ordered.length-1)*p)))];const avg=f=>samples.reduce((sum,x)=>sum+x[f],0)/samples.length;el('enhanceComparison').innerHTML=`<div class="enhanceCompareCards"><div><span>平均ギーナ / 石</span><b>${fmt(avg('gold'))}</b><br>${fmt(avg('stone'))}個</div><div><span>中央値</span><b>${fmt(q(.5).gold)}</b><br>${fmt(q(.5).stone)}個</div><div><span>運が良い10%地点</span><b>${fmt(q(.1).gold)}</b><br>${fmt(q(.1).stone)}個</div><div><span>運が悪い10%地点</span><b>${fmt(q(.9).gold)}</b><br>${fmt(q(.9).stone)}個</div></div><p>平均試行：${avg('tries').toFixed(2)}回 ／ 平均失敗：${avg('fail').toFixed(2)}回。3,000回の独立した乱数試行による推定値です。</p>`;}
+// v3.0: monte carlo budget. Uses exactly the same rate/cost helpers as the manual simulator.
+const BUDGET_KEY='aion2_enhance_budget_v30';
+try{let old=JSON.parse(localStorage.getItem(BUDGET_KEY)||'{}');if(Number.isSafeInteger(old.gina)&&old.gina>=0)el('budgetGina').value=String(old.gina);if(Number.isSafeInteger(old.stones)&&old.stones>=0)el('budgetStones').value=String(old.stones);}catch(e){}
+function calcBudget(){
+ const g=Number(el('budgetGina').value),st=Number(el('budgetStones').value);
+ if(!Number.isSafeInteger(g)||!Number.isSafeInteger(st)||g<0||st<0||g>1e10||st>1e7){el('budgetResult').textContent='⚠️ 予算はギーナ0〜100億、石0〜1000万の整数で入力してください。';return;}
+ try{localStorage.setItem(BUDGET_KEY,JSON.stringify({gina:g,stones:st}));}catch(e){}
+ const c=cost(),num=3000;let ok=0,spentG=0,spentS=0,tries=0,fail=0;
+ for(let i=0;i<num;i++){
+  let lv=start,failed=0,costG=0,costS=0,steps=0,failCount=0;
+  while(lv<target&&steps<300){const idx=lv;if(costG+c.gold[idx]>g||costS+c.stone[idx]>st)break;
+   const pass=rand()<chance(lv,failed);costG+=c.gold[idx];costS+=c.stone[idx];steps++;
+   if(pass){lv++;failed=0;}else{failed++;failCount++;}
+  }
+  if(lv===target)ok++;spentG+=costG;spentS+=costS;tries+=steps;fail+=failCount;
+ }
+ const pct=ok/num*100;
+ // Independent full-completion draws for 90% threshold estimate, holding the other resource fixed.
+ const totalRuns=[];
+ for(let i=0;i<num;i++){
+  let lv=start,failed=0,costG=0,costS=0,steps=0;
+  while(lv<target&&steps<300){const idx=lv,pass=rand()<chance(lv,failed);costG+=c.gold[idx];costS+=c.stone[idx];steps++;if(pass){lv++;failed=0;}else failed++;}
+  if(lv===target)totalRuns.push({gold:costG,stone:costS});
+ }
+ const rank=Math.ceil(num*.9);
+ const goldSorted=totalRuns.filter(x=>x.stone<=st).map(x=>x.gold).sort((a,b)=>a-b);
+ const stoneSorted=totalRuns.filter(x=>x.gold<=g).map(x=>x.stone).sort((a,b)=>a-b);
+ const gold90=goldSorted.length>=rank?goldSorted[rank-1]:null;
+ const stone90=stoneSorted.length>=rank?stoneSorted[rank-1]:null;
+ const needGold=gold90===null?'石不足で算出不可':fmt(Math.max(0,gold90-g))+' ギーナ追加';
+ const needStones=stone90===null?'ギーナ不足で算出不可':fmt(Math.max(0,stone90-st))+' 個追加';
+ el('budgetResult').innerHTML=`<div class="budgetBig">🎯 +${start} → +${target} 到達率：<strong>${pct.toFixed(1)}%</strong> <small>（${ok.toLocaleString('ja-JP')} / ${num.toLocaleString('ja-JP')}回）</small></div><div class="budgetGrid"><div>平均消費ギーナ<b>${fmt(spentG/num)}</b></div><div>平均消費強化石<b>${fmt(spentS/num)}</b></div><div>平均挑戦回数<b>${(tries/num).toFixed(1)}回</b></div><div>平均失敗回数<b>${(fail/num).toFixed(1)}回</b></div></div><p><b>90%到達の目安：</b>ギーナを増やす場合 ${needGold} ／ 石を増やす場合 ${needStones}<br><small>片方の資源を現在の所持数で固定した場合の参考値です。両方不足すると算出できません。</small></p><p>予算内で途中終了した試行も平均に含みます。3,000回のランダム推定で、実際の成功を保証しません。</p>`;
+}
+el('budgetCalculate').addEventListener('click',calcBudget);
+
 for(let n=0;n<=14;n++)el('enhanceStart').add(new Option('+'+n,n));for(let n=1;n<=15;n++)el('enhanceTarget').add(new Option('+'+n,n));
 try{const old=JSON.parse(localStorage.getItem(STORAGE)||'{}');if(['86','102','custom'].includes(old.preset))preset=old.preset;if(old.custom&&['gold','stone'].every(f=>Array.isArray(old.custom[f])&&old.custom[f].length===15&&old.custom[f].every(v=>Number.isSafeInteger(v)&&v>=0&&v<=1e9)))custom=old.custom;if(Number.isInteger(old.start)&&old.start>=0&&old.start<=14)start=old.start;if(Number.isInteger(old.target)&&old.target>start&&old.target<=15)target=old.target;}catch(e){}
 el('enhancePreset').value=preset;el('enhanceStart').value=String(start);el('enhanceTarget').value=String(target);
@@ -1117,7 +1201,7 @@ el('enhanceOne').onclick=()=>{runAttempt(state,true);paint();};el('enhanceAll').
 (()=>{'use strict';
  const el=id=>document.getElementById(id);
  const TAB_KEY='aion2_active_tab_v23';
- const validTabs=new Set(['home','map','pets','enhance','events','benefits','settings','help']);
+ const validTabs=new Set(['home','map','pets','enhance','dungeons','events','benefits','settings','help']);
  let tab='home';try{const saved=localStorage.getItem(TAB_KEY);if(validTabs.has(saved))tab=saved;}catch(e){}
  function tabGo(next){if(!validTabs.has(next))return;tab=next;document.body.dataset.tab=next;
   document.querySelectorAll('#appTabs button').forEach(b=>{const selected=b.dataset.tab===tab;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;});
@@ -1161,10 +1245,48 @@ el('enhanceOne').onclick=()=>{runAttempt(state,true);paint();};el('enhanceAll').
  try{if(!localStorage.getItem(GUIDE_KEY))setTimeout(openGuide,450)}catch(e){/* local preview */}
  const kind=$('feedbackKind'),title=$('feedbackTitle'),body=$('feedbackBody'),platform=$('feedbackPlatform'),link=$('feedbackSubmit'),message=$('feedbackMessage');
  const base='https://github.com/pandakun-git/aion2-support-tool/issues/new';
- function populate(){const t=title.value.trim(),b=body.value.trim();const kindName={bug:'不具合',idea:'機能要望',other:'ご意見'}[kind.value]||'ご意見';const desc=['## 内容',b||'（詳細を記入してください）','','## 利用端末',platform.value,'','## ツールのバージョン','v2.8','','※この報告は公開されます。'].join('\n');const params=new URLSearchParams({title:`[${kindName}] ${t||'件名を入力してください'}`,body:desc});link.href=base+'?'+params.toString();}
+ function populate(){const t=title.value.trim(),b=body.value.trim();const kindName={bug:'不具合',idea:'機能要望',other:'ご意見'}[kind.value]||'ご意見';const desc=['## 内容',b||'（詳細を記入してください）','','## 利用端末',platform.value,'','## ツールのバージョン','v3.0','','※この報告は公開されます。'].join('\n');const params=new URLSearchParams({title:`[${kindName}] ${t||'件名を入力してください'}`,body:desc});link.href=base+'?'+params.toString();}
  [kind,title,body,platform].forEach(e=>e.addEventListener('input',populate));populate();
  link.addEventListener('click',e=>{if(!title.value.trim()||!body.value.trim()){e.preventDefault();message.textContent='⚠️ 件名と内容の両方を入力してください。';(!title.value.trim()?title:body).focus();return;}if(title.value.trim().length>80||body.value.trim().length>400){e.preventDefault();message.textContent='⚠️ 入力文字数が多すぎます。';return;}populate();message.textContent='✅ GitHubの投稿画面を開きます。内容を確認し、GitHub上で「Submit new issue」を押すと公開されます。';});
 })();
+</script>
+
+<script>
+/* v3.0 dungeon quick guide - selected sourced summaries and per-browser notes */
+(()=>{'use strict';const el=id=>document.getElementById(id),safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const SOURCE='https://gamerch.com/aion2/1020186';
+const D={
+ vakron:{name:'バクロンの空中島',il:'征服：IL 1400（参考）',boss:'ティエ → タモン → バクロン',tips:['霧で弱体化が蓄積する区間では滞在時間に注意','飛行で移動する区間を事前に確認','毒・石化・岩のギミックはパーティーで役割を確認'],src:'https://gameguide-navi.com/aion2/endgame/expedition/vakron/'},
+ urgugu:{name:'ウルググ峡谷',il:'探索：Lv28 / IL 300、征服：Lv45 / IL 1400（参考）',boss:'守護隊長ラウル → 審判者ウラフム → 神聖なアウルドール',tips:['移動と足元の危険表示を優先確認','主要ボスの詠唱名と回避位置はゲーム内表示を確認'],src:'https://www.aion2guidance.com/ja/dungeons/'},
+ fire:{name:'炎の神殿',il:'探索：Lv35 / IL 500、征服：Lv45 / IL 2100（参考）',boss:'黒煙モルト / 赤い炎イグヌス / クロメデの欲望',tips:['火炎地雷は戦闘場所を狭めるため、設置位置を意識','イグヌスの突進は黄色い予兆に注意','クロメデの矢の雨・火炎壁は位置取りを優先'],src:'https://lounge.plaync.com/feed/82813?country=JP&locale=ja-JP'},
+ kurao:{name:'クラオ洞窟',il:'探索：Lv20 / IL 200、征服：Lv45 / IL 700（参考）',boss:'強化されたハルコン → 放置されたガディオトン → 完成体ベルク',tips:['初見は攻撃予兆と安全地帯の確認を優先','ボスごとの危険攻撃は自分用メモに残そう'],src:'https://www.aion2guidance.com/ja/dungeons/'},
+ draupnir:{name:'ドラウプニル',il:'探索・征服：Lv45 / IL 700（参考）',boss:'夢幻のラクシュミ → 捕食者サラスワティ → 超越したヴォカルマ',tips:['複数ボスの危険攻撃を事前に予習','安全地帯と解除が必要な状態異常をゲーム内で確認'],src:'https://www.aion2guidance.com/ja/dungeons/'},
+ cave:{name:'獰猛な角岩窟',il:'探索：Lv45 / IL 2100、征服：Lv45 / IL 2100（参考）',boss:'番犬クハプ → 降霊術士ドゥアンカ → 獰猛な角ヌアクム',tips:['出現する床の予兆や範囲攻撃を優先確認','同じグループでの立ち位置を相談'],src:'https://www.aion2guidance.com/ja/dungeons/'}
+};
+const KEY='aion2_dungeon_notes_v30',CLASS_KEY='aion2_dungeon_class_v30';let notes={};try{const n=JSON.parse(localStorage.getItem(KEY)||'{}');if(n&&typeof n==='object'&&!Array.isArray(n))notes=n}catch(_){}
+const CLASS_INFO={
+ gladiator:{name:'グラディエーター',icon:'⚔️',tips:['近接攻撃を続けられる安全な位置を確保する','前線で被弾しすぎず、危険予兆では攻撃を中断する','味方と敵の向きを共有する']},
+ templar:{name:'テンプラー',icon:'🛡️',tips:['敵の向きや位置を安定させ、味方の安全地帯を確保する','大技に合わせて防御・軽減スキルを温存する','ボス移動時はパーティーの立ち位置を確認する']},
+ assassin:{name:'アサシン',icon:'🗡️',tips:['背後や側面に回り込む前に範囲予兆を確認する','移動・回避用スキルの使いどころを意識する','危険な攻撃中は無理に接近しない']},
+ ranger:{name:'レンジャー',icon:'🏹',tips:['遠距離からでも床の予兆と安全地帯を確認する','味方から離れすぎず支援や回復を受けられる距離を保つ','移動が必要なギミックに備える']},
+ chanter:{name:'チャンター',icon:'✨',tips:['味方の支援効果と自身の位置取りを意識する','補助回復が必要になる場面を見極める','攻撃に集中しすぎずパーティーの状態を確認する']},
+ cleric:{name:'クレリック',icon:'💚',tips:['範囲被弾後の回復タイミングを意識する','解除できる弱体効果があるか事前に確認する','自分の生存と位置取りを優先し、危険予兆を避ける']},
+ sorcerer:{name:'ソーサラー',icon:'🔮',tips:['詠唱中でも危険予兆を優先して移動する','敵の範囲攻撃を避けられる射程と位置を保つ','大技のタイミングに合わせて攻撃スキルを調整する']},
+ spiritmaster:{name:'スピリットマスター',icon:'🌟',tips:['精霊の位置と自身の安全地帯を両方確認する','継続攻撃を維持しつつ危険予兆を避ける','状況に応じて召喚や補助効果を見直す']}
+};
+try{const saved=localStorage.getItem(CLASS_KEY);if(saved&&CLASS_INFO[saved])el('dungeonClass').value=saved}catch(_){}
+function draw(){const id=el('dungeonName').value,d=D[id],job=CLASS_INFO[el('dungeonClass').value]||CLASS_INFO.cleric;
+ el('dungeonGuide').innerHTML=`<section class="dungeonTile"><h3>📋 ${safe(d.name)}</h3><p>${safe(d.il)}</p><p><b>ボス：</b>${safe(d.boss)}</p><p class="small">必要Lv・ILは参考情報です。最新のゲーム画面で確認してください。</p><p><a target="_blank" rel="noopener noreferrer" href="${safe(SOURCE)}">遠征の入場条件を確認 ↗</a></p></section><section class="dungeonTile"><h3>⚠️ 覚えておきたいポイント</h3><ul>${d.tips.map(v=>`<li>${safe(v)}</li>`).join('')}</ul><p><a target="_blank" rel="noopener noreferrer" href="${safe(d.src)}">攻略情報の出典を見る ↗</a></p></section><section class="dungeonTile"><h3>${job.icon+' '+job.name+'向けの基本チェック'}</h3><ul>${job.tips.map(v=>`<li>${safe(v)}</li>`).join('')}</ul><p class="small">グローバル版の日本語クラス名に合わせています。役割別の一般的なチェックであり、ボス固有の確定ギミックを意味しません。</p></section>`;
+ el('dungeonNote').value=String(notes[id]||'');el('dungeonNoteStatus').textContent='保存済みメモを読み込みました';}
+ el('dungeonName').addEventListener('change',draw);el('dungeonClass').addEventListener('change',()=>{try{localStorage.setItem(CLASS_KEY,el('dungeonClass').value)}catch(_){}draw()});
+ el('dungeonNote').addEventListener('input',()=>el('dungeonNoteStatus').textContent='未保存の変更があります');
+ el('dungeonNoteSave').addEventListener('click',()=>{const key=el('dungeonName').value;notes[key]=el('dungeonNote').value;try{localStorage.setItem(KEY,JSON.stringify(notes));el('dungeonNoteStatus').textContent='✓ この端末に保存しました'}catch(_){el('dungeonNoteStatus').textContent='⚠️ 保存できませんでした'}});
+ draw();
+})();
+</script>
+<script>
+/* v3.0 PWA: only register for https. SW caches same-origin shell, not analytics or third-party API. */
+(()=>{if(!('serviceWorker' in navigator)||location.protocol!=='https:')return;navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(()=>{});})();
 </script>
 
 <script>

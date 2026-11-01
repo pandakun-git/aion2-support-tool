@@ -1,0 +1,24 @@
+{
+  "name": "AION2 総合サポートツール（非公式）",
+  "short_name": "AION2ツール",
+  "description": "探索マップ・魂確保・強化・ダンジョン攻略",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#09121c",
+  "theme_color": "#10283a",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
