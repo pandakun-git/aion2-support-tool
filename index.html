@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AION2 総合サポートツール v2.5</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AION2 総合サポートツール v2.6</title><style>
 :root{--bg:#09121c;--side:#0e1d2c;--pane:#112435;--line:#264054;--text:#eaf2f8;--sub:#a7bacb;--gold:#f4c97b;--mint:#62e2c4;--blue:#6fb8fa;--red:#ff887d}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,'Yu Gothic','Meiryo',sans-serif;font-size:14px}
 header{height:72px;border-bottom:1px solid #254259;background:linear-gradient(105deg,#122738,#0c1928);display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:12px}h1{font-size:20px;margin:0;font-weight:850;letter-spacing:.02em}h1 span{color:var(--gold)}.eyebrow{font-size:10px;color:var(--mint);font-weight:800;letter-spacing:.2em}.topbadges{display:flex;gap:8px;flex-wrap:wrap}.badge{border:1px solid #31506a;border-radius:30px;padding:7px 12px;background:#122b3d;color:#b9d5e5;font-size:12px}.badge b{color:white}.layout{display:grid;grid-template-columns:minmax(270px,318px) minmax(440px,1fr) minmax(285px,325px);height:calc(100vh - 72px);min-height:610px}.side{background:var(--side);overflow:auto;padding:18px 16px;border-right:1px solid var(--line)}.right{border-right:none;border-left:1px solid var(--line)}h2{font-size:14px;color:#fff;margin:0 0 12px}.section{padding:0 0 19px;margin:0 0 18px;border-bottom:1px solid #253e50}.section:last-child{border:none}.hint{color:var(--sub);font-size:12px;line-height:1.65}.muted{color:#83a1b6}.strong{font-size:25px;font-weight:800}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}button,select,input[type=text],input[type=number]{border:1px solid #315268;background:#162d41;color:#eef7ff;border-radius:9px;font:inherit;min-height:36px;padding:7px 10px}select,input[type=text]{width:100%}button{cursor:pointer;font-weight:700;transition:background .15s,transform .15s}button:hover{background:#244963}button:disabled{opacity:.35;cursor:not-allowed}.primary{background:#1b7f72;border-color:#2aa793;color:#f0fffc}.primary:hover{background:#289a89}.gold{background:#916b2f;border-color:#b8904b}.gold:hover{background:#a87f3f}.danger{color:#ffbbb4}.tiny{font-size:11px;padding:4px 7px;min-height:27px}.activeMode{background:#216d82!important;border:1px solid #5dddf2!important;box-shadow:inset 0 0 0 1px #5dddf277}.kpi{padding:9px 11px;background:#142c3c;border:1px solid #2b4659;border-radius:10px;min-width:70px;flex:1}.kpi .num{font-size:21px;font-weight:850}.kpi .label{color:#9cb7c7;font-size:11px}.datastatus{padding:10px 12px;border:1px solid #426a6b;background:#163638;border-radius:9px;color:#c4f7e6;font-size:12px;line-height:1.6}.alert{background:#3a2c22;border-color:#795c3c;color:#ffdda9}.checks{max-height:150px;overflow:auto;margin-top:10px;border:1px solid #2a4151;border-radius:9px;background:#0a1c2a}.checkitem{display:flex;gap:8px;align-items:center;padding:8px 10px;border-bottom:1px solid #203748;font-size:12px;cursor:pointer}.checkitem:last-child{border-bottom:0}.checkitem input{accent-color:#5bd7be}.chip{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:4px}.mapwrap{position:relative;min-width:0;background:#0e1b27;overflow:hidden}.viewport{position:absolute;inset:0;cursor:grab;overflow:hidden;touch-action:none;background:radial-gradient(ellipse,#2f4351 0,#111d26 70%)}.viewport:active{cursor:grabbing}.mapstage{width:1000px;height:1000px;position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}.baseimage{position:absolute;width:100%;height:100%;object-fit:fill;top:0;left:0;user-select:none;pointer-events:none}.mapoverlay{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:2;display:block}.fallbackmap{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 49px,#ffffff15 50px),repeating-linear-gradient(90deg,transparent 0 49px,#ffffff15 50px),radial-gradient(circle at 65% 60%,#73684b99,transparent 20%),radial-gradient(circle at 40% 40%,#59705c88,transparent 30%),#29475a}.mapHud{position:absolute;pointer-events:none;inset:0}.mapTop{position:absolute;top:15px;left:14px;right:14px;display:flex;align-items:start;justify-content:space-between;gap:12px}.mapPill{pointer-events:auto;color:white;background:#081723df;backdrop-filter:blur(7px);border:1px solid #466077;padding:10px 12px;border-radius:12px;font-size:12px;box-shadow:0 8px 25px #0008}.mapPill strong{font-size:14px}.zoomtools{display:flex;flex-direction:column;gap:5px;pointer-events:auto}.zoomtools button{width:37px;height:37px;font-size:20px;padding:0;background:#0e2431e8}.mapBottom{position:absolute;bottom:16px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:end;gap:12px}.footerhint{background:#081723df;border:1px solid #40586b;border-radius:10px;padding:9px 12px;max-width:420px;font-size:12px;line-height:1.5;color:#c2d7e4}.link{color:#8bcfff;text-decoration:none}.link:hover{text-decoration:underline}.navcard{border:1px solid #3c6674;background:linear-gradient(150deg,#12384b,#112d3e);border-radius:15px;padding:17px;margin-bottom:14px}.compassrow{display:flex;align-items:center;gap:16px;margin:15px 0}.arrowdial{width:92px;height:92px;border:2px solid #5b7a90;border-radius:50%;flex:none;background:radial-gradient(circle,#193a4e,#092233);position:relative;display:grid;place-items:center}.arrowdial:before{content:'N';position:absolute;top:5px;font-size:10px;color:#a6d0dd}.pointer{display:block;font-size:46px;font-weight:800;color:#f7d38c;line-height:1;transform:rotate(0deg);text-shadow:0 3px 20px #ffc57f77;transition:transform .2s}.dirtext{font-size:28px;font-weight:850;color:var(--gold)}.subline{font-size:12px;color:#c0d5df;line-height:1.5}.targetId{word-break:break-all;color:#b5d1dc;font-family:ui-monospace,Consolas,monospace;font-size:11px}.stepList{display:flex;flex-direction:column;gap:5px;max-height:270px;overflow:auto;margin-top:10px}.step{display:grid;grid-template-columns:26px 1fr auto;gap:7px;align-items:center;text-align:left;border-radius:9px;padding:6px 8px;border:1px solid #2c4355;background:#122b3c;font-size:12px;min-height:36px}.step.now{border-color:#e4bc6d;background:#45391f}.step.done{opacity:.48}.step .idx{width:23px;height:23px;background:#284a61;border-radius:50%;display:grid;place-items:center}.smalllabel{font-size:11px;color:#aac2d1}.footer{padding:17px;background:#0a1823;font-size:11px;color:#a3b7c8;line-height:1.7}.divider{height:1px;background:#32495a;margin:10px 0}input[type=checkbox]{accent-color:#50d9c1}input[type=range]{width:100%}.credit{font-size:11px;color:#9db6c6}.toast{position:absolute;left:50%;bottom:82px;transform:translateX(-50%);background:#163c41;color:#e6fff7;border:1px solid #61c6bb;padding:10px 18px;border-radius:10px;z-index:10;opacity:0;transition:opacity .25s;pointer-events:none;max-width:80%;text-align:center;box-shadow:0 9px 30px #0009}.toast.show{opacity:1}
@@ -175,7 +175,21 @@ body[data-tab="map"] .mapwrap{height:100%!important;min-height:460px}
   .bossCard h3{font-size:14px}
   body[data-tab="map"] .mapwrap{height:55vh!important}
 }
-</style></head><body data-tab="home"><header><div><div class="eyebrow">閲覧中心の外部マップ · ゲーム連携なし</div><h1><span>AION2</span> 総合サポートツール <span style="font-size:11px;color:#a3c0cf">v2.5</span></h1></div><div class="topbadges"><div class="badge">🛡️ ゲーム内部へのアクセスなし</div><div class="badge">🗺️ 出現地点の確認専用</div><div class="badge" id="factionBadge">魔族・アルトガルド</div></div></header>
+
+/* v2.6: mobile touch map and map-limited unique pets */
+#pointHover .hoverHead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+#pointHover .hoverClose{width:28px;min-height:28px;padding:0;font-size:19px;line-height:1;border:1px solid #426476;background:#1a3b50;color:#eaffff;touch-action:manipulation}
+#pointHover[data-pinned="1"]{border-color:#8cf7db;box-shadow:0 4px 26px #000b,0 0 0 1px #56ceb3a0;min-width:180px}
+#pointHover[data-pinned="1"] .hoverTitle{color:#c4ffdf}
+.petRow.mapExclusive{background:linear-gradient(95deg,#2b2c4a 0,#13283a 85%);border-left:3px solid #d3a2fa;padding-left:6px}
+.petRow.mapExclusive.owned{background:linear-gradient(95deg,#203c36 0,#122b2d 85%)}
+.exclusiveBadge{display:inline-block;font-size:10px;line-height:1.3;margin-left:6px;padding:2px 6px;background:#3b3159;color:#f5dcff;border:1px solid #866bae;border-radius:5px;white-space:nowrap;vertical-align:1px}
+.exclusiveBadge.elyos{background:#4d4122;border-color:#927b42;color:#ffe2a1}
+.exclusiveToggle{display:flex;gap:6px;align-items:center;cursor:pointer;color:#f5e8c8;font-size:12px;margin:9px 1px 7px;line-height:1.55}
+.exclusiveToggle input{width:16px;height:16px;flex:none}
+.uniquePetStats{font-size:11px;color:#a7dace;margin:4px 0 9px;line-height:1.55}
+@media(max-width:720px){#pointHover{font-size:13px;padding:10px 12px;max-height:55%;max-width:min(310px,calc(100% - 16px))}#pointHover .hoverTitle{font-size:13px}#pointHover .hoverName{font-size:12px}}
+</style></head><body data-tab="home"><header><div><div class="eyebrow">閲覧中心の外部マップ · ゲーム連携なし</div><h1><span>AION2</span> 総合サポートツール <span style="font-size:11px;color:#a3c0cf">v2.6</span></h1></div><div class="topbadges"><div class="badge">🛡️ ゲーム内部へのアクセスなし</div><div class="badge">🗺️ 出現地点の確認専用</div><div class="badge" id="factionBadge">魔族・アルトガルド</div></div></header>
 <div id="appBootNotice" role="status" style="margin:10px 14px;padding:12px 14px;border:1px solid #d99a3b;background:#44331e;color:#ffe3b5;border-radius:10px;font-size:13px;line-height:1.65">⚠️ まだアプリが起動していません。iPhoneの「ファイル」アプリやChatGPT内のHTMLプレビューではJavaScriptが動かず、項目が「読込中」のままになることがあります。通常のSafariからアクセスできるHTTPSページで開いてください。</div>
 <nav id="appTabs" class="appTabs" aria-label="上部メニュー">
  <button type="button" data-tab="home">🏠 ホーム</button>
@@ -197,18 +211,18 @@ body[data-tab="map"] .mapwrap{height:100%!important;min-height:460px}
 <div class="layout"><aside class="side left">
 <section class="section factionSection"><h2>🌐 陣営・マップ切替</h2><select id="factionSelect"><option value="asmo">🟣 魔族｜アルトガルド</option><option value="elyos">🟡 天族｜ベルテロン</option></select><p class="hint">天族はペット専用。魔族はキューブとペットを切り替えて表示できます。</p></section>
 <section class="soulPanel"><h2>🐾 魂確保管理・収集率</h2><div class="soulStats"><div class="soulStat"><span>魔族（アルトガルド）</span><strong id="statAsmo">— / —</strong></div><div class="soulStat"><span>天族（ベルテロン）</span><strong id="statElyos">— / —</strong></div><div class="soulStat overall"><span>合計</span><strong id="statTotal">— / —</strong></div><div class="soulStat overall"><span>収集率</span><strong id="statRate">— %</strong></div></div><div class="progressTrack"><div id="soulProgress" class="progressFill" style="width:0%"></div></div><p class="hint" id="statNote">ペットのデータを読込中…</p></section>
-<section class="section" id="mapControlsPanel"><h2>🗺️ 地図の表示設定</h2><select id="areaSelect"><option value="all">🌍 アルトガルド全域</option><option value="west">西グリバデ高原</option><option value="faf">ファフナイト鉱床</option><option value="dred">ドレドギオン墜落地</option><option value="nameless">無名墓地</option></select><select id="layerMode" style="margin-top:7px"><option value="both">💎＋🐾 キューブ＆ペット</option><option value="cube">💎 キューブだけ</option><option value="pet">🐾 ペットだけ</option></select><label class="row" style="margin-top:8px;font-size:12px;color:#d5eaf4;cursor:pointer"><input id="clusterEnabled" type="checkbox" checked> 近接マーカーをまとめる（大きく拡大すると全地点を分離）</label><p class="formCaption">地図の点は「出現する可能性がある位置」。実際の出現・魂の獲得を保証するものではありません。</p><div class="row"><div class="kpi"><div class="num" id="spotCount">—</div><div class="label">表示地点</div></div><div class="kpi"><div class="num" id="cubeCount">—</div><div class="label">キューブ候補</div></div><div class="kpi"><div class="num" id="petVisibleCount">—</div><div class="label">ペット地点</div></div></div>
+<section class="section" id="mapControlsPanel"><h2>🗺️ 地図の表示設定</h2><select id="areaSelect"><option value="all">🌍 アルトガルド全域</option><option value="west">西グリバデ高原</option><option value="faf">ファフナイト鉱床</option><option value="dred">ドレドギオン墜落地</option><option value="nameless">無名墓地</option></select><select id="layerMode" style="margin-top:7px"><option value="both">💎＋🐾 キューブ＆ペット</option><option value="cube">💎 キューブだけ</option><option value="pet">🐾 ペットだけ</option></select><label class="row" style="margin-top:8px;font-size:12px;color:#d5eaf4;cursor:pointer"><input id="clusterEnabled" type="checkbox" checked> 近接マーカーをまとめる（少し拡大すると細部を分離）</label><p class="formCaption">地図の点は「出現する可能性がある位置」。実際の出現・魂の獲得を保証するものではありません。</p><div class="row"><div class="kpi"><div class="num" id="spotCount">—</div><div class="label">表示地点</div></div><div class="kpi"><div class="num" id="cubeCount">—</div><div class="label">キューブ候補</div></div><div class="kpi"><div class="num" id="petVisibleCount">—</div><div class="label">ペット地点</div></div></div>
 <div id="cubeDataSection"><h3 style="font-size:12px;margin:12px 0 4px">💎 キューブ候補データ</h3><div id="dataStatus" class="sourceStatus">読込中…</div><div class="spacedBtns"><button id="reloadData">↻ キューブ更新</button><button id="pickJson">JSON手動読込</button></div><input type="file" id="jsonFile" accept=".json,application/json" hidden><div id="areaDataHint" class="formCaption"></div><details><summary style="cursor:pointer;font-size:12px;color:#f1d2a0">候補グループの表示を切り替える</summary><div id="groupList" class="checks cubeGroups"></div></details><p class="hint">読込できないときは<a class="link" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/problem-xyz/aion2-map-overlay/main/assets/object-sets/altgard.json">公開キューブJSON</a>をダウンロードして読み込めます。</p></div></section>
 <section class="section" id="petControlsPanel"><h2>🐾 ペットの出現地点</h2><div id="petStatus" class="sourceStatus">ペットデータ読込中…</div><div class="spacedBtns"><button id="reloadPets" class="primary">↻ ペット更新</button><button id="petPickJson">JSON手動読込</button></div><input id="petJsonFile" type="file" accept=".json,application/json" hidden><p class="hint"><a id="petSourceLink" class="link" target="_blank" rel="noopener">ペット位置JSONの入手先 ↗</a></p><div id="translationStatus">日本語名データ読込中…</div><details><summary class="hint" style="cursor:pointer">日本語辞書を手動で読み込む</summary><div class="spacedBtns" style="margin-top:6px"><button id="pickLocale">辞書JSONを読み込む</button><a class="link" href="https://raw.githubusercontent.com/MikeZeen/aion2-pet-tracker/master/src/data/pet_names.json" target="_blank" rel="noopener">辞書ファイル ↗</a></div><input type="file" id="localeJson" accept=".json,application/json" hidden></details>
 <div class="petSearchRow"><input id="petSearch" type="search" placeholder="日本語のペット名・対象モンスター名で検索" autocomplete="off" aria-label="ペットを検索"><button id="clearPetSearch" class="tiny" title="検索語をクリア">✕ 消去</button></div><div id="petSearchSummary" class="petSearchSummary" role="status" aria-live="polite">検索文字を入力すると一覧が絞られます。</div><select id="petGenus" style="margin-top:7px"><option value="all">全系統</option><option value="fera">野性</option><option value="natura">自然</option><option value="cogni">知性</option><option value="varian">変形</option></select>
-<div class="petToolbar"><div class="row"><span class="hint">🐾 魂確保Lv一覧</span><b id="ownedStats" class="ownedStats">確保済み —</b></div><select id="petListFilter"><option value="all">すべて</option><option value="unowned">未確保のみ</option><option value="owned">確保済みのみ</option><option value="lv1">Lv1のみ</option><option value="lv2">Lv2のみ</option><option value="lv3">Lv3のみ</option></select></div><div id="petList" class="checks petList"><p class="hint">データ読込中…</p></div>
+<div class="petToolbar"><div class="row"><span class="hint">🐾 魂確保Lv一覧</span><b id="ownedStats" class="ownedStats">確保済み —</b></div><label class="exclusiveToggle"><input type="checkbox" id="uniquePetsOnly"> 🟣🟡 この2マップで片方にしかいないペットだけ表示</label><div id="uniquePetStats" class="uniquePetStats">両陣営のデータを比較中…</div><select id="petListFilter"><option value="all">すべて</option><option value="unowned">未確保のみ</option><option value="owned">確保済みのみ</option><option value="lv1">Lv1のみ</option><option value="lv2">Lv2のみ</option><option value="lv3">Lv3のみ</option></select></div><div id="petList" class="checks petList"><p class="hint">データ読込中…</p></div>
 <div class="hint" style="margin-top:7px">検索中は一致するペットの出現地点を最大5種類まで一時表示します。検索を消すと通常表示へ戻ります。<br>☑ 通常表示するペットを最大5種類選べます。選択中：<b id="petSelectedCount">0/5</b></div><label class="checkitem" style="margin-top:8px"><input id="hideOwnedPets" type="checkbox" checked>確保済み（Lv1～3）は地図から隠す</label><div class="spacedBtns"><button id="clearPets">選択解除</button><button id="resetPetsOwned" class="danger">確保Lvをリセット</button></div></section>
 <section class="section" id="backupControlsPanel"><h2>💾 確保記録の保存</h2><div class="grid2"><button id="exportBtn">↥ 記録を書き出す</button><button id="importBtn">↧ 記録を読み込む</button></div><input id="saveFile" type="file" accept=".json,application/json" hidden><p class="hint">以前のv1.6記録も読込できます。ブラウザの保存領域は環境によって版ごとに分かれるため、旧版からはJSONを書き出して引き継いでください。</p></section>
 <section class="section" id="bgControlsPanel"><h2>🖼️ 背景地図と画質</h2>
 <div class="mapQualityRow"><label for="mapQuality">地図の画質</label><select id="mapQuality"><option value="auto">自動（拡大時に8K詳細地図）</option><option value="detail">高画質を優先（8K）</option><option value="reference">軽量を優先（4K）</option></select></div>
 <p class="mapResolutionTip">4K＝4096px・8K＝8192px。自動では拡大時に詳細地図へ切り替えます。大きく拡大しすぎると元画像の限界で多少粗くなります。8Kは通信・メモリを多く使います。</p>
 <button id="chooseMap">手元の地図画像を指定</button><input type="file" id="mapFile" accept="image/*" hidden><p class="hint">背景画像が取得できなかった場合に使用します。画像を手動指定すると、自動切替はいったん停止します。</p></section>
-</aside><main class="mapwrap"><div class="viewport" id="viewport"><div class="mapstage" id="mapstage"><div class="fallbackmap"></div><img id="baseimage" class="baseimage" draggable="false" alt="アルトガルド全域マップ"></div><svg id="mapSvg" class="mapoverlay" viewBox="0 0 1000 1000" preserveAspectRatio="none"><g id="markerLayer"></g></svg><div id="pointHover"></div></div><div class="mapHud"><div class="mapTop"><div class="mapPill"><strong id="mapTitle">🗺️ アルトガルド</strong><div id="mapArtStatus" style="color:#ffcb7d;font-size:11px">背景地図を読込中…</div><div class="hint">ドラッグ移動・ホイールで拡大</div></div><button id="timerMini" class="timerMini" title="イベントタイマーを表示">⏱ 次のイベント<strong>読込中…</strong></button><div class="zoomtools"><button id="zoomIn" title="拡大">＋</button><button id="zoomOut" title="縮小">－</button><button id="zoomHome" title="全体表示">⌂</button></div></div><div class="mapBottom"><div class="footerhint"><span id="cubeLegend"><span style="color:#ffe45e">◆</span> キューブの候補地点（黄色）　</span><span style="color:#ff9c79">●</span> ペットの狩り場（系統別の色）<br><span style="color:#9fb9cb">縮小時は近接地点を数字でまとめます。大きく拡大すると全地点を分離。重なる点も少しずらして表示します。PCはホバー、スマホはタップで名前を確認。</span></div></div></div><div id="toast" class="toast"></div></main><aside class="side right"><section class="section eventTimers" id="eventTimers" aria-label="イベントタイマー">
+</aside><main class="mapwrap"><div class="viewport" id="viewport"><div class="mapstage" id="mapstage"><div class="fallbackmap"></div><img id="baseimage" class="baseimage" draggable="false" alt="アルトガルド全域マップ"></div><svg id="mapSvg" class="mapoverlay" viewBox="0 0 1000 1000" preserveAspectRatio="none"><g id="markerLayer"></g></svg><div id="pointHover"></div></div><div class="mapHud"><div class="mapTop"><div class="mapPill"><strong id="mapTitle">🗺️ アルトガルド</strong><div id="mapArtStatus" style="color:#ffcb7d;font-size:11px">背景地図を読込中…</div><div class="hint">ドラッグ移動／二本指で拡大・縮小</div></div><button id="timerMini" class="timerMini" title="イベントタイマーを表示">⏱ 次のイベント<strong>読込中…</strong></button><div class="zoomtools"><button id="zoomIn" title="拡大">＋</button><button id="zoomOut" title="縮小">－</button><button id="zoomHome" title="全体表示">⌂</button></div></div><div class="mapBottom"><div class="footerhint"><span id="cubeLegend"><span style="color:#ffe45e">◆</span> キューブの候補地点（黄色）　</span><span style="color:#ff9c79">●</span> ペットの狩り場（系統別の色）<br><span style="color:#9fb9cb">縮小時は近接地点を数字でまとめます。大きく拡大すると全地点を分離。重なる点も少しずらして表示します。PCはホバー、スマホはタップで名前を確認。</span></div></div></div><div id="toast" class="toast"></div></main><aside class="side right"><section class="section eventTimers" id="eventTimers" aria-label="イベントタイマー">
   <details class="foldPanel timerFold" id="foldTimers" open>
     <summary class="foldTitle"><span>⏱ イベントタイマー</span><span class="serverNote">日本/ASIA · JST</span></summary>
     <div class="foldInner">
@@ -297,8 +311,9 @@ const CUBE_COLOR='#ffe45e'; // 全キューブ候補地点を統一した黄色�
 let faction='asmo',area='all',layer='both',selectedPets={asmo:new Set(),elyos:new Set()},petLevels={},hideOwned=true,petFilter='all';
 let pets={asmo:[],elyos:[]}, cubes=[],cubeNumberCache=new Map(),disableCube=new Set(),translation={},localeReady=false,loadSeq=0,mapSeq=0,toastTimer=0;
 let cam={cx:50,cy:50,z:.72},offset={x:0,y:0},drag=null,moved=false,visibleNodes=[];
-let clusteredMarkers=[],clusterEnabled=true,lastHoverId='',hoverHideTimer=0;
+let clusteredMarkers=[],clusterEnabled=true,lastHoverId='',hoverHideTimer=0,tooltipPinned=false,uniquePetsOnly=false;
 const CLUSTER_KEY='aion2_map_cluster_v22';
+const UNIQUE_PETS_KEY='aion2_unique_pets_only_v26';
 const MAP_QUALITY_KEY='aion2_reference_map_quality_v20';
 let mapQuality='auto',mapManual=false,imageLoaded='',mapLoading='';
 const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -312,7 +327,12 @@ function normalized(s){return String(s||'').toLowerCase().replace(/[’']/g,'').
 // 検索専用：日本語を消さずに照合する。半角/全角とひらがな/カタカナを揃える。
 function searchKey(s){return String(s??'').normalize('NFKC').toLowerCase().replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+0x60)).replace(/[\p{Separator}\p{Punctuation}]/gu,'');}
 function petMatchesQuery(p,query){if(!query)return true;const names=[petJP(p),p.name,String(p.id)];for(const m of p.monsters){names.push(m.name);const japanese=monJP(m.name);if(japanese)names.push(japanese);}return names.some(s=>searchKey(s).includes(query));}
-function filteredPets(){const g=$('petGenus').value,f=$('petListFilter').value,q=searchKey($('petSearch').value);return pets[faction].filter(p=>{const lv=levelFor(p);return (g==='all'||p.genus===g)&&(f==='all'||f==='owned'&&lv>0||f==='unowned'&&lv===0||f.startsWith('lv')&&+f[2]===lv)&&petMatchesQuery(p,q);}).sort((a,b)=>Number(selectedPets[faction].has(b.id))-Number(selectedPets[faction].has(a.id))||levelFor(a)-levelFor(b)||jpSorted(petJP(a),petJP(b)));}
+function mapExclusive(p){
+ // No conclusion can be drawn until BOTH source maps are loaded.
+ const other=faction==='asmo'?'elyos':'asmo';
+ return pets[other].length>0 && !pets[other].some(x=>x.id===p.id);
+}
+function filteredPets(){const g=$('petGenus').value,f=$('petListFilter').value,q=searchKey($('petSearch').value);return pets[faction].filter(p=>{const lv=levelFor(p);return (g==='all'||p.genus===g)&&(f==='all'||f==='owned'&&lv>0||f==='unowned'&&lv===0||f.startsWith('lv')&&+f[2]===lv)&&(!uniquePetsOnly||mapExclusive(p))&&petMatchesQuery(p,q);}).sort((a,b)=>Number(selectedPets[faction].has(b.id))-Number(selectedPets[faction].has(a.id))||levelFor(a)-levelFor(b)||jpSorted(petJP(a),petJP(b)));}
 // 検索中だけ一致ペットの出現地点を最大5種類プレビュー。既存のチェック選択を変更しない。
 function visiblePetIds(){if(!searchKey($('petSearch').value))return selectedPets[faction];return new Set(filteredPets().filter(p=>!hideOwned||!levelFor(p)).slice(0,5).map(p=>p.id));}
 
@@ -339,7 +359,12 @@ function renderGroups(){const base=new Map();for(const n of cubes)if(areaCube(n)
 function renderPets(){const p=pets[faction],ps=filteredPets(),searchText=$('petSearch').value.trim(),isSearching=!!searchKey(searchText);const eligible=ps.filter(x=>!hideOwned||!levelFor(x));const extra=isSearching?(eligible.length?` ／ 地図に${Math.min(eligible.length,5)}種類を一時表示${eligible.length>5?'（上位5種類）':''}`:' ／ 地図表示なし'):'';
 $('petSearchSummary').textContent=isSearching?`「${searchText}」の検索結果：${ps.length}種類${extra}`:`ペット名・モンスター名で検索できます。絞り込みは一覧と地図に反映。`;
 $('clearPetSearch').disabled=!searchText;
-$('ownedStats').textContent=`確保済み ${p.filter(x=>levelFor(x)>0).length} / ${p.length||'—'}`;$('petSelectedCount').textContent=selectedPets[faction].size+'/5';$('petList').innerHTML=`<div class="petListStatus">表示 ${ps.length} / 全${p.length}種類　／　${isSearching?'検索結果を地図に一時表示中':'☑で地図に表示'}</div>`+ps.map(x=>{const lv=levelFor(x),sel=selectedPets[faction].has(x.id);const mon=x.monsters.map(m=>monJP(m.name)).filter(Boolean);const meta=mon.length?[...new Set(mon)].slice(0,2).join('・')+' · '+x.spots.length+'地点':`出現地点 ${x.spots.length}か所 ／ 対象モンスター ${x.monsters.length}種類`;return `<div class="petRow ${lv?'owned':''}"><label class="petMain"><input class="petCheck" data-pet="${safe(x.id)}" type="checkbox" ${sel?'checked':''} ${lv&&hideOwned?'disabled':''}><span class="chip" style="background:${GENUS_COLORS[x.genus]||'#9de8e4'}"></span><span><strong class="petName">${safe(petJP(x))}</strong><br><span class="petMeta">${safe(meta)}</span></span></label><div class="petActions"><select class="soulLevel" data-pet="${safe(x.id)}" aria-label="${safe(petJP(x))}の魂確保レベル"><option value="0" ${!lv?'selected':''}>未確保</option><option value="1" ${lv===1?'selected':''}>Lv1確保</option><option value="2" ${lv===2?'selected':''}>Lv2確保</option><option value="3" ${lv===3?'selected':''}>Lv3確保</option></select><button class="petMapBtn" data-pet="${safe(x.id)}">🗺️ 地図へ</button></div></div>`;}).join('');if(!p.length)$('petList').innerHTML='<p class="hint">ペットデータを読み込めていません。</p>';else if(!ps.length)$('petList').innerHTML='<p class="hint">検索条件に合うペットがありません。</p>';
+$('ownedStats').textContent=`確保済み ${p.filter(x=>levelFor(x)>0).length} / ${p.length||'—'}`;
+const other=faction==='asmo'?'elyos':'asmo',comparable=p.length>0&&pets[other].length>0;
+const exclusiveCount=comparable?p.filter(x=>mapExclusive(x)).length:0;
+$('uniquePetStats').textContent=comparable?`⭐ ${REGIONS[faction].name}だけに登録：${exclusiveCount}種類（この2マップ間の比較）`:'⚠ 両陣営のペットデータ取得後に限定表示を判定します';
+$('uniquePetsOnly').disabled=!comparable;
+$('petSelectedCount').textContent=selectedPets[faction].size+'/5';$('petList').innerHTML=`<div class="petListStatus">表示 ${ps.length} / 全${p.length}種類　／　${isSearching?'検索結果を地図に一時表示中':'☑で地図に表示'}</div>`+ps.map(x=>{const lv=levelFor(x),sel=selectedPets[faction].has(x.id),exclusive=mapExclusive(x);const mon=x.monsters.map(m=>monJP(m.name)).filter(Boolean);const meta=mon.length?[...new Set(mon)].slice(0,2).join('・')+' · '+x.spots.length+'地点':`出現地点 ${x.spots.length}か所 ／ 対象モンスター ${x.monsters.length}種類`;return `<div class="petRow ${lv?'owned':''} ${exclusive?'mapExclusive':''}"><label class="petMain"><input class="petCheck" data-pet="${safe(x.id)}" type="checkbox" ${sel?'checked':''} ${lv&&hideOwned?'disabled':''}><span class="chip" style="background:${GENUS_COLORS[x.genus]||'#9de8e4'}"></span><span><strong class="petName">${safe(petJP(x))}</strong>${exclusive?`<span class="exclusiveBadge ${faction==='elyos'?'elyos':''}" title="この2マップの比較結果">${faction==='asmo'?'🟣 魔族マップのみ':'🟡 天族マップのみ'}</span>`:''}<br><span class="petMeta">${safe(meta)}</span></span></label><div class="petActions"><select class="soulLevel" data-pet="${safe(x.id)}" aria-label="${safe(petJP(x))}の魂確保レベル"><option value="0" ${!lv?'selected':''}>未確保</option><option value="1" ${lv===1?'selected':''}>Lv1確保</option><option value="2" ${lv===2?'selected':''}>Lv2確保</option><option value="3" ${lv===3?'selected':''}>Lv3確保</option></select><button class="petMapBtn" data-pet="${safe(x.id)}">🗺️ 地図へ</button></div></div>`;}).join('');if(!p.length)$('petList').innerHTML='<p class="hint">ペットデータを読み込めていません。</p>';else if(!ps.length)$('petList').innerHTML='<p class="hint">検索条件に合うペットがありません。</p>';
 $('petList').querySelectorAll('.petCheck').forEach(x=>x.onchange=()=>{const set=selectedPets[faction];if(x.checked&&set.size>=5){x.checked=false;notice('同時表示は5種類までです');return;}if(x.checked)set.add(x.dataset.pet);else set.delete(x.dataset.pet);if(faction==='asmo'&&layer==='cube'&&x.checked){layer='both';$('layerMode').value='both';}save();renderPets();renderMap();});
 $('petList').querySelectorAll('.soulLevel').forEach(x=>x.onchange=()=>{const v=+x.value;if(v===0)delete petLevels[x.dataset.pet];else petLevels[x.dataset.pet]=v;if(v&&hideOwned)selectedPets[faction].delete(x.dataset.pet);save();paintAll();notice(v?'魂確保Lvを更新しました':'未確保に戻しました');});
 $('petList').querySelectorAll('.petMapBtn').forEach(x=>x.onclick=()=>{const p0=p.find(p=>p.id===x.dataset.pet);if(!p0?.spots.length)return;const set=selectedPets[faction];if(hideOwned&&levelFor(p0)>0){notice('確保済み非表示を解除すると地図に表示できます');return;}if(!set.has(p0.id)){if(set.size>=5){notice('地図に表示できるのは5種類までです');return;}set.add(p0.id);}if(faction==='asmo'&&layer==='cube'){layer='both';$('layerMode').value='both';}area='all';$('areaSelect').value='all';const best=p0.spots.reduce((a,b)=>b[2]>a[2]?b:a);focus(best[0],best[1],3.8);save();renderGroups();renderPets();renderMap();});}
@@ -347,15 +372,15 @@ function paintAll(){renderStats();renderPets();renderGroups();renderMap();if(pet
 // Marker clusters are calculated using distances in displayed pixels, never map pixels.
 // Keep cube groups and pet groups separate so their colors and meanings never mix.
 function buildClusters(points){
- const radius=23,cell=radius,grid=new Map(),result=[];
+ const radius=cam.z<1.2?19:cam.z<1.8?14:9,cell=radius,grid=new Map(),result=[];
  const key=(kind,gx,gy)=>kind+'|'+gx+'|'+gy;
  const placed=[...points].sort((a,b)=>a.kind.localeCompare(b.kind)||a.y-b.y||a.x-b.x);
  // At high zoom NEVER group distinct points into a numbered marker.
  // For genuinely coincident positions, spread the icons in a small spiral
  // so every candidate can be inspected individually.
- if(!clusterEnabled || cam.z>=6){
+ if(!clusterEnabled || cam.z>=2.4){
   const single=placed.map((p,id)=>({kind:p.kind,x:p.x,y:p.y,sx:offset.x+p.x*10*cam.z,sy:offset.y+p.y*10*cam.z,items:[p],id}));
-  if(cam.z>=6 && clusterEnabled){
+  if(cam.z>=2.4){
    const bins=new Map(),dist=14;
    for(const item of single){
     const gx=Math.floor(item.sx/dist),gy=Math.floor(item.sy/dist);
@@ -418,15 +443,19 @@ function markerTooltip(a){
  const kind=a.kind==='cube'?'💎 キューブ候補':'🐾 ペットの狩り場';
  const labels=[...counts].sort((aa,bb)=>aa[0].localeCompare(bb[0],'ja'));
  const list=labels.map(([name,n])=>`<div class="hoverName">・${safe(name)}${n>1?` <b>（${n}地点）</b>`:''}</div>`).join('');
- return `<div class="hoverTitle">${kind}：${a.items.length}地点${labels.length>1?`／${labels.length}種類・グループ`:''}</div><div class="hoverNames">${list}</div>${a.items.length>1?'<div class="hoverHelp">最大拡大付近で各地点を分離します</div>':''}`;
+ return `<div class="hoverTitle">${kind}：${a.items.length}地点${labels.length>1?`／${labels.length}種類・グループ`:''}</div><div class="hoverNames">${list}</div>${a.items.length>1?'<div class="hoverHelp">拡大すると各地点を分離します</div>':''}`;
 }
-function hidePointHover(){clearTimeout(hoverHideTimer);lastHoverId='';$('pointHover').style.display='none';}
-function hidePointHoverSoon(){clearTimeout(hoverHideTimer);hoverHideTimer=setTimeout(hidePointHover,220);}
-function showPointHover(a,clientX,clientY){
- clearTimeout(hoverHideTimer);const h=$('pointHover');
- const id=a.id+':'+a.items.length+':'+faction;
- if(lastHoverId!==id){h.innerHTML=markerTooltip(a);lastHoverId=id;}
- h.style.display='block';
+function hidePointHover(){clearTimeout(hoverHideTimer);lastHoverId='';tooltipPinned=false;$('pointHover').style.display='none';$('pointHover').dataset.pinned='0';}
+function hidePointHoverSoon(){if(tooltipPinned)return;clearTimeout(hoverHideTimer);hoverHideTimer=setTimeout(()=>{if(!tooltipPinned)hidePointHover();},350);}
+function showPointHover(a,clientX,clientY,pin=false){
+  if(tooltipPinned&&!pin)return;
+  clearTimeout(hoverHideTimer);const h=$('pointHover');
+  if(pin)tooltipPinned=true;
+  const id=a.id+':'+a.items.length+':'+faction;
+  const close=tooltipPinned?'<button class="hoverClose" type="button" aria-label="詳細を閉じる">×</button>':'';
+  if(lastHoverId!==id || h.dataset.pinned!==(tooltipPinned?'1':'0')){h.innerHTML=`<div class="hoverHead"><span class="hoverTitle">地点の詳細</span>${close}</div>`+markerTooltip(a);lastHoverId=id;}
+  h.dataset.pinned=tooltipPinned?'1':'0';
+  h.style.display='block';
  const rect=$('viewport').getBoundingClientRect();
  // Measure after setting content; keep even long lists within the viewport.
  const width=h.offsetWidth,height=h.offsetHeight;
@@ -506,7 +535,7 @@ function loadBackground(){
 }
 function switchFaction(f){if(!REGIONS[f])return;mapManual=false;imageLoaded='';mapLoading='';faction=f;if(f==='elyos'){area='all';layer='pet';}else area='all';$('factionSelect').value=f;$('areaSelect').value=area;$('areaSelect').hidden=f==='elyos';$('layerMode').hidden=f==='elyos';$('layerMode').value=layer;$('cubeDataSection').hidden=f==='elyos';$('cubeLegend').hidden=f==='elyos';$('factionBadge').textContent=REGIONS[f].label;$('mapTitle').textContent='🗺️ '+REGIONS[f].name;$('baseimage').alt=REGIONS[f].name+'の全域マップ';$('petSourceLink').href=REGIONS[f].pet;disableCube.clear();$('petSearch').value='';save();paintAll();focus(50,50,.72);loadBackground();if(!pets[f].length)loadPets(f);}
 function downloadJson(obj,name){const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),15000);}
-function setup(){try{clusterEnabled=localStorage.getItem(CLUSTER_KEY)!=='false';}catch(e){}$('clusterEnabled').checked=clusterEnabled;$('clusterEnabled').onchange=e=>{clusterEnabled=e.target.checked;try{localStorage.setItem(CLUSTER_KEY,String(clusterEnabled));}catch(err){}renderMap();};restore();try{mapQuality=localStorage.getItem(MAP_QUALITY_KEY)||'auto';}catch(e){}if(!['auto','detail','reference'].includes(mapQuality))mapQuality='auto';$('mapQuality').value=mapQuality;$('mapQuality').onchange=e=>{mapQuality=e.target.value;mapManual=false;imageLoaded='';try{localStorage.setItem(MAP_QUALITY_KEY,mapQuality);}catch(err){}loadBackground();};$('hideOwnedPets').checked=hideOwned;$('petListFilter').value=['all','unowned','owned','lv1','lv2','lv3'].includes(petFilter)?petFilter:'all';$('factionSelect').onchange=e=>switchFaction(e.target.value);$('areaSelect').onchange=e=>{area=e.target.value;disableCube.clear();save();paintAll();const p={west:[64,61,4.2],faf:[70,56,4],dred:[45,39,3.2],nameless:[31,38,4.2],all:[50,50,.72]}[area];focus(...p);};$('layerMode').onchange=e=>{layer=e.target.value;save();renderMap();};$('petSearch').oninput=()=>{renderPets();renderMap();};$('clearPetSearch').onclick=()=>{$('petSearch').value='';renderPets();renderMap();$('petSearch').focus();};$('petGenus').onchange=()=>{renderPets();renderMap();};$('petListFilter').onchange=e=>{petFilter=e.target.value;save();renderPets();renderMap();};$('hideOwnedPets').onchange=e=>{hideOwned=e.target.checked;save();paintAll();};$('clearPets').onclick=()=>{selectedPets[faction].clear();save();paintAll();};$('resetPetsOwned').onclick=()=>{if(confirm('魔族・天族の魂確保Lvをすべて削除しますか？')){petLevels={};save();paintAll();}};
+function setup(){try{clusterEnabled=localStorage.getItem(CLUSTER_KEY)!=='false';}catch(e){}$('clusterEnabled').checked=clusterEnabled;$('clusterEnabled').onchange=e=>{clusterEnabled=e.target.checked;try{localStorage.setItem(CLUSTER_KEY,String(clusterEnabled));}catch(err){}renderMap();};restore();try{mapQuality=localStorage.getItem(MAP_QUALITY_KEY)||'auto';}catch(e){}if(!['auto','detail','reference'].includes(mapQuality))mapQuality='auto';$('mapQuality').value=mapQuality;$('mapQuality').onchange=e=>{mapQuality=e.target.value;mapManual=false;imageLoaded='';try{localStorage.setItem(MAP_QUALITY_KEY,mapQuality);}catch(err){}loadBackground();};try{uniquePetsOnly=localStorage.getItem(UNIQUE_PETS_KEY)==='true';}catch(e){}$('uniquePetsOnly').checked=uniquePetsOnly;$('uniquePetsOnly').onchange=e=>{uniquePetsOnly=e.target.checked;try{localStorage.setItem(UNIQUE_PETS_KEY,String(uniquePetsOnly));}catch(err){}renderPets();renderMap();};$('hideOwnedPets').checked=hideOwned;$('petListFilter').value=['all','unowned','owned','lv1','lv2','lv3'].includes(petFilter)?petFilter:'all';$('factionSelect').onchange=e=>switchFaction(e.target.value);$('areaSelect').onchange=e=>{area=e.target.value;disableCube.clear();save();paintAll();const p={west:[64,61,4.2],faf:[70,56,4],dred:[45,39,3.2],nameless:[31,38,4.2],all:[50,50,.72]}[area];focus(...p);};$('layerMode').onchange=e=>{layer=e.target.value;save();renderMap();};$('petSearch').oninput=()=>{renderPets();renderMap();};$('clearPetSearch').onclick=()=>{$('petSearch').value='';renderPets();renderMap();$('petSearch').focus();};$('petGenus').onchange=()=>{renderPets();renderMap();};$('petListFilter').onchange=e=>{petFilter=e.target.value;save();renderPets();renderMap();};$('hideOwnedPets').onchange=e=>{hideOwned=e.target.checked;save();paintAll();};$('clearPets').onclick=()=>{selectedPets[faction].clear();save();paintAll();};$('resetPetsOwned').onclick=()=>{if(confirm('魔族・天族の魂確保Lvをすべて削除しますか？')){petLevels={};save();paintAll();}};
 $('reloadPets').onclick=()=>loadPets(faction,true);$('petPickJson').onclick=()=>$('petJsonFile').click();$('petJsonFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>10e6)throw Error('JSONが大きすぎます');const j=JSON.parse(await f.text());const expected=faction==='asmo'?'altgard':'verteron';if(j.map&&j.map!==expected)throw Error('現在の陣営と違うデータです');pets[faction]=parsePets(j);try{localStorage.setItem(PET_CACHE+faction,JSON.stringify(j));}catch(x){}paintAll();notice('ペットデータを読み込みました');}catch(e){notice('読込失敗：'+e.message);}e.target.value='';};
 $('reloadData').onclick=()=>loadCubes(true);$('pickJson').onclick=()=>$('jsonFile').click();$('jsonFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>12e6)throw Error('JSONが大きすぎます');const j=JSON.parse(await f.text());cubes=parseCube(j);cubeNumberCache.clear();try{localStorage.setItem(CUBE_CACHE,JSON.stringify(j));}catch(x){}setCubeStatus('手動読込');paintAll();notice('キューブの地点を読み込みました');}catch(err){notice('キューブJSONの読込失敗：'+err.message);}e.target.value='';};
 $('pickLocale').onclick=()=>$('localeJson').click();$('localeJson').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>2e6)throw Error('辞書ファイルが大きすぎます');applyLocale(JSON.parse(await f.text()),'手動読込');notice('日本語辞書を読み込みました');}catch(err){notice('辞書の読込失敗：'+err.message);}e.target.value='';};
@@ -514,15 +543,77 @@ $('exportBtn').onclick=()=>{save();downloadJson({format:'aion2-manual-nav-progre
 $('importBtn').onclick=()=>$('saveFile').click();$('saveFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>5e6)throw Error('ファイルサイズが大きすぎます');const j=JSON.parse(await f.text());if(j.format!=='aion2-manual-nav-progress')throw Error('対応していない形式です');petLevels=getOldLevels(j);selectedPets.asmo=new Set(j.factionSnapshots?.asmo?.selectedPets||[]);selectedPets.elyos=new Set(j.factionSnapshots?.elyos?.selectedPets||[]);hideOwned=j.hideOwnedPets!==false;petFilter=j.petListFilter||'all';$('hideOwnedPets').checked=hideOwned;$('petListFilter').value=petFilter;save();paintAll();notice('魂確保記録を復元しました');}catch(err){notice('記録復元に失敗：'+err.message);}e.target.value='';};
 $('chooseMap').onclick=()=>$('mapFile').click();$('mapFile').onchange=e=>{const f=e.target.files?.[0];if(!f)return;if(!f.type.startsWith('image/'))return;const r=new FileReader();r.onload=()=>{mapSeq++;mapManual=true;mapLoading='';imageLoaded='';$('baseimage').src=r.result;$('baseimage').style.opacity=1;$('mapArtStatus').textContent='手動選択の背景地図を表示中（画質自動切替は停止）';};r.readAsDataURL(f);};
 $('zoomIn').onclick=()=>centerZoom(1.4);$('zoomOut').onclick=()=>centerZoom(1/1.4);$('zoomHome').onclick=()=>focus(50,50,.72);
-const vp=$('viewport');vp.addEventListener('pointerdown',e=>{if(e.button!==0)return;drag={x:e.clientX,y:e.clientY,cx:cam.cx,cy:cam.cy,ox:offset.x,oy:offset.y};moved=false;vp.setPointerCapture(e.pointerId);});vp.addEventListener('pointermove',e=>{if(e.target.closest?.('#pointHover')){clearTimeout(hoverHideTimer);return;}if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(dx,dy)>4)moved=true;if(moved){const v=sizeView();cam.cx=(v.w/2-drag.ox-dx)/(10*cam.z);cam.cy=(v.h/2-drag.oy-dy)/(10*cam.z);updateTransform();hidePointHover();return;}}const rect=vp.getBoundingClientRect();const px=e.clientX-rect.left,py=e.clientY-rect.top;let nearest=null,best=Infinity;for(const a of clusteredMarkers){const d=Math.hypot(a.sx-px,a.sy-py);const hit=a.items.length>1?17:11;if(d<best&&d<=hit){best=d;nearest=a;}}if(nearest)showPointHover(nearest,e.clientX,e.clientY);else hidePointHoverSoon();});vp.addEventListener('pointerup',e=>{
- if(!moved && (e.pointerType==='touch'||e.pointerType==='pen')){
-  const rect=vp.getBoundingClientRect();const px=e.clientX-rect.left,py=e.clientY-rect.top;
-  let nearest=null,best=Infinity;
-  for(const a of clusteredMarkers){const d=Math.hypot(a.sx-px,a.sy-py);if(d<best&&d<=23){best=d;nearest=a;}}
-  if(nearest)showPointHover(nearest,e.clientX,e.clientY);else hidePointHover();
+const vp=$('viewport');
+const pointers=new Map();let pinch=null,suppressTap=false;
+const pointerXY=e=>({x:e.clientX,y:e.clientY});
+const gesture=()=>{const v=[...pointers.values()];return {mid:{x:(v[0].x+v[1].x)/2,y:(v[0].y+v[1].y)/2},distance:Math.max(1,Math.hypot(v[0].x-v[1].x,v[0].y-v[1].y))};};
+function nearestMarker(x,y,touch=false){
+ const rect=vp.getBoundingClientRect(),px=x-rect.left,py=y-rect.top;
+ let nearest=null,best=Infinity;
+ for(const a of clusteredMarkers){const d=Math.hypot(a.sx-px,a.sy-py);const hit=touch?24:(a.items.length>1?17:11);if(d<best&&d<=hit){best=d;nearest=a;}}
+ return nearest;
+}
+vp.addEventListener('pointerdown',e=>{
+ if(e.target.closest?.('#pointHover'))return;
+ if(e.pointerType==='mouse'&&e.button!==0)return;
+ pointers.set(e.pointerId,pointerXY(e));
+ try{vp.setPointerCapture(e.pointerId);}catch(x){}
+ if(pointers.size===2){
+  const v=gesture();pinch={distance:v.distance,startZoom:cam.z,anchor:screenToMap(v.mid.x,v.mid.y)};
+  drag=null;moved=true;suppressTap=true;hidePointHover();
+ }else if(pointers.size===1){
+  drag={id:e.pointerId,x:e.clientX,y:e.clientY,ox:offset.x,oy:offset.y};moved=false;
  }
- drag=null;if(moved)renderMap();
-});vp.addEventListener('pointercancel',()=>{drag=null;if(moved)renderMap();});vp.addEventListener('pointerleave',hidePointHoverSoon);$('pointHover').addEventListener('wheel',e=>e.stopPropagation(),{passive:true});$('pointHover').addEventListener('pointerenter',()=>clearTimeout(hoverHideTimer));$('pointHover').addEventListener('pointerleave',hidePointHoverSoon);vp.addEventListener('wheel',e=>{e.preventDefault();zoomAt({x:e.clientX,y:e.clientY},e.deltaY<0?1.2:1/1.2);},{passive:false});window.addEventListener('resize',()=>{updateTransform();renderMap();});
+});
+vp.addEventListener('pointermove',e=>{
+ if(e.target.closest?.('#pointHover'))return;
+ if(pointers.has(e.pointerId))pointers.set(e.pointerId,pointerXY(e));
+ if(pointers.size>=2&&pinch){
+  const g=gesture(),r=vp.getBoundingClientRect();
+  cam.z=Math.max(.45,Math.min(15,pinch.startZoom*g.distance/pinch.distance));
+  cam.cx=pinch.anchor.x-(g.mid.x-r.left-r.width/2)/(10*cam.z);
+  cam.cy=pinch.anchor.y-(g.mid.y-r.top-r.height/2)/(10*cam.z);
+  moved=true;hidePointHover();updateTransform();renderMap();
+  return;
+ }
+ if(drag&&pointers.has(e.pointerId)&&drag.id===e.pointerId){
+  const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
+  if(Math.hypot(dx,dy)>6)moved=true;
+  if(moved){const v=sizeView();cam.cx=(v.w/2-drag.ox-dx)/(10*cam.z);cam.cy=(v.h/2-drag.oy-dy)/(10*cam.z);updateTransform();hidePointHover();return;}
+ }
+ if(tooltipPinned || (e.pointerType!=='mouse'&&e.pointerType!=='pen'))return;
+ const a=nearestMarker(e.clientX,e.clientY);
+ if(a)showPointHover(a,e.clientX,e.clientY);else hidePointHoverSoon();
+});
+function finishPointer(e,cancel=false){
+ if(e.target.closest?.('#pointHover'))return;
+ const wasPinching=!!pinch||pointers.size>=2;
+ pointers.delete(e.pointerId);
+ if(wasPinching){
+  pinch=null;drag=null;moved=true;suppressTap=true;
+  if(pointers.size===1){const [id,v]=[...pointers.entries()][0];drag={id,x:v.x,y:v.y,ox:offset.x,oy:offset.y};}
+  renderMap();loadBackground();return;
+ }
+ if(!cancel&&!moved&&!suppressTap&&(e.pointerType==='touch'||e.pointerType==='pen')){
+  const a=nearestMarker(e.clientX,e.clientY,true);
+  if(a)showPointHover(a,e.clientX,e.clientY,true);
+  else hidePointHover();
+ }
+ drag=null;
+ if(moved){renderMap();loadBackground();}
+ if(!pointers.size)suppressTap=false;
+}
+vp.addEventListener('pointerup',e=>finishPointer(e));
+vp.addEventListener('pointercancel',e=>finishPointer(e,true));
+vp.addEventListener('pointerleave',hidePointHoverSoon);
+vp.addEventListener('gesturestart',e=>e.preventDefault(),{passive:false});
+vp.addEventListener('gesturechange',e=>e.preventDefault(),{passive:false});
+$('pointHover').addEventListener('wheel',e=>e.stopPropagation(),{passive:true});
+$('pointHover').addEventListener('pointerenter',()=>clearTimeout(hoverHideTimer));
+$('pointHover').addEventListener('pointerleave',hidePointHoverSoon);
+$('pointHover').addEventListener('click',e=>{if(e.target.closest('.hoverClose')){e.stopPropagation();hidePointHover();}});
+vp.addEventListener('wheel',e=>{e.preventDefault();zoomAt({x:e.clientX,y:e.clientY},e.deltaY<0?1.2:1/1.2);},{passive:false});
+window.addEventListener('resize',()=>{updateTransform();renderMap();});
 // 既存のイベント・特典スクリプトは別ブロックで動く。ゲームの内部情報にはアクセスしない。
 switchFaction(faction);loadLocale();loadCubes();for(const f of ['asmo','elyos'])if(f!==faction)loadPets(f);}
 setup();
