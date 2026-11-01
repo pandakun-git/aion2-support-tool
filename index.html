@@ -1,4 +1,17 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AION2 総合サポートツール v2.8</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AION2 探索マップ・魂確保管理・武器強化シミュレーター｜総合サポートツール</title>
+<meta name="google-site-verification" content="DdaA07dU4inn1bF9PNhdNlLZDJ0oPIqvxg0ufLt_kpo" />
+<meta name="description" content="AION2の非公式・無料サポートツール。魔族アルトガルド・天族ベルテロンの探索マップ、キューブ候補地点、ペット魂確保Lv管理、武器強化シミュレーター、イベントタイマーをPC・スマホで利用できます。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://pandakun-git.github.io/aion2-support-tool/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="AION2 総合サポートツール">
+<meta property="og:title" content="AION2 探索マップ・魂確保管理・武器強化シミュレーター｜総合サポートツール">
+<meta property="og:description" content="AION2の非公式・無料サポートツール。魔族アルトガルド・天族ベルテロンの探索マップ、キューブ候補地点、ペット魂確保Lv管理、武器強化シミュレーター、イベントタイマーをPC・スマホで利用できます。">
+<meta property="og:url" content="https://pandakun-git.github.io/aion2-support-tool/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0d2232">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AION2 総合サポートツール","alternateName":"AION2 探索マップ・魂確保・武器強化シミュレーター","url":"https://pandakun-git.github.io/aion2-support-tool/","description":"AION2の非公式・無料サポートツール。魔族アルトガルド・天族ベルテロンの探索マップ、キューブ候補地点、ペット魂確保Lv管理、武器強化シミュレーター、イベントタイマーをPC・スマホで利用できます。","inLanguage":"ja-JP","operatingSystem":"Windows, macOS, iOS, Android","applicationCategory":"GameApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"isAccessibleForFree":true,"featureList":["アルトガルド・ベルテロン探索マップ","キューブ候補地点の表示","ペット魂確保Lv管理","武器強化シミュレーション","イベントタイマー","手動の魂確保同期コード"]}</script><style>
 :root{--bg:#09121c;--side:#0e1d2c;--pane:#112435;--line:#264054;--text:#eaf2f8;--sub:#a7bacb;--gold:#f4c97b;--mint:#62e2c4;--blue:#6fb8fa;--red:#ff887d}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,'Yu Gothic','Meiryo',sans-serif;font-size:14px}
 header{height:72px;border-bottom:1px solid #254259;background:linear-gradient(105deg,#122738,#0c1928);display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:12px}h1{font-size:20px;margin:0;font-weight:850;letter-spacing:.02em}h1 span{color:var(--gold)}.eyebrow{font-size:10px;color:var(--mint);font-weight:800;letter-spacing:.2em}.topbadges{display:flex;gap:8px;flex-wrap:wrap}.badge{border:1px solid #31506a;border-radius:30px;padding:7px 12px;background:#122b3d;color:#b9d5e5;font-size:12px}.badge b{color:white}.layout{display:grid;grid-template-columns:minmax(270px,318px) minmax(440px,1fr) minmax(285px,325px);height:calc(100vh - 72px);min-height:610px}.side{background:var(--side);overflow:auto;padding:18px 16px;border-right:1px solid var(--line)}.right{border-right:none;border-left:1px solid var(--line)}h2{font-size:14px;color:#fff;margin:0 0 12px}.section{padding:0 0 19px;margin:0 0 18px;border-bottom:1px solid #253e50}.section:last-child{border:none}.hint{color:var(--sub);font-size:12px;line-height:1.65}.muted{color:#83a1b6}.strong{font-size:25px;font-weight:800}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}button,select,input[type=text],input[type=number]{border:1px solid #315268;background:#162d41;color:#eef7ff;border-radius:9px;font:inherit;min-height:36px;padding:7px 10px}select,input[type=text]{width:100%}button{cursor:pointer;font-weight:700;transition:background .15s,transform .15s}button:hover{background:#244963}button:disabled{opacity:.35;cursor:not-allowed}.primary{background:#1b7f72;border-color:#2aa793;color:#f0fffc}.primary:hover{background:#289a89}.gold{background:#916b2f;border-color:#b8904b}.gold:hover{background:#a87f3f}.danger{color:#ffbbb4}.tiny{font-size:11px;padding:4px 7px;min-height:27px}.activeMode{background:#216d82!important;border:1px solid #5dddf2!important;box-shadow:inset 0 0 0 1px #5dddf277}.kpi{padding:9px 11px;background:#142c3c;border:1px solid #2b4659;border-radius:10px;min-width:70px;flex:1}.kpi .num{font-size:21px;font-weight:850}.kpi .label{color:#9cb7c7;font-size:11px}.datastatus{padding:10px 12px;border:1px solid #426a6b;background:#163638;border-radius:9px;color:#c4f7e6;font-size:12px;line-height:1.6}.alert{background:#3a2c22;border-color:#795c3c;color:#ffdda9}.checks{max-height:150px;overflow:auto;margin-top:10px;border:1px solid #2a4151;border-radius:9px;background:#0a1c2a}.checkitem{display:flex;gap:8px;align-items:center;padding:8px 10px;border-bottom:1px solid #203748;font-size:12px;cursor:pointer}.checkitem:last-child{border-bottom:0}.checkitem input{accent-color:#5bd7be}.chip{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:4px}.mapwrap{position:relative;min-width:0;background:#0e1b27;overflow:hidden}.viewport{position:absolute;inset:0;cursor:grab;overflow:hidden;touch-action:none;background:radial-gradient(ellipse,#2f4351 0,#111d26 70%)}.viewport:active{cursor:grabbing}.mapstage{width:1000px;height:1000px;position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}.baseimage{position:absolute;width:100%;height:100%;object-fit:fill;top:0;left:0;user-select:none;pointer-events:none}.mapoverlay{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:2;display:block}.fallbackmap{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 49px,#ffffff15 50px),repeating-linear-gradient(90deg,transparent 0 49px,#ffffff15 50px),radial-gradient(circle at 65% 60%,#73684b99,transparent 20%),radial-gradient(circle at 40% 40%,#59705c88,transparent 30%),#29475a}.mapHud{position:absolute;pointer-events:none;inset:0}.mapTop{position:absolute;top:15px;left:14px;right:14px;display:flex;align-items:start;justify-content:space-between;gap:12px}.mapPill{pointer-events:auto;color:white;background:#081723df;backdrop-filter:blur(7px);border:1px solid #466077;padding:10px 12px;border-radius:12px;font-size:12px;box-shadow:0 8px 25px #0008}.mapPill strong{font-size:14px}.zoomtools{display:flex;flex-direction:column;gap:5px;pointer-events:auto}.zoomtools button{width:37px;height:37px;font-size:20px;padding:0;background:#0e2431e8}.mapBottom{position:absolute;bottom:16px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:end;gap:12px}.footerhint{background:#081723df;border:1px solid #40586b;border-radius:10px;padding:9px 12px;max-width:420px;font-size:12px;line-height:1.5;color:#c2d7e4}.link{color:#8bcfff;text-decoration:none}.link:hover{text-decoration:underline}.navcard{border:1px solid #3c6674;background:linear-gradient(150deg,#12384b,#112d3e);border-radius:15px;padding:17px;margin-bottom:14px}.compassrow{display:flex;align-items:center;gap:16px;margin:15px 0}.arrowdial{width:92px;height:92px;border:2px solid #5b7a90;border-radius:50%;flex:none;background:radial-gradient(circle,#193a4e,#092233);position:relative;display:grid;place-items:center}.arrowdial:before{content:'N';position:absolute;top:5px;font-size:10px;color:#a6d0dd}.pointer{display:block;font-size:46px;font-weight:800;color:#f7d38c;line-height:1;transform:rotate(0deg);text-shadow:0 3px 20px #ffc57f77;transition:transform .2s}.dirtext{font-size:28px;font-weight:850;color:var(--gold)}.subline{font-size:12px;color:#c0d5df;line-height:1.5}.targetId{word-break:break-all;color:#b5d1dc;font-family:ui-monospace,Consolas,monospace;font-size:11px}.stepList{display:flex;flex-direction:column;gap:5px;max-height:270px;overflow:auto;margin-top:10px}.step{display:grid;grid-template-columns:26px 1fr auto;gap:7px;align-items:center;text-align:left;border-radius:9px;padding:6px 8px;border:1px solid #2c4355;background:#122b3c;font-size:12px;min-height:36px}.step.now{border-color:#e4bc6d;background:#45391f}.step.done{opacity:.48}.step .idx{width:23px;height:23px;background:#284a61;border-radius:50%;display:grid;place-items:center}.smalllabel{font-size:11px;color:#aac2d1}.footer{padding:17px;background:#0a1823;font-size:11px;color:#a3b7c8;line-height:1.7}.divider{height:1px;background:#32495a;margin:10px 0}input[type=checkbox]{accent-color:#50d9c1}input[type=range]{width:100%}.credit{font-size:11px;color:#9db6c6}.toast{position:absolute;left:50%;bottom:82px;transform:translateX(-50%);background:#163c41;color:#e6fff7;border:1px solid #61c6bb;padding:10px 18px;border-radius:10px;z-index:10;opacity:0;transition:opacity .25s;pointer-events:none;max-width:80%;text-align:center;box-shadow:0 9px 30px #0009}.toast.show{opacity:1}
@@ -229,7 +242,19 @@ body:not([data-tab="help"]) #helpPanel{display:none!important}
 .reportLink{display:flex;align-items:center;justify-content:center;min-height:45px;padding:10px;border:1px solid #79cdb8;background:#206f60;color:#fff;text-decoration:none;font-weight:800;border-radius:9px;text-align:center}.reportLink:hover{filter:brightness(1.12)}.feedbackMessage{color:#aed6de;font-size:12px;line-height:1.7;margin:10px 0}.helpIssueLink{display:inline-block;color:#91c9f7;font-size:12px;margin-top:6px}.helpFoot{text-align:center;margin-top:20px}
 .welcomeOverlay{position:fixed;inset:0;background:#020911dc;z-index:9999;display:grid;place-items:center;padding:15px;overscroll-behavior:contain}.welcomeDialog{width:min(100%,530px);max-height:min(90vh,700px);overflow:auto;border:1px solid #66a8ac;background:linear-gradient(155deg,#18394a,#0e2030);border-radius:19px;padding:23px;box-shadow:0 30px 100px #0009;outline:none}.welcomeTop,.welcomeActions{display:flex;align-items:center;justify-content:space-between;gap:8px}.welcomeTop button{min-width:36px}.welcomeKicker{color:#9cf7dd;font-size:11px;font-weight:900;letter-spacing:.13em}.welcomeDialog h2{font-size:27px;color:#fae1b7;margin:15px 0 4px}.welcomeLead{font-size:12px;color:#bdd9e5;margin:0 0 20px;line-height:1.6}.welcomeSteps{background:#0c2536;border:1px solid #3b6477;border-radius:13px;padding:20px 17px;min-height:230px}.welcomeIcon{font-size:43px;margin-bottom:6px}.welcomeStep h3{margin:7px 0 9px;font-size:20px;color:#fff}.welcomeStep p{font-size:14px;line-height:1.85;color:#c6dfe9;margin:0}.welcomeProgress{text-align:center;letter-spacing:.35em;color:#6fdeb9;margin:18px 0}.welcomeActions button{min-height:42px;padding:10px 12px}.welcomeActions #welcomeSkip{margin-right:auto}.welcomeActions #welcomePrev{margin-left:auto}
 @media(max-width:750px){.helpPanel{padding:12px 10px 24px}.helpHero{padding:15px}.helpHero h2{font-size:20px}.helpGrid{grid-template-columns:1fr;gap:10px}.helpCard{padding:14px}.helpFeedback{grid-column:auto}.welcomeDialog{padding:17px}.welcomeDialog h2{font-size:23px}.welcomeSteps{min-height:245px;padding:16px 14px}.welcomeStep p{font-size:13px}.welcomeActions button{font-size:12px;padding:8px 10px}}
-</style></head><body data-tab="home"><header><div><div class="eyebrow">閲覧中心の外部マップ · ゲーム連携なし</div><h1><span>AION2</span> 総合サポートツール <span style="font-size:11px;color:#a3c0cf">v2.8</span></h1></div><div class="topbadges"><div class="badge">🛡️ ゲーム内部へのアクセスなし</div><div class="badge">🗺️ 出現地点の確認専用</div><div class="badge" id="factionBadge">魔族・アルトガルド</div></div></header>
+
+/* v2.9: public SEO overview & consent UI (no analytics without owner configuration + opt-in) */
+.publicOverview{margin-top:16px;padding:17px 18px;border:1px solid #31546a;border-radius:14px;background:#112a3b;line-height:1.85}
+.publicOverview h2{font-size:17px;margin:0 0 9px;color:#f3d99d}.publicOverview p{margin:5px 0 12px;color:#c6d8e5}
+.publicOverviewGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-top:10px}
+.publicOverviewGrid article{padding:12px;border:1px solid #30536a;background:#102433;border-radius:9px}
+.publicOverviewGrid h3{font-size:13px;color:#d9f5ff;margin:0 0 5px}.publicOverviewGrid p{font-size:12px;margin:0;line-height:1.65}
+.publicOverview .publicOverviewNote{font-size:11px;color:#98b3c5;margin-bottom:0}
+#analyticsConsentBox{position:fixed;z-index:100500;right:16px;bottom:16px;max-width:min(440px,calc(100vw - 24px));padding:15px 16px;border-radius:14px;border:1px solid #6195a8;background:#112d40;box-shadow:0 9px 40px #000b;color:#ebf8ff;line-height:1.6}
+#analyticsConsentBox p{margin:8px 0 11px;font-size:12px}#analyticsConsentBox strong{font-size:14px}
+#analyticsConsentBox .row{justify-content:flex-end}#analyticsConsentBox button{min-width:110px}
+@media(max-width:720px){.publicOverviewGrid{grid-template-columns:1fr}.publicOverview{padding:13px 14px}#analyticsConsentBox{left:12px;right:12px;bottom:12px;max-width:none}}
+</style></head><body data-tab="home"><header><div><div class="eyebrow">閲覧中心の外部マップ · ゲーム連携なし</div><h1><span>AION2</span> 総合サポートツール <span style="font-size:11px;color:#a3c0cf">v2.9</span></h1></div><div class="topbadges"><div class="badge">🛡️ ゲーム内部へのアクセスなし</div><div class="badge">🗺️ 出現地点の確認専用</div><div class="badge" id="factionBadge">魔族・アルトガルド</div></div></header>
 <div id="appBootNotice" role="status" style="margin:10px 14px;padding:12px 14px;border:1px solid #d99a3b;background:#44331e;color:#ffe3b5;border-radius:10px;font-size:13px;line-height:1.65">⚠️ まだアプリが起動していません。iPhoneの「ファイル」アプリやChatGPT内のHTMLプレビューではJavaScriptが動かず、項目が「読込中」のままになることがあります。通常のSafariからアクセスできるHTTPSページで開いてください。</div>
 <nav id="appTabs" class="appTabs" aria-label="上部メニュー">
  <button type="button" data-tab="home">🏠 ホーム</button>
@@ -248,6 +273,16 @@ body:not([data-tab="help"]) #helpPanel{display:none!important}
   <article class="homeCard"><h3>🎁 特典チェック</h3><div class="homeRows"><div>🎟️ クーポン <b id="homeCoupons">読込中…</b></div><div>📺 Twitch Drops <b id="homeDrops">読込中…</b></div></div><p class="homeSub">最新の公式情報は「情報を取得」ボタンで手動確認。</p><button type="button" data-go="benefits">特典を確認 ↗</button></article>
   <article class="homeCard"><h3>🐾 魂確保の進捗</h3><div class="homeMetric" id="homeSoulRate">—%</div><div class="homeRows"><div>🟣 魔族 <b id="homeAsmo">— / —</b></div><div>🟡 天族 <b id="homeElyos">— / —</b></div><div>合計 <b id="homeTotal">— / —</b></div></div><button type="button" data-go="pets">魂確保一覧へ ↗</button></article>
  </div>
+ <section class="publicOverview" aria-label="AION2探索ツールの主な機能">
+  <h2>AION2の探索・魂確保・武器強化をまとめて管理</h2>
+  <p>ゲームをプレイしながらブラウザで使える、非公式の無料サポートツールです。<strong>魔族アルトガルド・天族ベルテロンの探索マップ</strong>でペットの生息候補を確認し、魔族側ではキューブの出現候補地点も表示できます。キューブの出現状況を自動検知する機能ではありません。</p>
+  <div class="publicOverviewGrid">
+    <article><h3>🗺️ キューブ・ペット探索マップ</h3><p>PCではマウス、スマホでは二本指で拡大縮小。マーカーを選ぶと詳細を確認できます。</p></article>
+    <article><h3>🐾 ペットの魂確保管理</h3><p>未確保・Lv1〜Lv3を記録。収集状況は端末内に保存され、同期コードで手動移行できます。</p></article>
+    <article><h3>⚒️ 武器強化シミュレーター</h3><p>唯一（金）武器の+15までの強化を試行し、ギーナや強化石の消費を試算できます。</p></article>
+  </div>
+  <p class="publicOverviewNote">本ツールはNCSOFT公式サービスではありません。マップ・出現地点・費用や確率は更新により変わる可能性があります。</p>
+ </section>
  <p class="homeFootnote">⚠️ 公開情報を表示する非公式ツールです。ゲームのメモリ、通信、操作を取得しません。イベントの時刻はゲーム内表示を優先してください。</p>
 </section>
 <section id="enhancePanel" class="enhancePanel" aria-label="武器強化シミュレーター">
@@ -280,8 +315,14 @@ body:not([data-tab="help"]) #helpPanel{display:none!important}
    <div class="helpHow"><b>3. 武器強化</b><p>武器の条件を設定すると、強化成功率に従うランダムな挑戦とギーナ・強化石の累計を試算できます。実際の成功を保証するものではありません。</p><button data-go="enhance" type="button">⚒️ 強化シミュレーター →</button></div>
    <div class="helpHow"><b>4. PC↔スマホの確保記録</b><p>設定で同期コードを作り、別端末の設定で貼り付けて取り込みます。ログイン不要ですが、自動同期ではありません。</p><button data-go="settings" type="button">🔄 同期コードを使う →</button></div>
   </section>
+  <section class="helpCard"><h3>🔐 プライバシーとアクセス解析</h3>
+   <p>このサイトは、Google Analyticsを利用してページ表示回数・推定利用者数・端末別の傾向などを集計する場合があります。集計値は管理者のGoogle Analytics画面のみで確認し、サイトに公開しません。<strong>未同意ではGoogle Analyticsのタグを読み込みません。</strong></p>
+   <p>解析に同意した場合、GoogleがCookie等を使用することがあります。魂確保Lv・同期コード・強化の操作履歴はアクセス解析に送信しません。同意はいつでも変更できます。</p>
+   <div class="row"><button type="button" id="analyticsConsentHelp">解析の同意設定を開く</button><span class="smalllabel" id="analyticsHelpStatus">解析は未設定です</span></div>
+  </section>
   <section class="helpCard"><h3>🆕 更新履歴</h3>
-   <div class="updateItem latest"><div class="updateBadge">NEW · v2.8</div><strong>初回ガイド・更新履歴・意見受付</strong><p>初回だけ表示する操作ガイド、いつでも見られるヘルプ、GitHub Issuesへつなぐ不具合・要望フォームを追加。</p></div>
+   <div class="updateItem latest"><div class="updateBadge">NEW · v2.9</div><strong>検索対策・アクセス解析の準備</strong><p>検索用タイトル・説明文・構造化データ・サイトマップを追加。GA4は同意制で、測定IDが設定されるまではアクセス情報を送信しません。</p></div>
+   <div class="updateItem"><div class="updateBadge">v2.8</div><strong>初回ガイド・更新履歴・意見受付</strong><p>初回だけ表示する操作ガイド、いつでも見られるヘルプ、GitHub Issuesへつなぐ不具合・要望フォームを追加。</p></div>
    <div class="updateItem"><div class="updateBadge">v2.7</div><strong>魂確保の同期コード／武器強化</strong><p>クラウドなしの手動同期と、唯一（金）武器の強化シミュレーターを追加。</p></div>
    <div class="updateItem"><div class="updateBadge">v2.6</div><strong>スマホ操作とペット一覧の改良</strong><p>二本指ズーム、マーカー詳細の固定、密集表示の緩和、2マップ間で片方にしかいないペットの強調。</p></div>
    <div class="updateItem"><div class="updateBadge">v2.5</div><strong>密集マーカーの分離</strong><p>拡大時に候補地点を個別表示。取得できないフィールドボスタイマーを撤去。</p></div>
@@ -396,7 +437,7 @@ body:not([data-tab="help"]) #helpPanel{display:none!important}
  <div class="benefitsNote">※ボタンを押した時だけSteamの公式ニュースを確認し、<b>タイトルと本文にTwitch Drops開催が明記され、開催期間が確認でき、終了していない告知だけ</b>を表示します。終了済み・開催日時不明・パッチノートなどは除外します。ローカルHTMLのCORS制限対策として、公開情報の取得に第三者の中継サービス（cors.dev）を利用します。<b>中継サービスの障害・公式Steamに載らない告知の見落としがあるため、取得失敗を「開催なし」とは判定しません。</b> 日程を解析できない告知は誤表示を避けるため一覧には追加しません。ゲームのメモリ・通信にはアクセスしません。</div>
 </section>
 
-<section class="section" id="usageHelpPanel"><h2>💡 見方</h2><p class="hint">キューブの候補地点はすべて黄色の◆で表示。出現中かどうかの判定はしません。<br>ペットは一覧から地図に表示する種類を選び、魂を確保したらLvを記録してください。<br>ゲームを操作・監視する機能はありません。</p></section><section class="section" id="privacyInfoPanel"><h2>🛡️ プライバシー</h2><p class="hint">本ツールがアクセスするのは公開のマップ・ペット・日本語名データだけです。ゲームのプロセス、メモリ、通信、画面、操作入力は読み取りません。利用許可やBANリスクゼロを保証するものではありません。</p></section></aside></div><footer class="footer"><b>非公式ファンツール。</b> AION2 © NCSOFT。キューブ・地図・ペット座標：<a href="https://github.com/problem-xyz/aion2-map-overlay" target="_blank" rel="noopener" class="link">problem-xyz/aion2-map-overlay</a>。キューブ情報の元データ：<a href="https://github.com/aion2-interactive-map/aion2-interactive-map" target="_blank" rel="noopener" class="link">aion2-interactive-map</a>（CC BY-NC 4.0、詳しくは上記GitHubのNOTICE）。日本語ペット名：<a href="https://github.com/MikeZeen/aion2-pet-tracker" target="_blank" rel="noopener" class="link">MikeZeen/aion2-pet-tracker</a>の公開言語データ参照。実際の出現や魂獲得は保証しません。</footer>
+<section class="section" id="usageHelpPanel"><h2>💡 見方</h2><p class="hint">キューブの候補地点はすべて黄色の◆で表示。出現中かどうかの判定はしません。<br>ペットは一覧から地図に表示する種類を選び、魂を確保したらLvを記録してください。<br>ゲームを操作・監視する機能はありません。</p></section><section class="section" id="privacyInfoPanel"><h2>🛡️ プライバシー</h2><p class="hint">探索・ペット表示のため、公開されている地図・ペット・日本語名などの外部データを読み込みます。一部の公式ニュースを手動取得する際は第三者の中継サービスを利用する場合があります。魂確保データは端末内に保存され、アクセス解析へ送信しません。ゲームのプロセス・メモリ・通信・画面・操作入力にはアクセスしません。利用許可やBANリスクゼロを保証するものではありません。アクセス解析（Google Analytics）は管理者が測定IDを設定し、利用者が同意した場合にのみ読み込みます。アクセス日時、閲覧ページ、端末やおおよその地域などがGoogleで集計されることがあります。管理者は集計結果を閲覧しますが、利用者の画面にアクセス数を表示しません。<button type="button" class="tiny" id="privacyConsentSettings">アクセス解析の同意設定</button> <span id="analyticsStateLabel" class="muted">解析：未設定</span></p></section></aside></div><footer class="footer"><b>非公式ファンツール。</b> AION2 © NCSOFT。キューブ・地図・ペット座標：<a href="https://github.com/problem-xyz/aion2-map-overlay" target="_blank" rel="noopener" class="link">problem-xyz/aion2-map-overlay</a>。キューブ情報の元データ：<a href="https://github.com/aion2-interactive-map/aion2-interactive-map" target="_blank" rel="noopener" class="link">aion2-interactive-map</a>（CC BY-NC 4.0、詳しくは上記GitHubのNOTICE）。日本語ペット名：<a href="https://github.com/MikeZeen/aion2-pet-tracker" target="_blank" rel="noopener" class="link">MikeZeen/aion2-pet-tracker</a>の公開言語データ参照。実際の出現や魂獲得は保証しません。</footer>
 
 <div id="welcomeOverlay" class="welcomeOverlay" hidden>
  <section class="welcomeDialog" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" aria-describedby="welcomeLead" tabindex="-1">
@@ -412,6 +453,12 @@ body:not([data-tab="help"]) #helpPanel{display:none!important}
   <div class="welcomeActions"><button id="welcomeSkip" type="button">スキップ</button><button id="welcomePrev" type="button">戻る</button><button id="welcomeNext" type="button" class="primary">次へ →</button></div>
  </section>
 </div>
+
+<aside id="analyticsConsentBox" role="dialog" aria-label="アクセス解析の同意" aria-modal="false" hidden>
+ <strong>🔐 アクセス解析について</strong>
+ <p>サイト改善のため、Google Analyticsで訪問回数などを集計してもよいですか？ 同意した場合のみGoogleへ閲覧情報を送信します。魂確保記録・同期コードは送信しません。あとから変更できます。</p>
+ <div class="row"><button id="analyticsReject" type="button">同意しない</button><button id="analyticsAccept" type="button" class="primary">同意する</button></div>
+</aside>
 
 <script>
 window.addEventListener('error',function(e){var b=document.getElementById('appBootNotice');if(b){b.style.display='block';b.hidden=false;b.textContent='⚠️ 起動エラー：'+String(e.message||'処理を実行できません')+'。HTMLプレビューではなく通常のブラウザで開いてください。';}});
@@ -1117,6 +1164,62 @@ el('enhanceOne').onclick=()=>{runAttempt(state,true);paint();};el('enhanceAll').
  function populate(){const t=title.value.trim(),b=body.value.trim();const kindName={bug:'不具合',idea:'機能要望',other:'ご意見'}[kind.value]||'ご意見';const desc=['## 内容',b||'（詳細を記入してください）','','## 利用端末',platform.value,'','## ツールのバージョン','v2.8','','※この報告は公開されます。'].join('\n');const params=new URLSearchParams({title:`[${kindName}] ${t||'件名を入力してください'}`,body:desc});link.href=base+'?'+params.toString();}
  [kind,title,body,platform].forEach(e=>e.addEventListener('input',populate));populate();
  link.addEventListener('click',e=>{if(!title.value.trim()||!body.value.trim()){e.preventDefault();message.textContent='⚠️ 件名と内容の両方を入力してください。';(!title.value.trim()?title:body).focus();return;}if(title.value.trim().length>80||body.value.trim().length>400){e.preventDefault();message.textContent='⚠️ 入力文字数が多すぎます。';return;}populate();message.textContent='✅ GitHubの投稿画面を開きます。内容を確認し、GitHub上で「Submit new issue」を押すと公開されます。';});
+})();
+</script>
+
+<script>
+/* v2.9: owner-only GA4 setup. Replace the empty ID only after creating a GA4 web data stream.
+   Never send analytics before visitor consent. Site stats are never rendered to end users. */
+(()=>{'use strict';
+ const MEASUREMENT_ID = 'G-43LS10V8X8'; // Google Analytics 4 (public measurement ID)
+ const LIVE_HOST = location.hostname === 'pandakun-git.github.io' && location.pathname.startsWith('/aion2-support-tool/');
+ const ENABLED = LIVE_HOST && /^G-[A-Z0-9]+$/.test(MEASUREMENT_ID);
+ const CONSENT_KEY = 'aion2_ga4_consent_v29';
+ const box=document.getElementById('analyticsConsentBox');
+ const status=document.getElementById('analyticsStateLabel');
+ const helpStatus=document.getElementById('analyticsHelpStatus');
+ let loaded=false;
+ function getSaved(){try{return localStorage.getItem(CONSENT_KEY)||''}catch(_){return ''}}
+ function save(v){try{localStorage.setItem(CONSENT_KEY,v)}catch(_){}}
+ function paint(){
+  const val=getSaved();let msg=!ENABLED?'解析：未設定':val==='yes'?'解析：同意中':val==='no'?'解析：不同意':'解析：同意確認前';
+  if(status)status.textContent=msg;
+  if(helpStatus)helpStatus.textContent=msg;
+ }
+ function startAnalytics(){
+  if(!ENABLED || loaded || getSaved()!=='yes')return;
+  loaded=true;
+  // Basic consent: do not load ANY Google Analytics resource until explicit consent.
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=function(){window.dataLayer.push(arguments)};
+  window.gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  window.gtag('consent','update',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  window.gtag('js',new Date());
+  window.gtag('config',MEASUREMENT_ID,{send_page_view:true,allow_google_signals:false,allow_ad_personalization_signals:false});
+  const s=document.createElement('script');s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(MEASUREMENT_ID);
+  document.head.appendChild(s);
+ }
+ function setChoice(v){
+  const old=getSaved();save(v);box.hidden=true;paint();
+  if(v==='yes')startAnalytics();
+  else if(loaded){
+   window['ga-disable-'+MEASUREMENT_ID]=true;
+   if(typeof window.gtag==='function')window.gtag('consent','update',{analytics_storage:'denied'});
+   // Unload the previously loaded analytics script when withdrawing consent.
+   location.reload();
+  }
+ }
+ function openSettings(){
+  if(!ENABLED){paint();return}
+  box.hidden=false;
+ }
+ const accept=document.getElementById('analyticsAccept'), reject=document.getElementById('analyticsReject');
+ if(accept)accept.addEventListener('click',()=>setChoice('yes'));
+ if(reject)reject.addEventListener('click',()=>setChoice('no'));
+ ['privacyConsentSettings','analyticsConsentHelp'].forEach(id=>{let el=document.getElementById(id);if(el)el.addEventListener('click',openSettings)});
+ paint();
+ if(ENABLED){if(getSaved()==='yes')startAnalytics();else if(!getSaved())openSettings()}
 })();
 </script>
 </body></html>
