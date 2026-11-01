@@ -1,0 +1,849 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AION2 総合サポートツール v2.5</title><style>
+:root{--bg:#09121c;--side:#0e1d2c;--pane:#112435;--line:#264054;--text:#eaf2f8;--sub:#a7bacb;--gold:#f4c97b;--mint:#62e2c4;--blue:#6fb8fa;--red:#ff887d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,'Yu Gothic','Meiryo',sans-serif;font-size:14px}
+header{height:72px;border-bottom:1px solid #254259;background:linear-gradient(105deg,#122738,#0c1928);display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:12px}h1{font-size:20px;margin:0;font-weight:850;letter-spacing:.02em}h1 span{color:var(--gold)}.eyebrow{font-size:10px;color:var(--mint);font-weight:800;letter-spacing:.2em}.topbadges{display:flex;gap:8px;flex-wrap:wrap}.badge{border:1px solid #31506a;border-radius:30px;padding:7px 12px;background:#122b3d;color:#b9d5e5;font-size:12px}.badge b{color:white}.layout{display:grid;grid-template-columns:minmax(270px,318px) minmax(440px,1fr) minmax(285px,325px);height:calc(100vh - 72px);min-height:610px}.side{background:var(--side);overflow:auto;padding:18px 16px;border-right:1px solid var(--line)}.right{border-right:none;border-left:1px solid var(--line)}h2{font-size:14px;color:#fff;margin:0 0 12px}.section{padding:0 0 19px;margin:0 0 18px;border-bottom:1px solid #253e50}.section:last-child{border:none}.hint{color:var(--sub);font-size:12px;line-height:1.65}.muted{color:#83a1b6}.strong{font-size:25px;font-weight:800}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}button,select,input[type=text],input[type=number]{border:1px solid #315268;background:#162d41;color:#eef7ff;border-radius:9px;font:inherit;min-height:36px;padding:7px 10px}select,input[type=text]{width:100%}button{cursor:pointer;font-weight:700;transition:background .15s,transform .15s}button:hover{background:#244963}button:disabled{opacity:.35;cursor:not-allowed}.primary{background:#1b7f72;border-color:#2aa793;color:#f0fffc}.primary:hover{background:#289a89}.gold{background:#916b2f;border-color:#b8904b}.gold:hover{background:#a87f3f}.danger{color:#ffbbb4}.tiny{font-size:11px;padding:4px 7px;min-height:27px}.activeMode{background:#216d82!important;border:1px solid #5dddf2!important;box-shadow:inset 0 0 0 1px #5dddf277}.kpi{padding:9px 11px;background:#142c3c;border:1px solid #2b4659;border-radius:10px;min-width:70px;flex:1}.kpi .num{font-size:21px;font-weight:850}.kpi .label{color:#9cb7c7;font-size:11px}.datastatus{padding:10px 12px;border:1px solid #426a6b;background:#163638;border-radius:9px;color:#c4f7e6;font-size:12px;line-height:1.6}.alert{background:#3a2c22;border-color:#795c3c;color:#ffdda9}.checks{max-height:150px;overflow:auto;margin-top:10px;border:1px solid #2a4151;border-radius:9px;background:#0a1c2a}.checkitem{display:flex;gap:8px;align-items:center;padding:8px 10px;border-bottom:1px solid #203748;font-size:12px;cursor:pointer}.checkitem:last-child{border-bottom:0}.checkitem input{accent-color:#5bd7be}.chip{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:4px}.mapwrap{position:relative;min-width:0;background:#0e1b27;overflow:hidden}.viewport{position:absolute;inset:0;cursor:grab;overflow:hidden;touch-action:none;background:radial-gradient(ellipse,#2f4351 0,#111d26 70%)}.viewport:active{cursor:grabbing}.mapstage{width:1000px;height:1000px;position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}.baseimage{position:absolute;width:100%;height:100%;object-fit:fill;top:0;left:0;user-select:none;pointer-events:none}.mapoverlay{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:2;display:block}.fallbackmap{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 49px,#ffffff15 50px),repeating-linear-gradient(90deg,transparent 0 49px,#ffffff15 50px),radial-gradient(circle at 65% 60%,#73684b99,transparent 20%),radial-gradient(circle at 40% 40%,#59705c88,transparent 30%),#29475a}.mapHud{position:absolute;pointer-events:none;inset:0}.mapTop{position:absolute;top:15px;left:14px;right:14px;display:flex;align-items:start;justify-content:space-between;gap:12px}.mapPill{pointer-events:auto;color:white;background:#081723df;backdrop-filter:blur(7px);border:1px solid #466077;padding:10px 12px;border-radius:12px;font-size:12px;box-shadow:0 8px 25px #0008}.mapPill strong{font-size:14px}.zoomtools{display:flex;flex-direction:column;gap:5px;pointer-events:auto}.zoomtools button{width:37px;height:37px;font-size:20px;padding:0;background:#0e2431e8}.mapBottom{position:absolute;bottom:16px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:end;gap:12px}.footerhint{background:#081723df;border:1px solid #40586b;border-radius:10px;padding:9px 12px;max-width:420px;font-size:12px;line-height:1.5;color:#c2d7e4}.link{color:#8bcfff;text-decoration:none}.link:hover{text-decoration:underline}.navcard{border:1px solid #3c6674;background:linear-gradient(150deg,#12384b,#112d3e);border-radius:15px;padding:17px;margin-bottom:14px}.compassrow{display:flex;align-items:center;gap:16px;margin:15px 0}.arrowdial{width:92px;height:92px;border:2px solid #5b7a90;border-radius:50%;flex:none;background:radial-gradient(circle,#193a4e,#092233);position:relative;display:grid;place-items:center}.arrowdial:before{content:'N';position:absolute;top:5px;font-size:10px;color:#a6d0dd}.pointer{display:block;font-size:46px;font-weight:800;color:#f7d38c;line-height:1;transform:rotate(0deg);text-shadow:0 3px 20px #ffc57f77;transition:transform .2s}.dirtext{font-size:28px;font-weight:850;color:var(--gold)}.subline{font-size:12px;color:#c0d5df;line-height:1.5}.targetId{word-break:break-all;color:#b5d1dc;font-family:ui-monospace,Consolas,monospace;font-size:11px}.stepList{display:flex;flex-direction:column;gap:5px;max-height:270px;overflow:auto;margin-top:10px}.step{display:grid;grid-template-columns:26px 1fr auto;gap:7px;align-items:center;text-align:left;border-radius:9px;padding:6px 8px;border:1px solid #2c4355;background:#122b3c;font-size:12px;min-height:36px}.step.now{border-color:#e4bc6d;background:#45391f}.step.done{opacity:.48}.step .idx{width:23px;height:23px;background:#284a61;border-radius:50%;display:grid;place-items:center}.smalllabel{font-size:11px;color:#aac2d1}.footer{padding:17px;background:#0a1823;font-size:11px;color:#a3b7c8;line-height:1.7}.divider{height:1px;background:#32495a;margin:10px 0}input[type=checkbox]{accent-color:#50d9c1}input[type=range]{width:100%}.credit{font-size:11px;color:#9db6c6}.toast{position:absolute;left:50%;bottom:82px;transform:translateX(-50%);background:#163c41;color:#e6fff7;border:1px solid #61c6bb;padding:10px 18px;border-radius:10px;z-index:10;opacity:0;transition:opacity .25s;pointer-events:none;max-width:80%;text-align:center;box-shadow:0 9px 30px #0009}.toast.show{opacity:1}
+@media(max-width:1250px){.layout{grid-template-columns:265px minmax(420px,1fr) 295px}.side{padding:14px 12px}}
+@media(max-width:1040px){header{height:auto;min-height:69px}.layout{height:auto;min-height:0;grid-template-columns:1fr 320px}.left{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border-right:0;border-bottom:1px solid #274054}.left .section{margin:0;padding:0;border:0}.mapwrap{height:680px}.right{height:680px}}
+@media(max-width:720px){header{padding:12px}h1{font-size:17px}.topbadges{display:none}.layout{display:flex;flex-direction:column}.left{display:block}.left .section{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #253e50}.mapwrap{height:55vh;min-height:390px}.right{height:auto;border-left:0}.footerhint{max-width:270px;font-size:10px}.mapPill{padding:7px;font-size:11px}.mapPill strong{font-size:12px}}
+
+.petToolbar{background:#112738;border:1px solid #2c4a5c;border-radius:10px;padding:9px;margin-top:9px}.petToolbar .row{justify-content:space-between;margin-bottom:7px}.petToolbar .ownedStats{color:#91e6ca;font-size:12px;font-weight:800}.petList{max-height:380px!important;overflow:auto}.petRow{display:grid;grid-template-columns:1fr auto;align-items:center;gap:7px;padding:8px;border-bottom:1px solid #253c4c;min-width:0}.petRow.owned{background:#11291f}.petRow:last-child{border-bottom:0}.petMain{display:flex;align-items:center;gap:7px;min-width:0;cursor:pointer}.petMain input{flex:none}.petName{font-size:12px;font-weight:800;overflow-wrap:anywhere}.petMeta{font-size:10px;color:#a7c0d0;overflow-wrap:anywhere;line-height:1.4}.petActions{display:flex;flex-direction:column;gap:5px;align-items:stretch}.ownedBtn{min-height:28px;padding:4px 7px;font-size:11px;background:#20384a;border-color:#3d5f72;white-space:nowrap}.ownedBtn.isOwned{background:#175e48;border-color:#42b99e;color:#ecfff8}.petMapBtn{min-height:25px;padding:2px 6px;font-size:10px}
+.soulPanel{padding:13px;margin:12px 0 10px;background:linear-gradient(145deg,#163a48,#122c3a);border:1px solid #4f8892;border-radius:12px}.soulPanel h2{margin-bottom:11px;color:#93e9d5}.soulStats{display:grid;grid-template-columns:1fr 1fr;gap:8px}.soulStat{background:#0a2230;border:1px solid #2b5261;padding:9px 8px;border-radius:9px;display:flex;flex-direction:column;gap:3px}.soulStat span{font-size:10px;color:#abcbd3}.soulStat strong{font-size:19px;color:#f5e3bd;white-space:nowrap}.soulStat.overall strong{color:#75f0cb}.progressTrack{height:9px;border-radius:999px;background:#234250;overflow:hidden;margin-top:12px}.progressFill{height:100%;background:linear-gradient(90deg,#2dadac,#72e9ae);transition:width .25s}.soulLevel{width:108px;min-height:31px!important;font-weight:850;font-size:12px;border-color:#57768b;background:#153849}.petRow.owned .soulLevel{border-color:#49ac95;color:#a0ffdb}.petActions{min-width:108px}.petListStatus{padding:6px 10px;color:#9fbace;font-size:11px;background:#0b1c29;border-bottom:1px solid #274053}.petSearchRow{display:flex;gap:6px;align-items:center;margin-top:9px}.petSearchRow input[type=search]{flex:1;min-width:0;min-height:38px;width:auto;border:1px solid #39617a;border-radius:9px;background:#0d2a40;color:#f0f8ff;padding:7px 10px;font:inherit}.petSearchRow input[type=search]:focus{outline:2px solid #62e2c4;outline-offset:1px}.petSearchRow button{flex:none;white-space:nowrap;min-height:36px}.petSearchSummary{font-size:11px;line-height:1.5;color:#9ed9cf;padding:5px 0;min-height:23px}.visibilityNote{font-size:10px;color:#eecb87}.mapPill em{color:#99f1d9;font-style:normal}
+[hidden]{display:none!important}.factionSection{background:#143344;border:1px solid #37607b;border-radius:12px;padding:13px;margin-bottom:16px}.factionSection h2{color:#f8d18d}.factionSection select{background:#1b465b;border-color:#5c8ba4;font-weight:800}
+
+/* v1.5 event countdowns — standalone, not connected to the game */
+.eventTimers{background:linear-gradient(135deg,#122e42,#101f33);border:1px solid #3b657c;border-radius:14px;padding:12px!important;margin-bottom:19px!important}
+.eventTimers .timerTitle{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:9px}
+.eventTimers .timerTitle h2{margin:0;color:#fce3b7;font-size:14px}
+.eventTimers .serverNote{font-size:10px;color:#aecbd7}
+.timerItem{border:1px solid #2d485d;background:#0c2132;border-radius:10px;padding:10px 10px 9px;margin:7px 0;transition:border-color .15s,background .15s}
+.timerItem.active{border-color:#5dccb6;background:#113731}
+.timerItem.soon{border-color:#c69a49;background:#35301d}
+.timerTopline{display:flex;align-items:center;justify-content:space-between;gap:7px}
+.timerName{font-size:12px;font-weight:800;color:#ecf3f8}
+.timerBadge{font-size:10px;padding:3px 6px;background:#1b3547;border-radius:7px;color:#c2dded;white-space:nowrap}
+.timerItem.active .timerBadge{background:#207563;color:#eafff4}
+.timerItem.soon .timerBadge{background:#855827;color:#ffebc8}
+.timerBig{font:800 26px/1.23 ui-monospace,Consolas,'Yu Gothic',monospace;font-variant-numeric:tabular-nums;letter-spacing:.025em;color:#f5ce88;margin:7px 0 3px}
+.timerItem.active .timerBig{color:#91f5c4}
+.timerBottom{font-size:11px;color:#adcad9;line-height:1.5}
+.timerProgress{height:4px;border-radius:99px;background:#254051;margin-top:7px;overflow:hidden}
+.timerProgress b{display:block;background:#eab36a;height:100%;width:0;transition:width 1s linear}
+.timerItem.active .timerProgress b{background:#69e0b8}
+.timerActions{display:flex;gap:6px;align-items:center;margin:9px 0 3px;flex-wrap:wrap}
+.timerActions button{font-size:11px;flex:1;min-width:105px}
+.timerSettings{border-top:1px solid #355062;margin-top:9px;padding-top:8px}
+.timerSettings summary{font-size:11px;font-weight:800;color:#e9ca88;cursor:pointer}
+.timerSettings label{font-size:11px;color:#bed4e0;display:block;margin-top:8px}
+.timerSettings select{width:100%;margin-top:4px;font-size:11px;min-height:30px;padding:5px 7px}
+.timerMsg{font-size:11px;line-height:1.5;color:#89e3cf;margin-top:5px;min-height:0}
+.timerHint{font-size:10px;color:#91abba;line-height:1.55;margin-top:8px}
+.timerMini{pointer-events:auto;cursor:pointer;background:#0c2433ed;border:1px solid #446b80;border-radius:12px;padding:8px 12px;color:#e8f8ff;text-align:left;box-shadow:0 7px 20px #0007;max-width:235px;font-size:11px;flex:0 1 auto;min-height:43px}
+.timerMini strong{display:block;color:#f6d08d;font-size:13px;font-variant-numeric:tabular-nums}
+.timerMini:focus-visible{outline:2px solid #7cddff}
+@media(max-width:900px){.timerMini{max-width:170px;padding:6px 9px}.timerMini strong{font-size:11px}}
+@media(max-width:470px){.timerMini{max-width:122px}.mapPill{max-width:192px}}
+
+
+/* v1.6 クーポンとTwitch Drops管理（独立・ゲーム非アクセス） */
+.benefits{border:1px solid #775d86;background:linear-gradient(145deg,#28253e,#132b3c);border-radius:14px;padding:12px;margin:0 0 18px}
+.benefits h2{color:#f9d9ff;margin:0}.benefitsHead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:9px}.benefitsStat{font-size:10px;color:#d1bcdb}
+.benefitsButtons{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.benefitsButtons button{font-size:11px;min-height:30px;padding:5px 8px}
+.benefits .brief{font-size:11px;color:#b5cedb;line-height:1.55}.benefitsState{font-size:11px;border:1px solid #3a6170;background:#163447;padding:8px;border-radius:8px;margin:7px 0;line-height:1.55}
+.benefitsCard{padding:9px 10px;margin:8px 0;border:1px solid #39556a;border-radius:10px;background:#0e2436;overflow-wrap:anywhere}
+.benefitsCard.isUsed{opacity:.65}.benefitsCard.isExpired{opacity:.67}
+.benefitsCard .cardTop{display:flex;justify-content:space-between;gap:7px;align-items:start}
+.benefitsCard .cardTitle{font-size:13px;font-weight:800;color:#fff;line-height:1.4}
+.benefitsCard code{display:inline-block;margin:6px 0 5px;padding:5px 7px;background:#102f34;color:#a3ffe5;font-weight:800;letter-spacing:.04em;border:1px dashed #3d8c87;border-radius:6px;font-size:13px;overflow-wrap:anywhere}
+.benefitsCard .cardMeta{font-size:11px;line-height:1.65;color:#b0cbd9}
+.benefitsCard a{font-size:11px;color:#92d0ff;white-space:nowrap}
+.benefitsCard .cardActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:7px;align-items:center}
+.benefitsCard .cardActions button{padding:4px 9px;min-height:29px;font-size:11px}
+.benefitsCard .cardActions label{font-size:11px;display:flex;gap:5px;align-items:center;color:#dbedfa;cursor:pointer}
+.benefitsChip{font-size:10px;border-radius:18px;background:#29516a;padding:3px 7px;white-space:nowrap;color:#d5f6ff;font-weight:750}
+.benefitsChip.isLive{background:#196c52;color:#c9ffe6}.benefitsChip.isExpired{background:#4d3d43;color:#ebc0be}.benefitsChip.isSoon{background:#76522c;color:#ffe8ab}
+.benefitsSectionHead{margin:14px 0 5px;padding-bottom:5px;border-bottom:1px solid #48506c;font-weight:800;font-size:12px;color:#ffe5bd}
+.benefits details{margin-top:10px;border:1px solid #394b64;padding:8px;border-radius:9px;background:#0c2431}.benefits details summary{font-size:11px;font-weight:800;cursor:pointer}.benefits label.addLabel{font-size:11px;color:#bed1db;display:block;margin:8px 0 4px}.benefits input[type=text],.benefits input[type=datetime-local]{width:100%;font-size:12px;min-height:33px;background:#0e2838;color:#fff;border:1px solid #426177;border-radius:7px;padding:6px}.benefits .smallExternal{display:inline-block;margin:6px 7px 0 0;font-size:11px;color:#9bd9ff}
+.benefitReward{display:flex;gap:7px;align-items:start;font-size:11px;line-height:1.4;padding:5px 0;border-top:1px solid #263e51}.benefitReward input{margin:2px 0 0;flex:none}.benefitReward span{flex:1;color:#cfe4ec}.benefitsNote{color:#a2bfcc;font-size:10px;line-height:1.6;margin-top:7px}
+
+
+/* v1.7: 鑑賞専用のマップ表示。ナビ操作類は実装しない。 */
+.quickHelp{padding:10px 12px;margin:10px 0;border-left:3px solid #65dabc;background:#112d39;border-radius:6px;color:#c8e8e9;font-size:12px;line-height:1.7}
+.sourceStatus{font-size:11px;padding:8px;border:1px solid #355369;border-radius:8px;color:#bad4e1;margin:7px 0}
+.mapBottom .footerhint{max-width:none}.mapPointInfo{background:#0d2738;border:1px solid #395c6f;border-radius:10px;margin-top:10px;padding:9px;font-size:11px;color:#d7eef7;line-height:1.7}
+.mapPointInfo strong{color:#ffe2aa}.petRow .petMeta{line-height:1.45}.petRow .petName{font-size:12px}
+.cubeGroups{max-height:180px;overflow:auto}.formCaption{font-size:11px;color:#a9c6d4;margin:7px 0}.spacedBtns{display:flex;gap:7px;flex-wrap:wrap}.spacedBtns button{flex:1;font-size:11px}
+#translationStatus{font-size:11px;line-height:1.6;color:#a9dcd4;padding:7px 0}
+#pointHover{pointer-events:auto;position:absolute;z-index:20;width:max-content;max-width:min(340px,calc(100% - 16px));white-space:normal;display:none;background:#102536eF;border:1px solid #6193a2;border-radius:8px;color:#fff;padding:7px 10px;font-size:11px;box-shadow:0 6px 15px #0009;max-height:min(340px,65%);overflow-y:auto;line-height:1.5}
+@media(max-width:1040px){.left{display:block}}
+
+/* v1.9: Play-friendly independent collapsible controls. */
+.foldPanel{border:1px solid #34576c;border-radius:11px;background:#102939;margin:6px 0 12px;overflow:hidden}
+.foldPanel>.foldTitle{display:flex;align-items:center;justify-content:space-between;gap:7px;padding:11px 10px;font-size:13px;font-weight:800;color:#f4e1c7;cursor:pointer;list-style:none;user-select:none;min-height:42px}
+.foldPanel>.foldTitle::-webkit-details-marker{display:none}
+.foldPanel>.foldTitle::before{content:'▸';font-size:12px;color:#80ddcf;flex:none;transition:transform .15s}
+.foldPanel[open]>.foldTitle::before{transform:rotate(90deg)}
+.foldPanel>.foldTitle:hover{background:#24435a}
+.foldPanel>.foldTitle:focus-visible{outline:2px solid #74dfea;outline-offset:-2px}
+.foldPanel>.foldInner{padding:0 9px 10px}
+.foldBadge{font-size:10px;color:#a3c4d2;font-weight:500}
+.eventTimers>.timerFold{margin:0;background:none;border:none}
+.eventTimers .timerFold>.foldTitle{padding:2px 0 11px;color:#fce3b7;font-size:14px}
+.eventTimers .timerFold>.foldInner{padding:0}
+.benefits .benefitFold{margin-top:10px;border:1px solid #394b64;padding:0;background:#0c2431}
+.benefits .benefitFold>.foldTitle{font-size:12px;color:#ffe5bd;padding:11px 9px}
+.benefits .benefitFold>.foldInner{padding:0 8px 10px}
+
+
+/* マークのSVGは画像の拡大レイヤーとは独立。拡大時にもベクターとして再描画。 */
+.mapstage{z-index:1}.mapHud{z-index:5}.mapoverlay .cubeMark{paint-order:stroke;stroke-linejoin:round}.mapoverlay .petMark{paint-order:stroke}
+.mapQualityRow{margin-top:8px;display:flex;gap:8px;align-items:center}.mapQualityRow label{font-size:12px;color:#b5d1df;min-width:65px}
+.mapQualityRow select{flex:1;min-width:0}.mapResolutionTip{font-size:11px;color:#a9c8d6;line-height:1.65;margin:7px 0}
+/* v2.2: clustered map markers and Japanese multi-name tooltips */
+.mapoverlay .clusterMark{paint-order:stroke;stroke-linejoin:round}
+.mapoverlay .clusterText{fill:#0a2431;font-family:system-ui,sans-serif;font-weight:900;text-anchor:middle;dominant-baseline:central;paint-order:stroke;pointer-events:none}
+#pointHover .hoverTitle{color:#ffdf99;font-weight:850;font-size:12px;margin-bottom:6px}
+#pointHover .hoverNames{display:grid;gap:3px;padding-top:4px;border-top:1px solid #35556a}
+#pointHover .hoverName{color:#e7f7ff;overflow-wrap:anywhere}
+#pointHover .hoverName b{color:#9ce4d9;font-weight:750}
+#pointHover .hoverHelp{font-size:10px;color:#a6c2d3;margin-top:6px}
+
+/* v2.3 Tabs, command center, manual field-boss estimates */
+.appTabs{display:flex;align-items:center;gap:7px;padding:9px 14px;border-bottom:1px solid #304b61;background:#10283a;overflow-x:auto;position:relative;z-index:10;scrollbar-width:thin}
+.appTabs button{flex:0 0 auto;white-space:nowrap;padding:9px 16px;min-height:39px;background:#18364b;border:1px solid #345771;border-radius:11px;font-size:12px;color:#b6cede}
+.appTabs button[aria-selected="true"]{color:#fff;background:#245f71;border-color:#64cccf;box-shadow:0 0 0 1px #64cccf55}
+.layout{height:calc(100vh - 132px)}
+.homeDashboard{display:none;max-width:1260px;margin:auto;padding:24px 22px 35px}
+.homeHero{display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(120deg,#153e50,#16273d);border:1px solid #49718a;border-radius:16px;padding:22px 25px;margin-bottom:17px}
+.homeHero h2{font-size:25px;margin:8px 0;color:#f8d9a0}.homeHero p{color:#bfdae9;font-size:12px;line-height:1.65;margin:0}
+.homeNow{background:#102636;border:1px solid #3b6478;border-radius:10px;padding:12px 14px;white-space:nowrap;color:#dff8fa;font-variant-numeric:tabular-nums}
+.homeGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.homeCard{padding:19px 20px;background:linear-gradient(140deg,#173145,#122739);border:1px solid #395a70;border-radius:14px;min-width:0;box-shadow:0 12px 30px #0002}
+.homeCard h3{margin:0 0 13px;color:#f4deaf;font-size:15px}.homeMetric{font-size:25px;font-weight:850;color:#98e7d7;margin:8px 0 11px;font-variant-numeric:tabular-nums}
+.homeRows{display:grid;gap:6px}.homeRows>div{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:8px 9px;border-radius:8px;background:#0a2231;color:#c9deeb}.homeRows b{color:#fff;text-align:right;font-variant-numeric:tabular-nums}
+.homeSub{font-size:11px;color:#a3bdcb;line-height:1.6}.homeCard>button{margin-top:13px;background:#1b5461;border:1px solid #43858f;font-size:11px;min-height:34px}.homeFootnote{color:#acc5d5;font-size:11px;line-height:1.7;margin:18px 4px}
+.bossPanel{padding:14px;border:1px solid #477286;border-radius:12px;background:linear-gradient(140deg,#192f3e,#142336)}.bossPanel h2{color:#f8d39c;font-size:15px}
+.bossCards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}.bossCard{border-radius:11px;background:#091f2e;border:1px solid #355366;padding:11px}.bossCard h3{font-size:13px;margin:0 0 5px;color:#ffdfae}.bossCard p{font-size:10px;color:#b1cbd8;margin:4px 0 9px}.bossTime{font-size:24px;font-weight:850;color:#91e8ce;font-variant-numeric:tabular-nums}.bossState{color:#ffc987;font-size:11px;margin:6px 0}
+.bossFields{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.bossFields label{font-size:11px;display:flex;align-items:center;gap:4px}.bossFields input[type=number]{width:65px;min-height:30px;padding:4px;font-size:13px}.bossButtons{display:flex;gap:5px;margin-top:9px;flex-wrap:wrap}.bossButtons button{font-size:11px;min-height:31px;padding:5px 9px}.bossLegend{font-size:11px;color:#bcd0de;line-height:1.6}
+body[data-tab="home"] #homeDashboard{display:block}
+body[data-tab="home"] .layout{display:none!important}
+body:not([data-tab="home"]) .homeDashboard{display:none}
+body[data-tab="map"] .layout{display:grid!important;grid-template-columns:minmax(275px,340px) minmax(0,1fr)!important}
+body[data-tab="map"] .right{display:none!important}
+body[data-tab="map"] .left{display:block!important;grid-column:auto!important}
+body[data-tab="map"] #backupControlsPanel,body[data-tab="map"] #bgControlsPanel,body[data-tab="map"] .soulPanel{display:none!important}
+body[data-tab="pets"] .layout,body[data-tab="settings"] .layout{display:block!important;height:auto;min-height:calc(100vh - 175px)}
+body[data-tab="pets"] .mapwrap,body[data-tab="pets"] .right,body[data-tab="settings"] .mapwrap,body[data-tab="settings"] .right{display:none!important}
+body[data-tab="pets"] .left,body[data-tab="settings"] .left{display:block!important;width:min(100%,860px);margin:0 auto;border-right:0;overflow:visible}
+body[data-tab="pets"] #mapControlsPanel,body[data-tab="pets"] #backupControlsPanel,body[data-tab="pets"] #bgControlsPanel{display:none!important}
+body[data-tab="settings"] .soulPanel,body[data-tab="settings"] #mapControlsPanel,body[data-tab="settings"] #petControlsPanel{display:none!important}
+body[data-tab="events"] .layout,body[data-tab="benefits"] .layout{display:block!important;height:auto;min-height:calc(100vh - 175px)}
+body[data-tab="events"] .left,body[data-tab="events"] .mapwrap,body[data-tab="benefits"] .left,body[data-tab="benefits"] .mapwrap{display:none!important}
+body[data-tab="events"] .right,body[data-tab="benefits"] .right{display:block!important;width:min(100%,1060px);margin:0 auto;border-left:0;overflow:visible}
+body[data-tab="events"] #benefits,body[data-tab="events"] #usageHelpPanel,body[data-tab="events"] #privacyInfoPanel{display:none!important}
+body[data-tab="benefits"] #eventTimers,body[data-tab="benefits"] #usageHelpPanel,body[data-tab="benefits"] #privacyInfoPanel{display:none!important}
+body[data-tab="map"] .mapwrap{height:100%!important;min-height:460px}
+@media(max-width:780px){.homeGrid{grid-template-columns:1fr}.homeHero{display:block}.homeNow{display:inline-block;margin-top:14px}.bossCards{grid-template-columns:1fr}body[data-tab="map"] .layout{display:flex!important;flex-direction:column;height:auto}body[data-tab="map"] .mapwrap{height:65vh!important;min-height:390px}.appTabs button{padding:8px 11px}.homeDashboard{padding:15px}}
+
+/* v2.4 - smartphone dashboard and fetch-once boss board */
+.bossUpdateRow{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:12px 0}
+.bossUpdateInfo{font-size:12px;line-height:1.55;color:#b8d8ed}
+.bossSettings{margin-top:10px;border:1px solid #38596b;border-radius:10px;padding:10px;background:#102838}
+.bossSettings summary{font-weight:700;cursor:pointer}
+.bossSettings input{width:100%;margin:8px 0 10px;font-size:13px}
+.bossSettings .row{margin:4px 0 12px}
+.bossCard[data-status="soon"]{border-color:#ffab63;box-shadow:inset 0 0 0 1px #c98b4766}
+.bossCard[data-status="up"]{border-color:#6ce2bd}
+.bossCard[data-status="stale"]{border-color:#776848}
+.bossCard .bossTime{font-size:25px}
+.bossCard .bossState{line-height:1.5;font-size:12px}
+@media(max-width:800px){
+  .appTabs{overflow-x:auto;display:flex;flex-wrap:nowrap;scrollbar-width:thin;gap:5px;padding:8px;scroll-snap-type:x proximity}
+  .appTabs button{white-space:nowrap;flex:0 0 auto;scroll-snap-align:center;min-height:42px}
+  .homeDashboard{padding:12px 10px 28px}
+  .homeHero{padding:15px}
+  .homeHero h2{font-size:21px}
+  body[data-tab="events"] .right, body[data-tab="benefits"] .right{width:100%!important;max-width:none!important;padding:12px 10px!important}
+  body[data-tab="map"] .layout{display:flex!important;flex-direction:column!important;grid-template-columns:none!important}
+  body[data-tab="map"] .mapwrap{height:min(68vh,680px)!important;min-height:320px!important}
+  .bossCards{grid-template-columns:1fr}
+  .bossUpdateRow button{min-height:44px}
+}
+@media(max-width:440px){
+  header{padding:10px 12px}
+  .homeRows>div{gap:5px}
+  .bossCard{padding:12px 10px}
+  .bossCard h3{font-size:14px}
+  body[data-tab="map"] .mapwrap{height:55vh!important}
+}
+</style></head><body data-tab="home"><header><div><div class="eyebrow">閲覧中心の外部マップ · ゲーム連携なし</div><h1><span>AION2</span> 総合サポートツール <span style="font-size:11px;color:#a3c0cf">v2.5</span></h1></div><div class="topbadges"><div class="badge">🛡️ ゲーム内部へのアクセスなし</div><div class="badge">🗺️ 出現地点の確認専用</div><div class="badge" id="factionBadge">魔族・アルトガルド</div></div></header>
+<div id="appBootNotice" role="status" style="margin:10px 14px;padding:12px 14px;border:1px solid #d99a3b;background:#44331e;color:#ffe3b5;border-radius:10px;font-size:13px;line-height:1.65">⚠️ まだアプリが起動していません。iPhoneの「ファイル」アプリやChatGPT内のHTMLプレビューではJavaScriptが動かず、項目が「読込中」のままになることがあります。通常のSafariからアクセスできるHTTPSページで開いてください。</div>
+<nav id="appTabs" class="appTabs" aria-label="上部メニュー">
+ <button type="button" data-tab="home">🏠 ホーム</button>
+ <button type="button" data-tab="map">🗺️ マップ</button>
+ <button type="button" data-tab="pets">🐾 魂確保</button>
+ <button type="button" data-tab="events">⏱️ イベント</button>
+ <button type="button" data-tab="benefits">🎁 クーポン・Drops</button>
+ <button type="button" data-tab="settings">⚙️ 設定</button>
+</nav>
+<section id="homeDashboard" class="homeDashboard" aria-label="総合ホーム画面">
+ <div class="homeHero"><div><div class="eyebrow">AION2 COMMAND CENTER</div><h2>今日のプレイ情報</h2><p>イベント・クーポン・Drops・魂確保状況をまとめて確認。</p></div><div class="homeNow" id="homeNow">日本時間 —</div></div>
+ <div class="homeGrid">
+  <article class="homeCard"><h3>⏱️ 次のイベント</h3><div class="homeMetric" id="homeEventNext">読込中…</div><div class="homeRows"><div>🌌 時空の亀裂 <b id="homeRift">—</b></div><div>🐱 シューゴフェスタ <b id="homeShugo">—</b></div><div>⚔️ 次元侵攻 <b id="homeInvasion">—</b></div></div><button type="button" data-go="events">タイマーを見る ↗</button></article>
+  <article class="homeCard"><h3>🎁 特典チェック</h3><div class="homeRows"><div>🎟️ クーポン <b id="homeCoupons">読込中…</b></div><div>📺 Twitch Drops <b id="homeDrops">読込中…</b></div></div><p class="homeSub">最新の公式情報は「情報を取得」ボタンで手動確認。</p><button type="button" data-go="benefits">特典を確認 ↗</button></article>
+  <article class="homeCard"><h3>🐾 魂確保の進捗</h3><div class="homeMetric" id="homeSoulRate">—%</div><div class="homeRows"><div>🟣 魔族 <b id="homeAsmo">— / —</b></div><div>🟡 天族 <b id="homeElyos">— / —</b></div><div>合計 <b id="homeTotal">— / —</b></div></div><button type="button" data-go="pets">魂確保一覧へ ↗</button></article>
+ </div>
+ <p class="homeFootnote">⚠️ 公開情報を表示する非公式ツールです。ゲームのメモリ、通信、操作を取得しません。イベントの時刻はゲーム内表示を優先してください。</p>
+</section>
+<div class="layout"><aside class="side left">
+<section class="section factionSection"><h2>🌐 陣営・マップ切替</h2><select id="factionSelect"><option value="asmo">🟣 魔族｜アルトガルド</option><option value="elyos">🟡 天族｜ベルテロン</option></select><p class="hint">天族はペット専用。魔族はキューブとペットを切り替えて表示できます。</p></section>
+<section class="soulPanel"><h2>🐾 魂確保管理・収集率</h2><div class="soulStats"><div class="soulStat"><span>魔族（アルトガルド）</span><strong id="statAsmo">— / —</strong></div><div class="soulStat"><span>天族（ベルテロン）</span><strong id="statElyos">— / —</strong></div><div class="soulStat overall"><span>合計</span><strong id="statTotal">— / —</strong></div><div class="soulStat overall"><span>収集率</span><strong id="statRate">— %</strong></div></div><div class="progressTrack"><div id="soulProgress" class="progressFill" style="width:0%"></div></div><p class="hint" id="statNote">ペットのデータを読込中…</p></section>
+<section class="section" id="mapControlsPanel"><h2>🗺️ 地図の表示設定</h2><select id="areaSelect"><option value="all">🌍 アルトガルド全域</option><option value="west">西グリバデ高原</option><option value="faf">ファフナイト鉱床</option><option value="dred">ドレドギオン墜落地</option><option value="nameless">無名墓地</option></select><select id="layerMode" style="margin-top:7px"><option value="both">💎＋🐾 キューブ＆ペット</option><option value="cube">💎 キューブだけ</option><option value="pet">🐾 ペットだけ</option></select><label class="row" style="margin-top:8px;font-size:12px;color:#d5eaf4;cursor:pointer"><input id="clusterEnabled" type="checkbox" checked> 近接マーカーをまとめる（大きく拡大すると全地点を分離）</label><p class="formCaption">地図の点は「出現する可能性がある位置」。実際の出現・魂の獲得を保証するものではありません。</p><div class="row"><div class="kpi"><div class="num" id="spotCount">—</div><div class="label">表示地点</div></div><div class="kpi"><div class="num" id="cubeCount">—</div><div class="label">キューブ候補</div></div><div class="kpi"><div class="num" id="petVisibleCount">—</div><div class="label">ペット地点</div></div></div>
+<div id="cubeDataSection"><h3 style="font-size:12px;margin:12px 0 4px">💎 キューブ候補データ</h3><div id="dataStatus" class="sourceStatus">読込中…</div><div class="spacedBtns"><button id="reloadData">↻ キューブ更新</button><button id="pickJson">JSON手動読込</button></div><input type="file" id="jsonFile" accept=".json,application/json" hidden><div id="areaDataHint" class="formCaption"></div><details><summary style="cursor:pointer;font-size:12px;color:#f1d2a0">候補グループの表示を切り替える</summary><div id="groupList" class="checks cubeGroups"></div></details><p class="hint">読込できないときは<a class="link" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/problem-xyz/aion2-map-overlay/main/assets/object-sets/altgard.json">公開キューブJSON</a>をダウンロードして読み込めます。</p></div></section>
+<section class="section" id="petControlsPanel"><h2>🐾 ペットの出現地点</h2><div id="petStatus" class="sourceStatus">ペットデータ読込中…</div><div class="spacedBtns"><button id="reloadPets" class="primary">↻ ペット更新</button><button id="petPickJson">JSON手動読込</button></div><input id="petJsonFile" type="file" accept=".json,application/json" hidden><p class="hint"><a id="petSourceLink" class="link" target="_blank" rel="noopener">ペット位置JSONの入手先 ↗</a></p><div id="translationStatus">日本語名データ読込中…</div><details><summary class="hint" style="cursor:pointer">日本語辞書を手動で読み込む</summary><div class="spacedBtns" style="margin-top:6px"><button id="pickLocale">辞書JSONを読み込む</button><a class="link" href="https://raw.githubusercontent.com/MikeZeen/aion2-pet-tracker/master/src/data/pet_names.json" target="_blank" rel="noopener">辞書ファイル ↗</a></div><input type="file" id="localeJson" accept=".json,application/json" hidden></details>
+<div class="petSearchRow"><input id="petSearch" type="search" placeholder="日本語のペット名・対象モンスター名で検索" autocomplete="off" aria-label="ペットを検索"><button id="clearPetSearch" class="tiny" title="検索語をクリア">✕ 消去</button></div><div id="petSearchSummary" class="petSearchSummary" role="status" aria-live="polite">検索文字を入力すると一覧が絞られます。</div><select id="petGenus" style="margin-top:7px"><option value="all">全系統</option><option value="fera">野性</option><option value="natura">自然</option><option value="cogni">知性</option><option value="varian">変形</option></select>
+<div class="petToolbar"><div class="row"><span class="hint">🐾 魂確保Lv一覧</span><b id="ownedStats" class="ownedStats">確保済み —</b></div><select id="petListFilter"><option value="all">すべて</option><option value="unowned">未確保のみ</option><option value="owned">確保済みのみ</option><option value="lv1">Lv1のみ</option><option value="lv2">Lv2のみ</option><option value="lv3">Lv3のみ</option></select></div><div id="petList" class="checks petList"><p class="hint">データ読込中…</p></div>
+<div class="hint" style="margin-top:7px">検索中は一致するペットの出現地点を最大5種類まで一時表示します。検索を消すと通常表示へ戻ります。<br>☑ 通常表示するペットを最大5種類選べます。選択中：<b id="petSelectedCount">0/5</b></div><label class="checkitem" style="margin-top:8px"><input id="hideOwnedPets" type="checkbox" checked>確保済み（Lv1～3）は地図から隠す</label><div class="spacedBtns"><button id="clearPets">選択解除</button><button id="resetPetsOwned" class="danger">確保Lvをリセット</button></div></section>
+<section class="section" id="backupControlsPanel"><h2>💾 確保記録の保存</h2><div class="grid2"><button id="exportBtn">↥ 記録を書き出す</button><button id="importBtn">↧ 記録を読み込む</button></div><input id="saveFile" type="file" accept=".json,application/json" hidden><p class="hint">以前のv1.6記録も読込できます。ブラウザの保存領域は環境によって版ごとに分かれるため、旧版からはJSONを書き出して引き継いでください。</p></section>
+<section class="section" id="bgControlsPanel"><h2>🖼️ 背景地図と画質</h2>
+<div class="mapQualityRow"><label for="mapQuality">地図の画質</label><select id="mapQuality"><option value="auto">自動（拡大時に8K詳細地図）</option><option value="detail">高画質を優先（8K）</option><option value="reference">軽量を優先（4K）</option></select></div>
+<p class="mapResolutionTip">4K＝4096px・8K＝8192px。自動では拡大時に詳細地図へ切り替えます。大きく拡大しすぎると元画像の限界で多少粗くなります。8Kは通信・メモリを多く使います。</p>
+<button id="chooseMap">手元の地図画像を指定</button><input type="file" id="mapFile" accept="image/*" hidden><p class="hint">背景画像が取得できなかった場合に使用します。画像を手動指定すると、自動切替はいったん停止します。</p></section>
+</aside><main class="mapwrap"><div class="viewport" id="viewport"><div class="mapstage" id="mapstage"><div class="fallbackmap"></div><img id="baseimage" class="baseimage" draggable="false" alt="アルトガルド全域マップ"></div><svg id="mapSvg" class="mapoverlay" viewBox="0 0 1000 1000" preserveAspectRatio="none"><g id="markerLayer"></g></svg><div id="pointHover"></div></div><div class="mapHud"><div class="mapTop"><div class="mapPill"><strong id="mapTitle">🗺️ アルトガルド</strong><div id="mapArtStatus" style="color:#ffcb7d;font-size:11px">背景地図を読込中…</div><div class="hint">ドラッグ移動・ホイールで拡大</div></div><button id="timerMini" class="timerMini" title="イベントタイマーを表示">⏱ 次のイベント<strong>読込中…</strong></button><div class="zoomtools"><button id="zoomIn" title="拡大">＋</button><button id="zoomOut" title="縮小">－</button><button id="zoomHome" title="全体表示">⌂</button></div></div><div class="mapBottom"><div class="footerhint"><span id="cubeLegend"><span style="color:#ffe45e">◆</span> キューブの候補地点（黄色）　</span><span style="color:#ff9c79">●</span> ペットの狩り場（系統別の色）<br><span style="color:#9fb9cb">縮小時は近接地点を数字でまとめます。大きく拡大すると全地点を分離。重なる点も少しずらして表示します。PCはホバー、スマホはタップで名前を確認。</span></div></div></div><div id="toast" class="toast"></div></main><aside class="side right"><section class="section eventTimers" id="eventTimers" aria-label="イベントタイマー">
+  <details class="foldPanel timerFold" id="foldTimers" open>
+    <summary class="foldTitle"><span>⏱ イベントタイマー</span><span class="serverNote">日本/ASIA · JST</span></summary>
+    <div class="foldInner">
+ <div class="timerItem" id="timer-rift">
+  <div class="timerTopline"><span class="timerName">🌌 時空の亀裂</span><span class="timerBadge" id="timer-rift-badge">次回まで</span></div>
+  <div class="timerBig" id="timer-rift-clock" role="timer" aria-label="時空の亀裂の残り時間">--:--:--</div>
+  <div class="timerBottom" id="timer-rift-info">基準時刻を確認しています…</div><div class="timerProgress"><b id="timer-rift-bar"></b></div>
+ </div>
+ <div class="timerItem" id="timer-shugo">
+  <div class="timerTopline"><span class="timerName">🐱 シューゴフェスタ</span><span class="timerBadge" id="timer-shugo-badge">次回まで</span></div>
+  <div class="timerBig" id="timer-shugo-clock" role="timer" aria-label="シューゴフェスタの残り時間">--:--:--</div>
+  <div class="timerBottom" id="timer-shugo-info">毎時00分 / 受付目安3分間</div><div class="timerProgress"><b id="timer-shugo-bar"></b></div>
+ </div>
+ <div class="timerItem" id="timer-invasion">
+  <div class="timerTopline"><span class="timerName">⚔️ 次元侵攻</span><span class="timerBadge" id="timer-invasion-badge">次回まで</span></div>
+  <div class="timerBig" id="timer-invasion-clock" role="timer" aria-label="次元侵攻の残り時間">--:--:--</div>
+  <div class="timerBottom" id="timer-invasion-info">毎時30分 / 受付目安3分間</div><div class="timerProgress"><b id="timer-invasion-bar"></b></div>
+ </div>
+ <div class="timerActions"><button id="timerSoundBtn" aria-pressed="false">🔕 音通知 OFF</button><button id="timerTestBtn">♪ 通知音テスト</button></div>
+ <div class="timerMsg" id="timerMsg" aria-live="polite"></div>
+ <details class="timerSettings"><summary>⚙️ タイマー設定・開催時刻の調整</summary>
+  <label for="timerRiftPhase">時空の亀裂の開始時刻（サーバー時刻）</label>
+  <select id="timerRiftPhase">
+   <option value="2">02・05・08・11・14・17・20・23時（既定）</option>
+   <option value="0">00・03・06・09・12・15・18・21時（別報告）</option>
+   <option value="1">01・04・07・10・13・16・19・22時（調整）</option>
+  </select>
+  <label for="timerInvasionMode">次元侵攻の開催判定</label>
+  <select id="timerInvasionMode"><option value="all">毎時30分（既定）</option><option value="skip">亀裂開催時刻の30分を除外</option></select>
+  <label for="timerLead">音通知のタイミング（ONのとき）</label>
+  <select id="timerLead"><option value="5">5分前と開始時</option><option value="10">10分前と開始時</option><option value="1">1分前と開始時</option><option value="0">開始時のみ</option></select>
+  <p class="timerHint">設定はこのブラウザ内に保存。音はこのページを開いた状態でのみ鳴ります。時刻はPC時計で計算。バックグラウンドでは通知が遅れる場合があります。</p>
+ </details>
+ <div class="timerHint">※非公式の公開時刻表による目安。ゲーム内表示が違う場合は上の設定で調整してください。イベント参加の確約ではありません。</div>
+  </div></details>
+ </section>
+
+<section class="benefits" id="benefits" aria-label="クーポンとTwitch Drops">
+ <div class="benefitsHead"><h2>🎁 クーポン・Twitch Drops</h2><span class="benefitsStat" id="benefitCount">確認中…</span></div>
+ <div id="benefitStatus" class="benefitsState" role="status">保存済みの公式発表を表示します。</div>
+ <div class="benefitsButtons"><button class="primary" id="benefitRefresh">📺 Twitch Drops情報を取得</button><button id="benefitShowHistory">期限切れクーポンを表示：OFF</button></div>
+ <details class="foldPanel benefitFold" id="foldCoupons" open>
+   <summary class="foldTitle"><span>🎟️ クーポン</span><span class="foldBadge">開閉</span></summary>
+   <div class="foldInner"><div id="couponList" aria-live="polite"></div></div>
+  </details>
+  <details class="foldPanel benefitFold" id="foldDrops" open>
+   <summary class="foldTitle"><span>📺 Twitch Drops（開催中・開催予定のみ）</span><span class="foldBadge">開閉</span></summary>
+   <div class="foldInner"><div id="dropsList" aria-live="polite"></div></div>
+  </details>
+  <details class="foldPanel benefitFold" id="foldNews">
+   <summary class="foldTitle"><span>📰 公式ニュースで検出したDrops関連記事</span><span class="foldBadge">開閉</span></summary>
+   <div class="foldInner"><div id="benefitNews" class="brief">ボタンを押すと、Drops開催告知のみ確認します。</div></div>
+  </details>
+ <a class="smallExternal" href="https://x.com/AION2_JP" target="_blank" rel="noopener noreferrer">日本公式X ↗</a>
+ <a class="smallExternal" href="https://steamcommunity.com/app/3393110/allnews/?l=japanese" target="_blank" rel="noopener noreferrer">Steam公式ニュース ↗</a>
+ <a class="smallExternal" href="https://www.twitch.tv/drops/inventory" target="_blank" rel="noopener noreferrer">Drops受取画面 ↗</a>
+ <details><summary>＋ クーポンを自分で追加 / 更新データを取り込む</summary>
+  <label class="addLabel" for="benefitCustomCode">クーポンコード</label><input id="benefitCustomCode" type="text" placeholder="英数字コード" maxlength="64" autocomplete="off" spellcheck="false">
+  <label class="addLabel" for="benefitCustomExpiry">有効期限（日本時間。未確認なら空欄）</label><input id="benefitCustomExpiry" type="datetime-local">
+  <label class="addLabel" for="benefitCustomReward">報酬メモ</label><input id="benefitCustomReward" type="text" placeholder="例：オードエネルギー×2" maxlength="160">
+  <label class="addLabel" for="benefitCustomSource">確認元のリンク（任意、httpsのみ）</label><input id="benefitCustomSource" type="text" placeholder="https://..." maxlength="400">
+  <button id="benefitAddCode" class="primary" style="margin-top:9px;width:100%">このクーポンを追加</button>
+  <div class="divider"></div><div class="brief">共同管理などで用意した更新JSONも読み込めます。JSONはデータとして解釈し、JavaScriptは実行しません。</div>
+  <input type="file" id="benefitImport" accept="application/json,.json" style="width:100%;margin-top:7px;font-size:11px">
+  <button id="benefitExport" style="width:100%;margin-top:7px">クーポン・Dropsの記録を書き出す</button>
+ </details>
+ <div class="benefitsNote">※ボタンを押した時だけSteamの公式ニュースを確認し、<b>タイトルと本文にTwitch Drops開催が明記され、開催期間が確認でき、終了していない告知だけ</b>を表示します。終了済み・開催日時不明・パッチノートなどは除外します。ローカルHTMLのCORS制限対策として、公開情報の取得に第三者の中継サービス（cors.dev）を利用します。<b>中継サービスの障害・公式Steamに載らない告知の見落としがあるため、取得失敗を「開催なし」とは判定しません。</b> 日程を解析できない告知は誤表示を避けるため一覧には追加しません。ゲームのメモリ・通信にはアクセスしません。</div>
+</section>
+
+<section class="section" id="usageHelpPanel"><h2>💡 見方</h2><p class="hint">キューブの候補地点はすべて黄色の◆で表示。出現中かどうかの判定はしません。<br>ペットは一覧から地図に表示する種類を選び、魂を確保したらLvを記録してください。<br>ゲームを操作・監視する機能はありません。</p></section><section class="section" id="privacyInfoPanel"><h2>🛡️ プライバシー</h2><p class="hint">本ツールがアクセスするのは公開のマップ・ペット・日本語名データだけです。ゲームのプロセス、メモリ、通信、画面、操作入力は読み取りません。利用許可やBANリスクゼロを保証するものではありません。</p></section></aside></div><footer class="footer"><b>非公式ファンツール。</b> AION2 © NCSOFT。キューブ・地図・ペット座標：<a href="https://github.com/problem-xyz/aion2-map-overlay" target="_blank" rel="noopener" class="link">problem-xyz/aion2-map-overlay</a>。キューブ情報の元データ：<a href="https://github.com/aion2-interactive-map/aion2-interactive-map" target="_blank" rel="noopener" class="link">aion2-interactive-map</a>（CC BY-NC 4.0、詳しくは上記GitHubのNOTICE）。日本語ペット名：<a href="https://github.com/MikeZeen/aion2-pet-tracker" target="_blank" rel="noopener" class="link">MikeZeen/aion2-pet-tracker</a>の公開言語データ参照。実際の出現や魂獲得は保証しません。</footer>
+<script>
+window.addEventListener('error',function(e){var b=document.getElementById('appBootNotice');if(b){b.style.display='block';b.hidden=false;b.textContent='⚠️ 起動エラー：'+String(e.message||'処理を実行できません')+'。HTMLプレビューではなく通常のブラウザで開いてください。';}});
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const RAW='https://raw.githubusercontent.com/problem-xyz/aion2-map-overlay/main/assets/';
+const LOCALE_URL='https://raw.githubusercontent.com/MikeZeen/aion2-pet-tracker/master/src/data/pet_names.json';
+const LOCALE_CACHE='aion2_pet_japanese_names_v17';
+const PET_CACHE='aion2_manual_pet_public_v13_';
+const CUBE_CACHE='aion2_manual_nav_public_data_v1';
+const OLD_SAVE='aion2_manual_nav_user_v13';
+const SAVE='aion2_reference_map_v17';
+const REGIONS={asmo:{name:'アルトガルド',label:'魔族・アルトガルド',pet:RAW+'pets/altgard.json',map:[RAW+'maps/altgard/reference.webp','https://aion2.app/map-images/World_D_A.webp'],detail:RAW+'maps/altgard/detail.webp'},elyos:{name:'ベルテロン',label:'天族・ベルテロン',pet:RAW+'pets/verteron.json',map:[RAW+'maps/verteron/reference.webp'],detail:RAW+'maps/verteron/detail.webp'}};
+const GENUS_COLORS={fera:'#fb977c',natura:'#7be4ae',cogni:'#8eaefe',varian:'#c6a0ff'};
+const GENUS_NAMES={fera:'野性',natura:'自然',cogni:'知性',varian:'変形'};
+const CUBE_COLOR='#ffe45e'; // 全キューブ候補地点を統一した黄色で表示（ペット系統の色と重ならない）
+let faction='asmo',area='all',layer='both',selectedPets={asmo:new Set(),elyos:new Set()},petLevels={},hideOwned=true,petFilter='all';
+let pets={asmo:[],elyos:[]}, cubes=[],cubeNumberCache=new Map(),disableCube=new Set(),translation={},localeReady=false,loadSeq=0,mapSeq=0,toastTimer=0;
+let cam={cx:50,cy:50,z:.72},offset={x:0,y:0},drag=null,moved=false,visibleNodes=[];
+let clusteredMarkers=[],clusterEnabled=true,lastHoverId='',hoverHideTimer=0;
+const CLUSTER_KEY='aion2_map_cluster_v22';
+const MAP_QUALITY_KEY='aion2_reference_map_quality_v20';
+let mapQuality='auto',mapManual=false,imageLoaded='',mapLoading='';
+const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const jpSorted=(a,b)=>String(a).localeCompare(String(b),'ja');
+function notice(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3300);}
+function save(){try{localStorage.setItem(SAVE,JSON.stringify({faction,area,layer,selectedPets:{asmo:[...selectedPets.asmo],elyos:[...selectedPets.elyos]},petLevels,hideOwned,petFilter}));}catch(e){}}
+function getOldLevels(legacy){const levels={};if(legacy?.petLevels&&typeof legacy.petLevels==='object')for(const [id,level] of Object.entries(legacy.petLevels)){const v=+level;if(Number.isInteger(v)&&v>=1&&v<=3)levels[id]=v;}if(Array.isArray(legacy?.petOwned))for(const id of legacy.petOwned)if(!levels[id])levels[id]=1;return levels;}
+function restore(){try{const x=JSON.parse(localStorage.getItem(SAVE)||'null');if(x){faction=x.faction==='elyos'?'elyos':'asmo';area=x.area||'all';layer=['both','cube','pet'].includes(x.layer)?x.layer:'both';petLevels=getOldLevels(x);selectedPets={asmo:new Set(x.selectedPets?.asmo||[]),elyos:new Set(x.selectedPets?.elyos||[])};hideOwned=x.hideOwned!==false;petFilter=x.petFilter||'all';return;}const xOld=JSON.parse(localStorage.getItem(OLD_SAVE)||'null');if(xOld){faction=xOld.faction==='elyos'?'elyos':'asmo';petLevels=getOldLevels(xOld);selectedPets={asmo:new Set((xOld.factionSnapshots?.asmo?.selectedPets||[])),elyos:new Set((xOld.factionSnapshots?.elyos?.selectedPets||[]))};hideOwned=xOld.hideOwnedPets!==false;petFilter=xOld.petListFilter||'all';}}catch(e){}}
+function levelFor(p){return Math.min(3,Math.max(0,+(petLevels[String(p.id)]||0)||0));}
+function normalized(s){return String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]/g,'');}
+// 検索専用：日本語を消さずに照合する。半角/全角とひらがな/カタカナを揃える。
+function searchKey(s){return String(s??'').normalize('NFKC').toLowerCase().replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+0x60)).replace(/[\p{Separator}\p{Punctuation}]/gu,'');}
+function petMatchesQuery(p,query){if(!query)return true;const names=[petJP(p),p.name,String(p.id)];for(const m of p.monsters){names.push(m.name);const japanese=monJP(m.name);if(japanese)names.push(japanese);}return names.some(s=>searchKey(s).includes(query));}
+function filteredPets(){const g=$('petGenus').value,f=$('petListFilter').value,q=searchKey($('petSearch').value);return pets[faction].filter(p=>{const lv=levelFor(p);return (g==='all'||p.genus===g)&&(f==='all'||f==='owned'&&lv>0||f==='unowned'&&lv===0||f.startsWith('lv')&&+f[2]===lv)&&petMatchesQuery(p,q);}).sort((a,b)=>Number(selectedPets[faction].has(b.id))-Number(selectedPets[faction].has(a.id))||levelFor(a)-levelFor(b)||jpSorted(petJP(a),petJP(b)));}
+// 検索中だけ一致ペットの出現地点を最大5種類プレビュー。既存のチェック選択を変更しない。
+function visiblePetIds(){if(!searchKey($('petSearch').value))return selectedPets[faction];return new Set(filteredPets().filter(p=>!hideOwned||!levelFor(p)).slice(0,5).map(p=>p.id));}
+
+function applyLocale(raw,origin){if(!raw?.en||!raw?.ja)throw Error('enとjaの辞書が必要です');const next={};for(const [key,en] of Object.entries(raw.en)){const name=raw.ja[key];if(typeof name==='string'&&name.trim()){next[normalized(en)]=name.trim();}}if(Object.keys(next).length<100)throw Error('日本語辞書の件数が不足しています');translation=next;localeReady=true;try{localStorage.setItem(LOCALE_CACHE,JSON.stringify(raw));}catch(e){}$('translationStatus').textContent=`✓ 日本語名辞書 ${Object.keys(next).length}件（${origin}）`;renderPets();renderMap();}
+async function loadLocale(force=false){if(!force){try{const cached=localStorage.getItem(LOCALE_CACHE);if(cached){applyLocale(JSON.parse(cached),'保存済み');return;}}catch(e){}}$('translationStatus').textContent='日本語名データを取得中…';try{const r=await fetch(LOCALE_URL,{mode:'cors',cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);applyLocale(await r.json(),'公開辞書');}catch(e){localeReady=false;$('translationStatus').textContent='⚠ 日本語名辞書の取得に失敗しました。下の「辞書JSON」を手動読込できます。英語名は表示せずペット番号で仮表示します。';renderPets();renderMap();}}
+const emergency={'armadon':'アルマドン','sparkie':'スパーキー','papis':'パピス','potcrab':'キャンサリード','forestspirit':'森の精霊','dranaslime':'ドラナ スライム','drakanprobe':'ドラカン探査機','grave rat':'墓ネズミ','fossa':'ポサ','fungie':'ファンギ','lupyllini':'ルフィーリニ','karnif':'カルニフ','kralllaborer':'クラル労働者'};
+function petJP(p){return translation[normalized(p.name)]||emergency[normalized(p.name)]||`ペット［番号${p.id}］`;}
+function monJP(s){return translation[normalized(s)]||emergency[normalized(s)]||null;}
+function parsePets(j){if(!Array.isArray(j?.pets))throw Error('pets配列がないJSONです');return j.pets.filter(p=>p&&p.id&&p.name&&Array.isArray(p.spots)).map(p=>({id:String(p.id),name:String(p.name),genus:String(p.genus||'fera').toLowerCase(),monsters:p.monsters||[],spots:p.spots.filter(s=>Array.isArray(s)&&s.length>=2&&Number.isFinite(+s[0])&&Number.isFinite(+s[1])&&+s[0]>=0&&+s[0]<=100&&+s[1]>=0&&+s[1]<=100).map(s=>[+s[0],+s[1],Math.max(1,Math.round(+s[2]||1))])}));}
+function parseCube(j){if(!Array.isArray(j?.nodes))throw Error('nodes配列がないJSONです');return j.nodes.filter(n=>n.categoryId==='hidden-cube-altgard'&&Number.isFinite(+n.x)&&Number.isFinite(+n.y)&&String(n.id).startsWith('cube-')).map(n=>({id:String(n.id),x:+n.x,y:+n.y,level:String(n.level||''),group:String(n.id).replace(/-\d+$/,'')}));}
+function loadCachedPets(which){try{const s=localStorage.getItem(PET_CACHE+which)||(which==='asmo'?localStorage.getItem('aion2_manual_pet_public_v1'):null);if(s){pets[which]=parsePets(JSON.parse(s));return true;}}catch(e){}return false;}
+async function loadPets(which,force=false){const seq=++loadSeq;if(!force&&pets[which].length){paintAll();return;}if(!force&&loadCachedPets(which)){paintAll();return;}if(which===faction){$('petStatus').textContent='ペット生息データを取得中…';}try{const r=await fetch(REGIONS[which].pet,{mode:'cors',cache:force?'no-store':'default'});if(!r.ok)throw Error('HTTP '+r.status);const json=await r.json();if(json.map&&json.map!==(which==='asmo'?'altgard':'verteron'))throw Error('マップ不一致');pets[which]=parsePets(json);try{localStorage.setItem(PET_CACHE+which,JSON.stringify(json));}catch(e){}if(which===faction){$('petStatus').textContent=`✓ ${REGIONS[which].name}のペット ${pets[which].length}種類（公開データ）`;}paintAll();}catch(e){if(which===faction){$('petStatus').textContent=`⚠ ペットデータを取得できません：${e.message}。JSONの手動読込を利用してください。`;}paintAll();}}
+async function loadCubes(force=false){if(!force){try{const s=localStorage.getItem(CUBE_CACHE);if(s){const n=parseCube(JSON.parse(s));if(n.length>=500){cubes=n;cubeNumberCache.clear();setCubeStatus('保存済みデータ');paintAll();return;}}}catch(e){}}setCubeStatus('取得中…',true);try{const r=await fetch(RAW+'object-sets/altgard.json',{mode:'cors',cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);const j=await r.json();cubes=parseCube(j);cubeNumberCache.clear();try{localStorage.setItem(CUBE_CACHE,JSON.stringify({nodes:j.nodes.filter(n=>n.categoryId==='hidden-cube-altgard')}));}catch(e){}setCubeStatus('公開データ');paintAll();}catch(e){setCubeStatus('自動取得できません。キューブJSONを手動で指定してください',true);paintAll();}}
+function setCubeStatus(origin,error=false){$('dataStatus').textContent=error?'⚠ '+origin:`✓ ${cubes.length.toLocaleString('ja-JP')}候補地点（${origin}）`;}
+function groupNo(group){if(!cubeNumberCache.has(group)){cubeNumberCache=new Map([...new Set(cubes.map(x=>x.group))].sort().map((g,i)=>[g,i+1]));}return cubeNumberCache.get(group)||0;}
+function cubeRegion(group){const g=group.toLowerCase();const pairs=[['westgribade','西グリバデ高原'],['easterngr ibade','東グリバデ高原'],['easterngribade','東グリバデ高原'],['eastgribade','東グリバデ高原'],['fafnite','ファフナイト鉱床'],['dredgion','ドレドギオン墜落地'],['unnamed_cemetery','無名墓地'],['nameless','無名墓地'],['zemurru','ゼムルの墓'],['steelhammer','スティールハンマー作業場'],['basfelt','バスフェルト遺跡'],['battlescar','激戦の丘'],['purifying','浄化の森'],['spiritisle','精霊の島'],['moslan','モスランの森'],['silenthill','沈黙の丘'],['ural','ウルサス'],['forest','森'],['grave','墓地'],['gribade','グリバデ高原'],['blackclaw','黒爪の村'],['drona','ドレナクトス'],['dranactus','ドレナクトス'],['lake','湖'],['camp','野営地'],['fortress','要塞'],['hill','丘陵'],['river','川']];for(const [pat,jp] of pairs)if(g.includes(pat.replace(/ /g,'')))return jp;return 'アルトガルド';}
+function groupLabel(group){return `${cubeRegion(group)}・出現グループ${String(groupNo(group)).padStart(2,'0')}`;}
+function areaCube(n){if(area==='all')return true;const g=n.group.toLowerCase();return ({west:/westgribade/,faf:/fafnit/,dred:/dredgion/,nameless:/unnamed|cemetery/})[area]?.test(g)??true;}
+function areaPet(x,y){if(area==='all'||faction==='elyos')return true;const regions={west:[57,71,53,70],faf:[64,76,51,70],dred:[36,57,29,49],nameless:[25,40,29,50]};const a=regions[area]||[0,100,0,100];return x>=a[0]&&x<=a[1]&&y>=a[2]&&y<=a[3];}
+function cubeColor(){return CUBE_COLOR;}
+function shownPoints(){const list=[];const visibleIds=visiblePetIds();if(faction==='asmo'&&layer!=='pet'){for(const n of cubes)if(areaCube(n)&&!disableCube.has(n.group)){list.push({...n,kind:'cube',label:groupLabel(n.group)+' · 出現候補'});}}if(layer!=='cube'||faction==='elyos'){for(const p of pets[faction]){if(!visibleIds.has(p.id)||hideOwned&&levelFor(p)>0)continue;for(const [x,y,w] of p.spots)if(areaPet(x,y))list.push({kind:'pet',id:p.id,x,y,w,label:'🐾 '+petJP(p)+' · 出現候補',genus:p.genus});}}return list;}
+function renderStats(){let acquired=0,total=0,complete=true;for(const f of ['asmo','elyos']){const p=pets[f],c=p.filter(x=>levelFor(x)>0).length;$(f==='asmo'?'statAsmo':'statElyos').textContent=p.length?`${c} / ${p.length}`:'— / —';if(!p.length)complete=false;acquired+=c;total+=p.length;}const percent=total?acquired/total*100:0;$('statTotal').textContent=complete?`${acquired} / ${total}`:'— / —';$('statRate').textContent=complete?`${Number.isInteger(percent)?percent:percent.toFixed(1)}%`:'— %';$('soulProgress').style.width=complete?percent+'%':'0%';$('statNote').textContent=complete?'Lv1以上を確保済みとして集計。両陣営で重なるペットはそれぞれ1種類と数えます。':'両陣営のデータが揃うと合算収集率を表示します。';}
+function renderGroups(){const base=new Map();for(const n of cubes)if(areaCube(n))base.set(n.group,(base.get(n.group)||0)+1);$('groupList').innerHTML=[...base].sort((a,b)=>jpSorted(groupLabel(a[0]),groupLabel(b[0]))).map(([g,n])=>`<label class="checkitem"><input type="checkbox" class="groupToggle" data-group="${safe(g)}" ${disableCube.has(g)?'':'checked'}><span class="chip" style="background:${cubeColor(g)}"></span><span style="flex:1">${safe(groupLabel(g))}</span><small>${n}地点</small></label>`).join('')||'<span class="hint">候補がありません</span>';$('groupList').querySelectorAll('.groupToggle').forEach(x=>x.addEventListener('change',()=>{if(x.checked)disableCube.delete(x.dataset.group);else disableCube.add(x.dataset.group);renderMap();}));}
+function renderPets(){const p=pets[faction],ps=filteredPets(),searchText=$('petSearch').value.trim(),isSearching=!!searchKey(searchText);const eligible=ps.filter(x=>!hideOwned||!levelFor(x));const extra=isSearching?(eligible.length?` ／ 地図に${Math.min(eligible.length,5)}種類を一時表示${eligible.length>5?'（上位5種類）':''}`:' ／ 地図表示なし'):'';
+$('petSearchSummary').textContent=isSearching?`「${searchText}」の検索結果：${ps.length}種類${extra}`:`ペット名・モンスター名で検索できます。絞り込みは一覧と地図に反映。`;
+$('clearPetSearch').disabled=!searchText;
+$('ownedStats').textContent=`確保済み ${p.filter(x=>levelFor(x)>0).length} / ${p.length||'—'}`;$('petSelectedCount').textContent=selectedPets[faction].size+'/5';$('petList').innerHTML=`<div class="petListStatus">表示 ${ps.length} / 全${p.length}種類　／　${isSearching?'検索結果を地図に一時表示中':'☑で地図に表示'}</div>`+ps.map(x=>{const lv=levelFor(x),sel=selectedPets[faction].has(x.id);const mon=x.monsters.map(m=>monJP(m.name)).filter(Boolean);const meta=mon.length?[...new Set(mon)].slice(0,2).join('・')+' · '+x.spots.length+'地点':`出現地点 ${x.spots.length}か所 ／ 対象モンスター ${x.monsters.length}種類`;return `<div class="petRow ${lv?'owned':''}"><label class="petMain"><input class="petCheck" data-pet="${safe(x.id)}" type="checkbox" ${sel?'checked':''} ${lv&&hideOwned?'disabled':''}><span class="chip" style="background:${GENUS_COLORS[x.genus]||'#9de8e4'}"></span><span><strong class="petName">${safe(petJP(x))}</strong><br><span class="petMeta">${safe(meta)}</span></span></label><div class="petActions"><select class="soulLevel" data-pet="${safe(x.id)}" aria-label="${safe(petJP(x))}の魂確保レベル"><option value="0" ${!lv?'selected':''}>未確保</option><option value="1" ${lv===1?'selected':''}>Lv1確保</option><option value="2" ${lv===2?'selected':''}>Lv2確保</option><option value="3" ${lv===3?'selected':''}>Lv3確保</option></select><button class="petMapBtn" data-pet="${safe(x.id)}">🗺️ 地図へ</button></div></div>`;}).join('');if(!p.length)$('petList').innerHTML='<p class="hint">ペットデータを読み込めていません。</p>';else if(!ps.length)$('petList').innerHTML='<p class="hint">検索条件に合うペットがありません。</p>';
+$('petList').querySelectorAll('.petCheck').forEach(x=>x.onchange=()=>{const set=selectedPets[faction];if(x.checked&&set.size>=5){x.checked=false;notice('同時表示は5種類までです');return;}if(x.checked)set.add(x.dataset.pet);else set.delete(x.dataset.pet);if(faction==='asmo'&&layer==='cube'&&x.checked){layer='both';$('layerMode').value='both';}save();renderPets();renderMap();});
+$('petList').querySelectorAll('.soulLevel').forEach(x=>x.onchange=()=>{const v=+x.value;if(v===0)delete petLevels[x.dataset.pet];else petLevels[x.dataset.pet]=v;if(v&&hideOwned)selectedPets[faction].delete(x.dataset.pet);save();paintAll();notice(v?'魂確保Lvを更新しました':'未確保に戻しました');});
+$('petList').querySelectorAll('.petMapBtn').forEach(x=>x.onclick=()=>{const p0=p.find(p=>p.id===x.dataset.pet);if(!p0?.spots.length)return;const set=selectedPets[faction];if(hideOwned&&levelFor(p0)>0){notice('確保済み非表示を解除すると地図に表示できます');return;}if(!set.has(p0.id)){if(set.size>=5){notice('地図に表示できるのは5種類までです');return;}set.add(p0.id);}if(faction==='asmo'&&layer==='cube'){layer='both';$('layerMode').value='both';}area='all';$('areaSelect').value='all';const best=p0.spots.reduce((a,b)=>b[2]>a[2]?b:a);focus(best[0],best[1],3.8);save();renderGroups();renderPets();renderMap();});}
+function paintAll(){renderStats();renderPets();renderGroups();renderMap();if(pets[faction].length)$('petStatus').textContent=`✓ ${REGIONS[faction].name}・${pets[faction].length}種類のペット候補（公開データまたは保存済み）`;}
+// Marker clusters are calculated using distances in displayed pixels, never map pixels.
+// Keep cube groups and pet groups separate so their colors and meanings never mix.
+function buildClusters(points){
+ const radius=23,cell=radius,grid=new Map(),result=[];
+ const key=(kind,gx,gy)=>kind+'|'+gx+'|'+gy;
+ const placed=[...points].sort((a,b)=>a.kind.localeCompare(b.kind)||a.y-b.y||a.x-b.x);
+ // At high zoom NEVER group distinct points into a numbered marker.
+ // For genuinely coincident positions, spread the icons in a small spiral
+ // so every candidate can be inspected individually.
+ if(!clusterEnabled || cam.z>=6){
+  const single=placed.map((p,id)=>({kind:p.kind,x:p.x,y:p.y,sx:offset.x+p.x*10*cam.z,sy:offset.y+p.y*10*cam.z,items:[p],id}));
+  if(cam.z>=6 && clusterEnabled){
+   const bins=new Map(),dist=14;
+   for(const item of single){
+    const gx=Math.floor(item.sx/dist),gy=Math.floor(item.sy/dist);
+    let group=null;
+    for(let dy=-1;dy<=1&&!group;dy++)for(let dx=-1;dx<=1&&!group;dx++){
+     for(const g of bins.get(key("all",gx+dx,gy+dy))||[]){
+      if(Math.hypot(g.cx-item.sx,g.cy-item.sy)<dist){group=g;break;}
+     }
+    }
+    if(!group){group={cx:item.sx,cy:item.sy,items:[]};const k=key("all",gx,gy);if(!bins.has(k))bins.set(k,[]);bins.get(k).push(group);}
+    group.items.push(item);
+   }
+   const groups=new Set();for(const a of bins.values())for(const g of a)groups.add(g);
+   for(const g of groups){
+    if(g.items.length===1)continue;
+    // Center is the average of the unadjusted positions.
+    const ax=g.items.reduce((a,b)=>a+b.sx,0)/g.items.length;
+    const ay=g.items.reduce((a,b)=>a+b.sy,0)/g.items.length;
+    const total=g.items.length;
+    g.items.forEach((a,i)=>{
+     const angle=i*2.399963229728653;
+     const r=16*Math.sqrt(i+1);
+     a.sx=ax+Math.cos(angle)*r;
+     a.sy=ay+Math.sin(angle)*r;
+     a.x=(a.sx-offset.x)/(10*cam.z);
+     a.y=(a.sy-offset.y)/(10*cam.z);
+     a.spider=true;
+    });
+   }
+  }
+  return single;
+ }
+ for(const p of placed){
+  const sx=offset.x+p.x*10*cam.z,sy=offset.y+p.y*10*cam.z;
+  const gx=Math.floor(sx/cell),gy=Math.floor(sy/cell);
+  let target=null,best=radius*radius;
+  for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
+   for(const idx of grid.get(key(p.kind,gx+dx,gy+dy))||[]){
+    const a=result[idx];const d=(a.sx-sx)**2+(a.sy-sy)**2;
+    if(d<best&&Math.max(Math.abs(a.sx-sx),Math.abs(a.sy-sy))<radius){target=a;best=d;}
+   }
+  }
+  if(target){
+   target.items.push(p);const count=target.items.length;
+   target.sx+=(sx-target.sx)/count;target.sy+=(sy-target.sy)/count;
+   target.x+=(p.x-target.x)/count;target.y+=(p.y-target.y)/count;
+  }else{
+   target={kind:p.kind,x:p.x,y:p.y,sx,sy,items:[p],id:result.length};result.push(target);
+   const k=key(p.kind,gx,gy);if(!grid.has(k))grid.set(k,[]);grid.get(k).push(target.id);
+  }
+ }
+ return result;
+}
+function markerTooltip(a){
+ const counts=new Map();
+ for(const p of a.items){
+  const label=p.kind==='cube'?groupLabel(p.group):p.label.replace(/^🐾\s*/, '').replace(/\s*·\s*出現候補$/, '');
+  counts.set(label,(counts.get(label)||0)+1);
+ }
+ const kind=a.kind==='cube'?'💎 キューブ候補':'🐾 ペットの狩り場';
+ const labels=[...counts].sort((aa,bb)=>aa[0].localeCompare(bb[0],'ja'));
+ const list=labels.map(([name,n])=>`<div class="hoverName">・${safe(name)}${n>1?` <b>（${n}地点）</b>`:''}</div>`).join('');
+ return `<div class="hoverTitle">${kind}：${a.items.length}地点${labels.length>1?`／${labels.length}種類・グループ`:''}</div><div class="hoverNames">${list}</div>${a.items.length>1?'<div class="hoverHelp">最大拡大付近で各地点を分離します</div>':''}`;
+}
+function hidePointHover(){clearTimeout(hoverHideTimer);lastHoverId='';$('pointHover').style.display='none';}
+function hidePointHoverSoon(){clearTimeout(hoverHideTimer);hoverHideTimer=setTimeout(hidePointHover,220);}
+function showPointHover(a,clientX,clientY){
+ clearTimeout(hoverHideTimer);const h=$('pointHover');
+ const id=a.id+':'+a.items.length+':'+faction;
+ if(lastHoverId!==id){h.innerHTML=markerTooltip(a);lastHoverId=id;}
+ h.style.display='block';
+ const rect=$('viewport').getBoundingClientRect();
+ // Measure after setting content; keep even long lists within the viewport.
+ const width=h.offsetWidth,height=h.offsetHeight;
+ const x=clientX-rect.left+14,y=clientY-rect.top-height-10;
+ h.style.left=Math.round(Math.max(8,Math.min(rect.width-width-8,x)))+'px';
+ h.style.top=Math.round(Math.max(8,Math.min(rect.height-height-8,y)))+'px';
+}
+function renderMap(){
+ visibleNodes=shownPoints();
+ $('spotCount').textContent=visibleNodes.length;
+ $('cubeCount').textContent=visibleNodes.filter(n=>n.kind==='cube').length;
+ $('petVisibleCount').textContent=visibleNodes.filter(n=>n.kind==='pet').length;
+ $('areaDataHint').textContent=faction==='asmo'?`登録済み：${cubes.length}候補地点。地域フィルターは対象地域名の一致に基づきます。`:'天族ではペットのみ表示します。';
+ clusteredMarkers=buildClusters(visibleNodes);
+ hidePointHover();
+ const unit=px=>(px/cam.z).toFixed(3);
+ // SVG is outside the bitmap mapstage, so marks remain crisp at every zoom.
+ $('markerLayer').innerHTML=clusteredMarkers.map(a=>{
+  const x=a.x*10,y=a.y*10,n=a.items.length;
+  const tether=a.spider?`<line x1="${(a.items[0].x*10).toFixed(3)}" y1="${(a.items[0].y*10).toFixed(3)}" x2="${x.toFixed(3)}" y2="${y.toFixed(3)}" stroke="#f5e7ca" stroke-width="${unit(.9)}" opacity=".6"/>`:'';
+  if(n>1){
+   const cube=a.kind==='cube';
+   const color=cube?CUBE_COLOR:'#6ce6d0';
+   const r=Math.max(11,Math.min(17,11+String(n).length*2));
+   // Geometry scales by inverse zoom, keeping circle and count readable.
+   const textSize=unit(n>99?10:n>9?11.5:12.5);
+   return `<g class="clusterMark" aria-label="${cube?'キューブ':'ペット'} ${n}地点"><circle cx="${x.toFixed(3)}" cy="${y.toFixed(3)}" r="${unit(r)}" fill="${color}" stroke="#092838" stroke-width="${unit(2.1)}" opacity=".98"/><text class="clusterText" x="${x.toFixed(3)}" y="${y.toFixed(3)}" font-size="${textSize}" stroke="${color}" stroke-width="${unit(.4)}">${n}</text></g>`;
+  }
+  const p=a.items[0];
+  if(a.kind==='cube'){
+   const r=3.8/cam.z,d=(r*2).toFixed(3);
+   return tether+`<rect class="cubeMark" x="${(x-r).toFixed(3)}" y="${(y-r).toFixed(3)}" width="${d}" height="${d}" transform="rotate(45 ${x.toFixed(3)} ${y.toFixed(3)})" fill="${CUBE_COLOR}" stroke="#473715" stroke-width="${unit(1)}" opacity=".97"/>`;
+  }
+  const c=GENUS_COLORS[p.genus]||'#ffa78c';
+  const size=Math.min(6,3.4+Math.log2(p.w||1)*.55);
+  return tether+`<circle class="petMark" cx="${x.toFixed(3)}" cy="${y.toFixed(3)}" r="${unit(size)}" fill="${c}" stroke="#122235" stroke-width="${unit(1)}" opacity=".95"/>`;
+ }).join('');
+}
+function sizeView(){return{w:$('viewport').clientWidth,h:$('viewport').clientHeight};}
+function updateTransform(){
+ const {w,h}=sizeView();
+ offset={x:w/2-cam.cx*10*cam.z,y:h/2-cam.cy*10*cam.z};
+ $('mapstage').style.transform=`translate(${offset.x}px,${offset.y}px) scale(${cam.z})`;
+ // パン・ズーム後もSVGの図形をベクターのまま描画する。
+ $('mapSvg').setAttribute('viewBox',`0 0 ${Math.max(1,w)} ${Math.max(1,h)}`);
+ $('markerLayer').setAttribute('transform',`translate(${offset.x} ${offset.y}) scale(${cam.z})`);
+}
+function focus(x,y,z){cam={cx:x,cy:y,z};updateTransform();renderMap();loadBackground();}
+function screenToMap(x,y){const r=$('viewport').getBoundingClientRect();return{x:Math.max(0,Math.min(100,((x-r.left-offset.x)/cam.z)/10)),y:Math.max(0,Math.min(100,((y-r.top-offset.y)/cam.z)/10))};}
+function zoomAt(point,ratio){const pt=screenToMap(point.x,point.y);cam.z=Math.max(.45,Math.min(15,cam.z*ratio));const r=$('viewport').getBoundingClientRect();cam.cx=pt.x-((point.x-r.left)-r.width/2)/(10*cam.z);cam.cy=pt.y-((point.y-r.top)-r.height/2)/(10*cam.z);updateTransform();renderMap();loadBackground();}
+function centerZoom(r){const b=$('viewport').getBoundingClientRect();zoomAt({x:b.left+b.width/2,y:b.top+b.height/2},r);}
+function loadBackground(){
+ if(mapManual)return;
+ const which=faction, region=REGIONS[which];
+ // 通常4K、十分に拡大したら8Kを取得。手動で8K優先にもできる。
+ const high=mapQuality==='detail'||(mapQuality==='auto'&&cam.z>=2.8);
+ const urls=high?[region.detail,...region.map]:region.map.slice();
+ const primary=urls[0];
+ if(imageLoaded===primary||mapLoading===primary)return;
+ const token=++mapSeq, img=$('baseimage');
+ mapLoading=primary;
+ $('mapArtStatus').textContent=high?'8K詳細地図を読み込み中…':'背景地図を読み込み中…';
+ function tryUrl(i){
+  if(token!==mapSeq||which!==faction)return;
+  if(i>=urls.length){mapLoading='';$('mapArtStatus').textContent='⚠ 地図を取得できません。手動で地図画像を選んでください。';return;}
+  const pre=new Image();
+  pre.onload=()=>{
+   if(token!==mapSeq||which!==faction)return;
+   img.src=pre.src;img.style.opacity=1;
+   imageLoaded=primary;mapLoading='';
+   $('mapArtStatus').textContent=`✓ ${region.name}：${pre.naturalWidth.toLocaleString('ja-JP')}px地図${i?'（代替画像）':''}`;
+  };
+  pre.onerror=()=>tryUrl(i+1);
+  pre.src=urls[i];
+ }
+ tryUrl(0);
+}
+function switchFaction(f){if(!REGIONS[f])return;mapManual=false;imageLoaded='';mapLoading='';faction=f;if(f==='elyos'){area='all';layer='pet';}else area='all';$('factionSelect').value=f;$('areaSelect').value=area;$('areaSelect').hidden=f==='elyos';$('layerMode').hidden=f==='elyos';$('layerMode').value=layer;$('cubeDataSection').hidden=f==='elyos';$('cubeLegend').hidden=f==='elyos';$('factionBadge').textContent=REGIONS[f].label;$('mapTitle').textContent='🗺️ '+REGIONS[f].name;$('baseimage').alt=REGIONS[f].name+'の全域マップ';$('petSourceLink').href=REGIONS[f].pet;disableCube.clear();$('petSearch').value='';save();paintAll();focus(50,50,.72);loadBackground();if(!pets[f].length)loadPets(f);}
+function downloadJson(obj,name){const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),15000);}
+function setup(){try{clusterEnabled=localStorage.getItem(CLUSTER_KEY)!=='false';}catch(e){}$('clusterEnabled').checked=clusterEnabled;$('clusterEnabled').onchange=e=>{clusterEnabled=e.target.checked;try{localStorage.setItem(CLUSTER_KEY,String(clusterEnabled));}catch(err){}renderMap();};restore();try{mapQuality=localStorage.getItem(MAP_QUALITY_KEY)||'auto';}catch(e){}if(!['auto','detail','reference'].includes(mapQuality))mapQuality='auto';$('mapQuality').value=mapQuality;$('mapQuality').onchange=e=>{mapQuality=e.target.value;mapManual=false;imageLoaded='';try{localStorage.setItem(MAP_QUALITY_KEY,mapQuality);}catch(err){}loadBackground();};$('hideOwnedPets').checked=hideOwned;$('petListFilter').value=['all','unowned','owned','lv1','lv2','lv3'].includes(petFilter)?petFilter:'all';$('factionSelect').onchange=e=>switchFaction(e.target.value);$('areaSelect').onchange=e=>{area=e.target.value;disableCube.clear();save();paintAll();const p={west:[64,61,4.2],faf:[70,56,4],dred:[45,39,3.2],nameless:[31,38,4.2],all:[50,50,.72]}[area];focus(...p);};$('layerMode').onchange=e=>{layer=e.target.value;save();renderMap();};$('petSearch').oninput=()=>{renderPets();renderMap();};$('clearPetSearch').onclick=()=>{$('petSearch').value='';renderPets();renderMap();$('petSearch').focus();};$('petGenus').onchange=()=>{renderPets();renderMap();};$('petListFilter').onchange=e=>{petFilter=e.target.value;save();renderPets();renderMap();};$('hideOwnedPets').onchange=e=>{hideOwned=e.target.checked;save();paintAll();};$('clearPets').onclick=()=>{selectedPets[faction].clear();save();paintAll();};$('resetPetsOwned').onclick=()=>{if(confirm('魔族・天族の魂確保Lvをすべて削除しますか？')){petLevels={};save();paintAll();}};
+$('reloadPets').onclick=()=>loadPets(faction,true);$('petPickJson').onclick=()=>$('petJsonFile').click();$('petJsonFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>10e6)throw Error('JSONが大きすぎます');const j=JSON.parse(await f.text());const expected=faction==='asmo'?'altgard':'verteron';if(j.map&&j.map!==expected)throw Error('現在の陣営と違うデータです');pets[faction]=parsePets(j);try{localStorage.setItem(PET_CACHE+faction,JSON.stringify(j));}catch(x){}paintAll();notice('ペットデータを読み込みました');}catch(e){notice('読込失敗：'+e.message);}e.target.value='';};
+$('reloadData').onclick=()=>loadCubes(true);$('pickJson').onclick=()=>$('jsonFile').click();$('jsonFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>12e6)throw Error('JSONが大きすぎます');const j=JSON.parse(await f.text());cubes=parseCube(j);cubeNumberCache.clear();try{localStorage.setItem(CUBE_CACHE,JSON.stringify(j));}catch(x){}setCubeStatus('手動読込');paintAll();notice('キューブの地点を読み込みました');}catch(err){notice('キューブJSONの読込失敗：'+err.message);}e.target.value='';};
+$('pickLocale').onclick=()=>$('localeJson').click();$('localeJson').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>2e6)throw Error('辞書ファイルが大きすぎます');applyLocale(JSON.parse(await f.text()),'手動読込');notice('日本語辞書を読み込みました');}catch(err){notice('辞書の読込失敗：'+err.message);}e.target.value='';};
+$('exportBtn').onclick=()=>{save();downloadJson({format:'aion2-manual-nav-progress',version:5,faction,factionSnapshots:{asmo:{selectedPets:[...selectedPets.asmo]},elyos:{selectedPets:[...selectedPets.elyos]}},petLevels,petOwned:Object.keys(petLevels).filter(id=>petLevels[id]>0),hideOwnedPets:hideOwned,petListFilter:petFilter},'AION2_魂確保管理_'+new Date().toISOString().slice(0,10)+'.json');};
+$('importBtn').onclick=()=>$('saveFile').click();$('saveFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>5e6)throw Error('ファイルサイズが大きすぎます');const j=JSON.parse(await f.text());if(j.format!=='aion2-manual-nav-progress')throw Error('対応していない形式です');petLevels=getOldLevels(j);selectedPets.asmo=new Set(j.factionSnapshots?.asmo?.selectedPets||[]);selectedPets.elyos=new Set(j.factionSnapshots?.elyos?.selectedPets||[]);hideOwned=j.hideOwnedPets!==false;petFilter=j.petListFilter||'all';$('hideOwnedPets').checked=hideOwned;$('petListFilter').value=petFilter;save();paintAll();notice('魂確保記録を復元しました');}catch(err){notice('記録復元に失敗：'+err.message);}e.target.value='';};
+$('chooseMap').onclick=()=>$('mapFile').click();$('mapFile').onchange=e=>{const f=e.target.files?.[0];if(!f)return;if(!f.type.startsWith('image/'))return;const r=new FileReader();r.onload=()=>{mapSeq++;mapManual=true;mapLoading='';imageLoaded='';$('baseimage').src=r.result;$('baseimage').style.opacity=1;$('mapArtStatus').textContent='手動選択の背景地図を表示中（画質自動切替は停止）';};r.readAsDataURL(f);};
+$('zoomIn').onclick=()=>centerZoom(1.4);$('zoomOut').onclick=()=>centerZoom(1/1.4);$('zoomHome').onclick=()=>focus(50,50,.72);
+const vp=$('viewport');vp.addEventListener('pointerdown',e=>{if(e.button!==0)return;drag={x:e.clientX,y:e.clientY,cx:cam.cx,cy:cam.cy,ox:offset.x,oy:offset.y};moved=false;vp.setPointerCapture(e.pointerId);});vp.addEventListener('pointermove',e=>{if(e.target.closest?.('#pointHover')){clearTimeout(hoverHideTimer);return;}if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(dx,dy)>4)moved=true;if(moved){const v=sizeView();cam.cx=(v.w/2-drag.ox-dx)/(10*cam.z);cam.cy=(v.h/2-drag.oy-dy)/(10*cam.z);updateTransform();hidePointHover();return;}}const rect=vp.getBoundingClientRect();const px=e.clientX-rect.left,py=e.clientY-rect.top;let nearest=null,best=Infinity;for(const a of clusteredMarkers){const d=Math.hypot(a.sx-px,a.sy-py);const hit=a.items.length>1?17:11;if(d<best&&d<=hit){best=d;nearest=a;}}if(nearest)showPointHover(nearest,e.clientX,e.clientY);else hidePointHoverSoon();});vp.addEventListener('pointerup',e=>{
+ if(!moved && (e.pointerType==='touch'||e.pointerType==='pen')){
+  const rect=vp.getBoundingClientRect();const px=e.clientX-rect.left,py=e.clientY-rect.top;
+  let nearest=null,best=Infinity;
+  for(const a of clusteredMarkers){const d=Math.hypot(a.sx-px,a.sy-py);if(d<best&&d<=23){best=d;nearest=a;}}
+  if(nearest)showPointHover(nearest,e.clientX,e.clientY);else hidePointHover();
+ }
+ drag=null;if(moved)renderMap();
+});vp.addEventListener('pointercancel',()=>{drag=null;if(moved)renderMap();});vp.addEventListener('pointerleave',hidePointHoverSoon);$('pointHover').addEventListener('wheel',e=>e.stopPropagation(),{passive:true});$('pointHover').addEventListener('pointerenter',()=>clearTimeout(hoverHideTimer));$('pointHover').addEventListener('pointerleave',hidePointHoverSoon);vp.addEventListener('wheel',e=>{e.preventDefault();zoomAt({x:e.clientX,y:e.clientY},e.deltaY<0?1.2:1/1.2);},{passive:false});window.addEventListener('resize',()=>{updateTransform();renderMap();});
+// 既存のイベント・特典スクリプトは別ブロックで動く。ゲームの内部情報にはアクセスしない。
+switchFaction(faction);loadLocale();loadCubes();for(const f of ['asmo','elyos'])if(f!==faction)loadPets(f);}
+setup();
+const bootNotice=document.getElementById("appBootNotice");if(bootNotice){bootNotice.hidden=true;bootNotice.style.display='none';}
+})();
+
+</script>
+<script>
+/* AION2 Event Timer — schedule calculations only: no game/network/process/screen access. */
+(()=>{'use strict';
+ const el=id=>document.getElementById(id);
+ const KEY='aion2_manual_event_timer_v15';
+ const HOUR=3600000, DAY=86400000, JST=9*HOUR;
+ const DEFAULT={riftPhase:2,invasionMode:'all',lead:5,sound:false};
+ let cfg={...DEFAULT},audioCtx=null,notified=new Set(),lastSettingsToast=0, msgTimer=null;
+ try{const stored=JSON.parse(localStorage.getItem(KEY)||'{}');if(stored&&typeof stored==='object') cfg={...cfg,...stored};}catch(e){}
+ if(![0,1,2].includes(Number(cfg.riftPhase)))cfg.riftPhase=2;
+ cfg.riftPhase=Number(cfg.riftPhase);
+ if(!['all','skip'].includes(cfg.invasionMode))cfg.invasionMode='all';
+ if(![0,1,5,10].includes(Number(cfg.lead)))cfg.lead=5;
+ cfg.lead=Number(cfg.lead);
+ // Sound is OFF on each fresh load: a user click is required to unlock Web Audio.
+ cfg.sound=false;
+ function save(){try{localStorage.setItem(KEY,JSON.stringify({...cfg,sound:false}));}catch(e){}}
+ function clock(ms){const s=Math.max(0,Math.ceil(ms/1000));const hh=Math.floor(s/3600);return [hh,Math.floor(s/60)%60,s%60].map(n=>String(n).padStart(2,'0')).join(':');}
+ function stamp(epoch,now){const dt=new Date(epoch+JST), today=new Date(now+JST);const d1=Math.floor((epoch+JST)/DAY),d0=Math.floor((now+JST)/DAY);const day=d1===d0?'今日':d1===d0+1?'明日':(dt.getUTCMonth()+1)+'/'+dt.getUTCDate();return day+' '+String(dt.getUTCHours()).padStart(2,'0')+':'+String(dt.getUTCMinutes()).padStart(2,'0');}
+ function inRiftHour(epoch){const h=new Date(epoch+JST).getUTCHours();return (h-cfg.riftPhase+24)%3===0;}
+ function timesFor(id,now){
+  const local=now+JST, floorHour=Math.floor(local/HOUR)*HOUR;
+  const found=[];
+  for(let i=-6;i<=6;i++){
+   const serverStart=floorHour+i*HOUR+(id==='invasion'?30*60000:0);
+   if(id==='rift'&&!inRiftHour(serverStart-JST))continue;
+   if(id==='invasion'&&cfg.invasionMode==='skip'&&inRiftHour(serverStart-JST))continue;
+   found.push(serverStart-JST);
+  }
+  return {last:found.filter(t=>t<=now).at(-1),next:found.find(t=>t>now)};
+ }
+ const events=[
+  {id:'rift',title:'時空の亀裂',period:3*HOUR,entry:10*60000,duration:60*60000},
+  {id:'shugo',title:'シューゴフェスタ',period:HOUR,entry:3*60000,duration:8*60000},
+  {id:'invasion',title:'次元侵攻',period:HOUR,entry:3*60000,duration:13*60000}
+ ];
+ function snapshot(event,now){
+  const {last,next}=timesFor(event.id,now);const elapsed=now-last;
+  if(elapsed>=0&&elapsed<event.entry){return {event,now,last,next,status:'受付中',label:'受付終了まで',remain:event.entry-elapsed,bar:(elapsed/event.entry)*100,tint:'active',extra:event.id==='rift'?'ポータル開放中（目安10分間）':'参加受付中（目安3分間）'};}
+  if(elapsed>=event.entry&&elapsed<event.duration){return {event,now,last,next,status:'開催中',label:'進行中 / 次回まで',remain:next-now,bar:Math.min(100,elapsed/event.duration*100),tint:'active',extra:event.id==='rift'?'ポータル入場は終了・滞在可能時間の目安':'受付終了・イベント開催中（目安）'};}
+  return {event,now,last,next,status:'開始まで',label:'次回開始まで',remain:next-now,bar:Math.min(100,(1-(next-now)/event.period)*100),tint:next-now<=5*60000?'soon':'',extra:event.id==='rift'?'入場可能時間は開始から10分間':'参加受付は開始から約3分間'};
+ }
+ function msg(s){const a=el('timerMsg');a.textContent=s;clearTimeout(msgTimer);msgTimer=setTimeout(()=>a.textContent='',7000);}
+ function play(){try{
+   const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;
+   if(!audioCtx)audioCtx=new AC();if(audioCtx.state==='suspended')audioCtx.resume();
+   const t=audioCtx.currentTime;
+   for(let i=0;i<2;i++){
+    const o=audioCtx.createOscillator(),gain=audioCtx.createGain();o.type='sine';o.frequency.setValueAtTime(i?740:880,t+i*.23);
+    gain.gain.setValueAtTime(.0001,t+i*.23);gain.gain.exponentialRampToValueAtTime(.14,t+i*.23+.025);gain.gain.exponentialRampToValueAtTime(.0001,t+i*.23+.19);
+    o.connect(gain).connect(audioCtx.destination);o.start(t+i*.23);o.stop(t+i*.23+.2);
+   }return true;
+  }catch(err){return false;}}
+ function updateSoundBtn(){el('timerSoundBtn').textContent=cfg.sound?'🔔 音通知 ON':'🔕 音通知 OFF';el('timerSoundBtn').setAttribute('aria-pressed',cfg.sound?'true':'false');}
+ function maybeNotify(e,now){if(!cfg.sound)return;
+  const stages=cfg.lead>0?[[cfg.lead,'開始'+cfg.lead+'分前'],[0,'開始時']]:[[0,'開始時']];
+  for(const [minutes,kind] of stages){const eventTime=minutes===0?e.last:e.next, trigger=eventTime-minutes*60000, delta=now-trigger;
+   // Only while timer is open; no hidden/system notifications.
+   if(delta>=0&&delta<1400){const key=e.event.id+':'+eventTime+':'+minutes;if(notified.has(key))continue;
+    notified.add(key);play();msg('🔔 '+e.event.title+' '+kind+'です！（'+stamp(eventTime,now)+'）');
+   }
+  }
+  if(notified.size>100){notified=new Set([...notified].slice(-40));}
+ }
+ function render(){const now=Date.now();const all=events.map(e=>snapshot(e,now));
+  for(const d of all){const id=d.event.id,card=el('timer-'+id),count=el('timer-'+id+'-clock');card.classList.toggle('active',d.tint==='active');card.classList.toggle('soon',d.tint==='soon');
+   el('timer-'+id+'-badge').textContent=d.status;count.textContent=clock(d.remain);
+   el('timer-'+id+'-info').textContent=d.extra+' ／ 次回 '+stamp(d.next,now);
+   el('timer-'+id+'-bar').style.width=d.bar.toFixed(1)+'%';
+   maybeNotify(d,now);
+  }
+  // Show the most urgent currently open or upcoming event in the map overlay.
+  const openings=all.filter(x=>x.status==='受付中').sort((a,b)=>a.remain-b.remain);
+  const upcoming=all.slice().sort((a,b)=>a.next-b.next);
+  const first=openings[0]||upcoming[0];
+  el('timerMini').innerHTML=first.status==='受付中'?'✅ '+first.event.title+' 受付中<strong>あと '+clock(first.remain)+'</strong>':'⏱ 次：'+first.event.title+'<strong>'+clock(first.next-now)+'</strong>';
+ }
+ function apply(){el('timerRiftPhase').value=String(cfg.riftPhase);el('timerInvasionMode').value=cfg.invasionMode;el('timerLead').value=String(cfg.lead);updateSoundBtn();render();}
+ el('timerRiftPhase').onchange=e=>{cfg.riftPhase=Number(e.target.value);save();notified.clear();render();msg('時空の亀裂の基準時刻を変更しました');};
+ el('timerInvasionMode').onchange=e=>{cfg.invasionMode=e.target.value;save();notified.clear();render();msg('次元侵攻の開催判定を変更しました');};
+ el('timerLead').onchange=e=>{cfg.lead=Number(e.target.value);save();render();};
+ el('timerSoundBtn').onclick=async()=>{cfg.sound=!cfg.sound;updateSoundBtn();if(cfg.sound){const ok=play();msg(ok?'通知音を有効にしました。':'音声が利用できません。ブラウザ設定を確認してください。');if(!ok){cfg.sound=false;updateSoundBtn();}}else msg('通知音をオフにしました');};
+ el('timerTestBtn').onclick=()=>{const ok=play();msg(ok?'♪ テスト音を再生しました':'音を再生できませんでした');};
+ el('timerMini').onclick=()=>{const panel=el('eventTimers');panel.scrollIntoView({behavior:'smooth',block:'start'});};
+ apply();setInterval(render,1000);window.addEventListener('focus',render);document.addEventListener('visibilitychange',()=>{if(!document.hidden)render();});
+})();
+</script>
+<script>
+ /* v1.9: save which panels are open; no game integration. */
+ (()=>{
+   const KEY='aion2_ui_fold_v19', defaults={foldTimers:true,foldCoupons:true,foldDrops:true,foldNews:false};
+   let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){}
+   for(const [id,fallback] of Object.entries(defaults)){
+     const el=document.getElementById(id);if(!el)continue;
+     el.open=typeof saved[id]==='boolean'?saved[id]:fallback;
+     el.addEventListener('toggle',()=>{saved[id]=el.open;try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){} });
+   }
+ })();
+/* AION2 rewards organizer v1.6: independent of the game, and read-only public announcement check. */
+(()=>{'use strict';
+ const $=id=>document.getElementById(id);
+ const KEY='aion2_rewards_tracker_v16';
+ const st={used:{},claimed:{},custom:[],history:false,news:[],dropNotices:[],checked:null,error:null,source:null};
+ const VERIFIED=[
+  {code:'AION2SPOOKYDAEVA',expires:'2026-11-04T15:30:00+09:00',first:'2026-10-31',region:'日本公式告知／グローバル',reward:'オードエネルギー×2、復活の精霊石×10 ほか',source:'https://x.com/AION2_JP',confidence:'日本公式X（2026/10/31確認）'},
+  {code:'TAKEFLIGHTAION2',expires:'2026-10-14T15:00:00+09:00',first:'2026-10-01',region:'全サーバー',reward:'オードエネルギー×4、復活の精霊石×5、戦闘強化スクロール×10',source:'https://lounge.plaync.com/feed/82977?country=JP&locale=ja-JP',confidence:'NCSOFT公式'}
+ ];
+ const DROPS=[
+  {id:'halloween-2026',title:'グローバル・ハロウィン Drops',start:'2026-10-29T02:00:00+09:00',end:'2026-11-04T16:59:00+09:00',claim:'2026-11-18T16:59:00+09:00',region:'グローバルサーバーのみ',source:'https://steamcommunity.com/app/3393110/allnews/?l=japanese',rewards:[['1時間','復活の精霊石 ×15'],['2時間','キャラクター外見変更券 ×1'],['4時間','デザイン利用券 ×3'],['6時間','オードエネルギー ×4'],['8時間','まるまるパンダ（ヘルム外形） ×1']]}
+ ];
+ try {const d=JSON.parse(localStorage.getItem(KEY)||'{}'); if(d&&typeof d==='object'){
+   st.used=d.used&&typeof d.used==='object'?d.used:{};
+   st.claimed=d.claimed&&typeof d.claimed==='object'?d.claimed:{};
+   st.custom=Array.isArray(d.custom)?d.custom.slice(0,100):[];
+   st.history=!!d.history;st.checked=d.checked||null;st.news=Array.isArray(d.news)?d.news.slice(0,20):[];st.dropNotices=Array.isArray(d.dropNotices)?d.dropNotices.slice(0,20):[];st.source=typeof d.source==='string'?d.source:null;
+ }}catch(e){}
+ function persist(){try{localStorage.setItem(KEY,JSON.stringify({used:st.used,claimed:st.claimed,custom:st.custom,history:st.history,checked:st.checked,news:st.news,dropNotices:st.dropNotices,source:st.source}));}catch(e){}}
+ const clean=v=>String(v==null?'':v).replace(/[\u0000-\u001f]/g,'').slice(0,500);
+ const escape=s=>clean(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ function safeUrl(s){try{const u=new URL(String(s));return u.protocol==='https:'?u.href:''}catch(e){return ''}}
+ const dt=s=>{if(!s)return null;const v=Date.parse(s);return Number.isFinite(v)?v:null};
+ function jp(s){const n=dt(s);return n==null?'期限未確認':new Date(n).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).replace(',','')+' JST'}
+ const rel=ms=>{const days=Math.ceil(ms/86400000);return days<=1?'24時間以内':days+'日以内'};
+ function badge(status){const a=status==='利用可能'?['isLive','有効']:status==='受取期間'?['isSoon','受取期間']:status==='期限間近'?['isSoon','期限間近']:status==='終了'?['isExpired','終了']:['',status];return '<span class="benefitsChip '+a[0]+'">'+escape(a[1])+'</span>'}
+ const link=(s,label)=>{const u=safeUrl(s);return u?'<a href="'+escape(u)+'" rel="noopener noreferrer" target="_blank">'+escape(label)+' ↗</a>':''}
+ function allCoupons(){let m=new Map(VERIFIED.map(c=>[c.code,c]));for(const c of st.custom){if(c&&/^[a-z0-9_-]{4,64}$/i.test(c.code||''))m.set(c.code.toUpperCase(),{...c,code:c.code.toUpperCase()})}return [...m.values()]}
+ function couponStatus(c,now){const x=dt(c.expires);return x&&now>=x?'終了':x&&x-now<=86400000?'期限間近':x?'利用可能':'期限未確認'}
+ function dropStatus(d,now){if(now<dt(d.start))return '開催予定';if(now<dt(d.end))return '利用可能';if(now<dt(d.claim))return '受取期間';return '終了'}
+  // Strict positive evidence: an announcement *about an actual Twitch Drops campaign*, not a patch that happens to mention Drops.
+  function dropsHeadline(title){
+    const t=String(title||'').toLowerCase().replace(/［|【/g,'[').replace(/］|】/g,']');
+    if(!/(?:\btwitch[\s\-–]*drops?\b|\btwitch[\s\-–]*ドロップス?\b|twitch.{0,8}ドロップス?|ツイッチ.{0,8}ドロップス?)/i.test(t))return false;
+    if(/(?:patch\s*notes?|hotfix|maintenance|update\s*notes?|weekly\s*update|round\s*up|recap|faq|guide|how\s*to|known\s*issues|パッチノート|パッチ内容|メンテナンス|不具合|修正内容|攻略|よくある質問|まとめ)/i.test(t))return false;
+    return true;
+  }
+  function dropsCampaignNotice(n){
+    if(!dropsHeadline(n.title))return false;
+    const b=String(n.contents||'').replace(/<[^>]*>/g,' ');
+    // Avoid news articles where Drops are just a side mention or a link.
+    return /(?:event\s*(?:schedule|period|details)|campaign\s*(?:dates?|period)|drops?\s*(?:will\s*run|campaign|event)|開催期間|イベント期間|実施期間|イベント詳細|twitch.{0,24}開催|drops.{0,30}(?:開始|開催)|イベント日程)/i.test(b);
+  }
+  function validDropPeriod(n,now){return dt(n.start)!=null&&dt(n.end)!=null&&dt(n.end)>dt(n.start)&&dt(n.end)-dt(n.start)<46*86400000&&dt(n.end)>now}
+ function parseNoticeDates(text){
+   // Date ranges extracted only from publisher news. No guessing when ambiguous.
+   const body=String(text||'').replace(/<[^>]+>/g,' ').replace(/&nbsp;|&#160;/gi,' ');
+   const jpDates=[...body.matchAll(/(?:(20\d{2})年\s*)?(\d{1,2})月\s*(\d{1,2})日\s*(?:[（(][^）)]{1,8}[）)])?\s*(\d{1,2})[:：](\d{2})/g)];
+   if(jpDates.length>=2){
+      const yr=Number(jpDates[0][1]||new Date().getFullYear());
+      const parse=(m,prev)=>{let y=Number(m[1]||yr);if(!m[1]&&Number(m[2])<Number(prev[2])-6)y++;const iso=`${y}-${String(m[2]).padStart(2,'0')}-${String(m[3]).padStart(2,'0')}T${String(m[4]).padStart(2,'0')}:${m[5]}:00+09:00`;return dt(iso)?iso:null};
+      const start=parse(jpDates[0],jpDates[0]),end=parse(jpDates[1],jpDates[0]);
+      if(start&&end&&dt(end)>dt(start)&&dt(end)-dt(start)<46*864e5)return {start,end};
+   }
+   const rx=/\b(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?\s+(\d{1,2}),?\s+(20\d{2})\s*(?:at\s*)?(\d{1,2}):(\d{2})\s*(PDT|PST|UTC|JST|CET|CEST)\b/gi;
+   const months={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+   const offsets={PDT:'-07:00',PST:'-08:00',UTC:'+00:00',JST:'+09:00',CET:'+01:00',CEST:'+02:00'};
+   const enDates=[...body.matchAll(rx)];
+   if(enDates.length>=2){
+      const get=m=>{const mn=months[m[1].slice(0,3).toLowerCase()],s=`${m[3]}-${String(mn).padStart(2,'0')}-${m[2].padStart(2,'0')}T${m[4].padStart(2,'0')}:${m[5]}:00${offsets[m[6].toUpperCase()]}`;return dt(s)?s:null};
+      const start=get(enDates[0]),end=get(enDates[1]);
+      if(start&&end&&dt(end)>dt(start)&&dt(end)-dt(start)<46*864e5)return {start,end};
+   }
+   return {start:null,end:null};
+ }
+ function infoStatus(n,now){if(!dt(n.start)||!dt(n.end))return '日時要確認';if(now<dt(n.start))return '開催予定';if(now<dt(n.end))return '利用可能';return '終了'}
+ function renderNotices(now){
+   const notices=st.dropNotices.filter(n=>dropsHeadline(n.title)&&validDropPeriod(n,now));
+   return notices.map(n=>{
+     const status=infoStatus(n,now),date=n.start&&n.end?`🗓 ${escape(jp(n.start))} ～ ${escape(jp(n.end))}`:'🗓 開催日時：公式告知で確認';
+     const age=dt(n.published)?'告知：'+escape(new Date(n.published).toLocaleDateString('ja-JP',{timeZone:'Asia/Tokyo'}))+'<br>':'';
+     return '<div class="benefitsCard '+(status==='終了'?'isExpired':'')+'"><div class="cardTop"><div class="cardTitle">'+escape(n.title)+'</div>'+badge(status)+'</div><div class="cardMeta">'+age+date+'<br>⚠️ 新しい公式告知（報酬・受取期限は元記事を確認）</div><div class="cardActions">'+link(n.url,'Steam公式告知')+' '+link('https://www.twitch.tv/drops/inventory','Drops受取画面')+'</div></div>';
+   }).join('');
+ }
+ function paint(){const now=Date.now(); const cs=allCoupons().sort((a,b)=>(dt(a.expires)||Infinity)-(dt(b.expires)||Infinity));
+  const active=cs.filter(c=>couponStatus(c,now)!=='終了'&&!st.used[c.code]).length;
+  const activeDrops=DROPS.filter(c=>dropStatus(c,now)==='利用可能').length+st.dropNotices.filter(n=>dropsHeadline(n.title)&&validDropPeriod(n,now)&&infoStatus(n,now)==='利用可能').length;
+  $('benefitCount').textContent='未使用 '+active+'件 / Drops開催中 '+activeDrops+'件';
+  $('benefitShowHistory').textContent='期限切れクーポンを表示：'+(st.history?'ON':'OFF');
+  $('couponList').innerHTML=cs.filter(c=>st.history||couponStatus(c,now)!=='終了').map(c=>{
+   const status=couponStatus(c,now),used=!!st.used[c.code],end=dt(c.expires),exp=end?'期限：'+escape(jp(c.expires)):'期限：未確認（公式で要確認）';
+   return '<div class="benefitsCard '+(used?'isUsed ':'')+(status==='終了'?'isExpired':'')+'"><div class="cardTop"><div class="cardTitle">'+escape(c.code)+'</div>'+badge(status)+'</div><code>'+escape(c.code)+'</code><div class="cardMeta">'+exp+(status==='期限間近'?' ⚠️ '+rel(end-now):'')+'<br>🎁 '+escape(c.reward||'報酬未確認')+'<br>対象：'+escape(c.region||'要確認')+'<br><span class="muted">'+escape(c.confidence||'手動入力')+'</span></div><div class="cardActions"><button data-copy="'+escape(c.code)+'" class="primary">コピー</button><label><input type="checkbox" data-used="'+escape(c.code)+'" '+(used?'checked':'')+'>使用済み</label>'+link(c.source,'告知元')+(c.manual?'<button data-delete="'+escape(c.code)+'" class="tiny danger">削除</button>':'')+'</div></div>';
+  }).join('')||'<div class="brief">現在表示するクーポンはありません。期限切れの履歴は切り替えから確認できます。</div>';
+  $('dropsList').innerHTML=renderNotices(now)+DROPS.filter(d=>['利用可能','開催予定'].includes(dropStatus(d,now))).map(d=>{
+   const status=dropStatus(d,now);const ck=st.claimed[d.id]||{};
+   return '<div class="benefitsCard '+(status==='終了'?'isExpired':'')+'"><div class="cardTop"><div class="cardTitle">'+escape(d.title)+'</div>'+badge(status)+'</div><div class="cardMeta">🗓 '+escape(jp(d.start))+' ～ '+escape(jp(d.end))+'<br>🎁 受取期限：<b>'+escape(jp(d.claim))+'</b><br>対象：'+escape(d.region)+'</div><div class="cardActions">'+link('https://www.twitch.tv/drops/inventory','受取画面')+'　'+link('https://aion2.plaync.com/ja-jp/twitchdrops/index','連携方法')+'</div><div class="cardMeta" style="margin-top:6px">受取済み（自分でチェック）</div>'+d.rewards.map((r,i)=>'<label class="benefitReward"><input type="checkbox" data-claim="'+escape(d.id)+'" data-idx="'+i+'" '+(ck[i]?'checked':'')+'><span><b>'+escape(r[0])+'</b>　'+escape(r[1])+'</span></label>').join('')+'</div>';
+  }).join('')||'<div class="brief">記録済みのキャンペーンは終了しています。新着情報の取得状況を確認してください。</div>';
+  const dropNews=st.news.filter(n=>dropsHeadline(n.title)&&validDropPeriod(n,now));
+   $('benefitNews').innerHTML=dropNews.length?dropNews.slice(0,8).map(n=>'<div class="benefitsCard"><div class="cardMeta">'+escape(n.date)+' ／ '+escape(n.type)+'</div>'+link(n.url,clean(n.title).slice(0,120))+'<div class="benefitsNote">Twitch Drops開催の公式告知です。報酬・受取期限などは元記事を確認してください。</div></div>').join(''):'<div class="brief">開催中・開催予定で、開催日時を確認できたTwitch Dropsの公式記事はありません。ボタンで再確認できます（未掲載の告知がないことを保証するものではありません）。</div>';
+  const checked=st.checked?'公式ニュース最終確認：'+escape(new Date(st.checked).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo'}))+'<br>':'';
+  const age=st.checked&&now-Date.parse(st.checked)>7*86400000?'⚠️ 最終確認から7日以上経過しています。<br>':'';
+  $('benefitStatus').innerHTML=checked+age+(st.error?'⚠️ 情報取得に失敗：'+escape(st.error)+'<br><span class="brief">公式ニュースへのアクセスに失敗しました。通信環境または中継サービスを確認してください。取得失敗は開催なしを意味しません。</span>':st.checked?'✅ '+escape(st.source||'Steam公式ニュース')+'の取得に成功。開催中・開催予定のDrops関連記事：'+st.news.filter(n=>dropsHeadline(n.title)&&validDropPeriod(n,now)).length+'件（他媒体の情報は未確認）':'📌 確認済みデータを表示中。最新情報は「Twitch Drops情報を取得」を押してください。');
+ }
+ $('benefitShowHistory').onclick=()=>{st.history=!st.history;persist();paint()};
+ $('couponList').addEventListener('change',e=>{const code=e.target?.dataset?.used;if(!code)return;st.used[code]=!!e.target.checked;persist();paint()});
+ $('couponList').addEventListener('click',async e=>{const copy=e.target?.dataset?.copy,del=e.target?.dataset?.delete;
+  if(copy){try{await navigator.clipboard.writeText(copy);e.target.textContent='コピー済み ✓'}catch(err){const ta=document.createElement('textarea');ta.value=copy;ta.style.cssText='position:fixed;left:-9999px;top:0';document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();e.target.textContent=ok?'コピー済み ✓':'コピー不可（コードを選択してコピー）'}}
+  if(del&&window.confirm(del+' を一覧から削除しますか？')){st.custom=st.custom.filter(c=>c.code!==del);persist();paint()}
+ });
+ $('dropsList').addEventListener('change',e=>{const id=e.target?.dataset?.claim;if(!id)return;st.claimed[id]??={};st.claimed[id][e.target.dataset.idx]=!!e.target.checked;persist();paint()});
+ $('benefitAddCode').onclick=()=>{const code=$('benefitCustomCode').value.trim().toUpperCase();if(!/^[A-Z0-9_-]{4,64}$/.test(code)){alert('コードは半角英数字・ハイフン・アンダーバーで4～64文字にしてください。');return}
+  const raw=$('benefitCustomExpiry').value.trim();const expires=raw?raw+':00+09:00':null;
+  if(raw&&!Number.isFinite(Date.parse(expires))){alert('期限の日時形式を確認してください');return}
+  const url=$('benefitCustomSource').value.trim();if(url&&!safeUrl(url)){alert('確認元URLは https:// で始まるものを指定してください。');return}
+  const obj={code,expires,reward:clean($('benefitCustomReward').value)||'報酬未確認',source:url,region:'手動追加／対象地域要確認',confidence:'手動登録：告知元を確認',manual:true};st.custom=st.custom.filter(c=>c.code!==code);st.custom.unshift(obj);
+  $('benefitCustomCode').value='';$('benefitCustomExpiry').value='';$('benefitCustomReward').value='';$('benefitCustomSource').value='';persist();paint();};
+ function exportJson(){const blob=new Blob([JSON.stringify({schema:'aion2-benefits-v1',savedAt:new Date().toISOString(),coupons:allCoupons(),drops:DROPS,used:st.used,claimed:st.claimed},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='AION2_クーポンDrops記録_'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500)}
+ $('benefitExport').onclick=exportJson;
+ $('benefitImport').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;if(f.size>1024*1024){alert('JSONが大きすぎます');return}try{const v=JSON.parse(await f.text());if(v.schema!=='aion2-benefits-v1'){alert('対応するクーポン記録JSONではありません');return}
+   if(Array.isArray(v.coupons)){for(const c of v.coupons.slice(0,100)){if(!c||!/^[A-Z0-9_-]{4,64}$/i.test(c.code||''))continue;const code=c.code.toUpperCase();if(VERIFIED.some(p=>p.code===code))continue;st.custom=st.custom.filter(p=>p.code!==code);st.custom.push({code,expires:dt(c.expires)?String(c.expires):null,reward:clean(c.reward),source:safeUrl(c.source),region:clean(c.region)||'記録から取り込み',confidence:'JSONから取り込み',manual:true})}}
+   if(v.used&&typeof v.used==='object')for(const c of Object.keys(v.used).slice(0,200))if(/^[A-Z0-9_-]{4,64}$/.test(c))st.used[c]=!!v.used[c];
+   if(v.claimed&&typeof v.claimed==='object')for(const id of DROPS.map(x=>x.id))if(v.claimed[id]&&typeof v.claimed[id]==='object')st.claimed[id]=v.claimed[id];persist();paint();alert('記録を読み込みました')
+  }catch(err){alert('JSON読み込みに失敗：'+err.message)}finally{e.target.value=''}});
+ async function fetchWithFallback(){
+   const upstream='https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3393110&count=100&maxlength=0&feeds=steam_community_announcements&format=json';
+   // Explicit opt-in user action, public-only proxy. No credentials or cookies.
+   const endpoints=[['Steam API（中継経由）','https://proxy.cors.dev/'+upstream],['Steam API（直接）',upstream]];
+   const errors=[];
+   for(const [label,url] of endpoints){
+     const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),18000);
+     try{
+       const resp=await fetch(url,{signal:ctrl.signal,credentials:'omit',mode:'cors',cache:'no-store'});
+       if(!resp.ok)throw new Error('HTTP '+resp.status);
+       const data=await resp.json();const items=data?.appnews?.newsitems;
+       if(!Array.isArray(items))throw new Error('ニュース形式が不明');
+       return {items,source:label};
+     }catch(e){errors.push(label+'：'+(e.name==='AbortError'?'タイムアウト':e.message||'通信に失敗'))}
+     finally{clearTimeout(timer)}
+   }
+   // Steam's official publisher RSS feed as a fallback, also read through a public proxy.
+   const feed='https://steamcommunity.com/games/3393110/rss';
+   const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),18000);
+   try{
+     const resp=await fetch('https://proxy.cors.dev/'+feed,{signal:ctrl.signal,credentials:'omit',mode:'cors',cache:'no-store'});
+     if(!resp.ok)throw new Error('HTTP '+resp.status);
+     const doc=new DOMParser().parseFromString(await resp.text(),'application/xml');
+     if(doc.querySelector('parsererror'))throw new Error('RSS形式が不正');
+     const items=[...doc.querySelectorAll('item')].map(i=>({title:i.querySelector('title')?.textContent||'',contents:i.querySelector('description')?.textContent||'',date:Math.floor(Date.parse(i.querySelector('pubDate')?.textContent||'')/1000),url:i.querySelector('link')?.textContent||''}));
+     if(!items.length)throw new Error('RSSの記事が取得できません');
+     return {items,source:'Steam公式RSS（中継経由）'};
+   }catch(e){errors.push('Steam公式RSS：'+(e.name==='AbortError'?'タイムアウト':e.message||'通信に失敗'));throw new Error(errors.join(' / '));}
+   finally{clearTimeout(timer)}
+ }
+ async function refresh(){
+   const btn=$('benefitRefresh');if(btn.disabled)return;btn.disabled=true;btn.textContent='⏳ 公式情報を確認中…';st.error=null;paint();
+   try{
+     const {items,source}=await fetchWithFallback();
+
+      const now=Date.now();
+      const notices=[];
+      const confirmedNews=[];
+      for(const n of items){
+        if(!dropsCampaignNotice(n))continue;
+        const title=clean(n.title),url=safeUrl(n.url);
+        if(!title||!url)continue;
+        const dates=parseNoticeDates(String(n.contents||''));
+        // Only show scheduled or live events with a trustworthy interpreted end date.
+        if(!validDropPeriod(dates,now))continue;
+        const item={id:'official-'+String(n.gid||n.date||'')+'-'+title.slice(0,20),title,url,published:Number.isFinite(Number(n.date))&&Number(n.date)>0?new Date(Number(n.date)*1000).toISOString():null,...dates};
+        confirmedNews.push({...item,date:item.published?new Date(item.published).toLocaleDateString('ja-JP',{timeZone:'Asia/Tokyo'}):'日時未記載',type:'Twitch Drops'});
+        // Already included as a verified reward card: show the news link, not a duplicate Drops card.
+        if(/halloween|ハロウィン/i.test(title)&&Math.abs(dt(dates.start)-dt(DROPS[0].start))<86400000)continue;
+        notices.push(item);
+      }
+      // Related news shows confirmed active/upcoming Drops announcements only.
+      st.dropNotices=notices.slice(0,18);
+      st.news=confirmedNews.slice(0,20);
+     st.checked=new Date().toISOString();st.source=source;st.error=null;
+     // Coupon discovery remains conservative; no unverified code is marked valid.
+     for(const n of items){
+       const body=String(n.title||'')+' '+String(n.contents||'').replace(/\[[^\]]*\]/g,' ').replace(/<[^>]*>/g,' ');
+       if(!/(?:coupon|クーポン|redeem.{0,8}code|gift.{0,8}code)/i.test(body))continue;
+       const re=/(?:クーポン(?:コード|番号)|coupon\s*code|redeem\s*code|gift\s*code)\s*(?:[:：=]|is|\s){1,8}["'`]?([A-Z][A-Z0-9_-]{5,31})\b/gi;
+       let m;
+       while((m=re.exec(body))!==null){const code=m[1].toUpperCase();if(/^(?:TWITCH|OFFICIAL|ACCOUNT|EXPIRED|AVAILABLE|REDEEM|COUPON|NOW|REWARDS)$/.test(code))continue;
+         if(!VERIFIED.some(c=>c.code===code)&&!st.custom.some(c=>c.code===code))st.custom.unshift({code,expires:null,reward:'公式ニュースで内容を確認',source:safeUrl(n.url),region:'対象サーバー要確認',confidence:'公式ニュースで検出（期限・利用可否は未確認）',manual:false});
+       }
+     }
+     persist();
+   }catch(err){st.error=clean(err.message||'通信できません。公式発表リンクを確認してください。');}
+   finally{btn.disabled=false;btn.textContent='📺 Twitch Drops情報を取得';paint();}
+ }
+ $('benefitRefresh').onclick=refresh;
+ paint();setInterval(paint,60000);
+})();
+</script>
+
+<script>
+/* v2.5: Tabs & home dashboard. No field boss network requests. */
+(()=>{'use strict';
+ const el=id=>document.getElementById(id);
+ const TAB_KEY='aion2_active_tab_v23';
+ const validTabs=new Set(['home','map','pets','events','benefits','settings']);
+ let tab='home';try{const saved=localStorage.getItem(TAB_KEY);if(validTabs.has(saved))tab=saved;}catch(e){}
+ function tabGo(next){if(!validTabs.has(next))return;tab=next;document.body.dataset.tab=next;
+  document.querySelectorAll('#appTabs button').forEach(b=>{const selected=b.dataset.tab===tab;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;});
+  try{localStorage.setItem(TAB_KEY,next);}catch(e){}
+  if(next==='map')setTimeout(()=>window.dispatchEvent(new Event('resize')),90);
+ }
+ document.querySelectorAll('#appTabs button').forEach(b=>b.addEventListener('click',()=>tabGo(b.dataset.tab)));
+ document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>tabGo(b.dataset.go)));
+ const mini=el('timerMini');if(mini)mini.addEventListener('click',()=>tabGo('events'));
+ function update(){
+  el('homeNow').textContent=new Date().toLocaleString('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',weekday:'short',hour:'2-digit',minute:'2-digit',second:'2-digit'})+' JST';
+  const ids=['rift','shugo','invasion'];const homes=['homeRift','homeShugo','homeInvasion'];
+  ids.forEach((id,i)=>{const clock=el('timer-'+id+'-clock');el(homes[i]).textContent=clock?.textContent||'—';});
+  const names={rift:'時空の亀裂',shugo:'シューゴフェスタ',invasion:'次元侵攻'};
+  const next=ids.map(id=>({id,v:el('timer-'+id+'-clock')?.textContent||''})).filter(x=>/^\d{2}:\d{2}:\d{2}$/.test(x.v)).sort((a,b)=>a.v.localeCompare(b.v));
+  el('homeEventNext').textContent=next.length?names[next[0].id]+' '+next[0].v:'イベント時刻を確認中';
+  for(const [a,b] of [['homeAsmo','statAsmo'],['homeElyos','statElyos'],['homeTotal','statTotal'],['homeSoulRate','statRate']])el(a).textContent=el(b)?.textContent||'—';
+  const coupons=el('couponList'),drops=el('dropsList');
+  el('homeCoupons').textContent=(coupons?.querySelectorAll('.benefitsCard').length||0)+' 件表示';
+  el('homeDrops').textContent=(drops?.querySelectorAll('.benefitsCard').length||0)+' 件表示';
+ }
+ tabGo(tab);update();setInterval(update,1000);
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)update();});
+})();
+</script>
+</body></html>
