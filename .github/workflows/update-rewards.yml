@@ -1,0 +1,44 @@
+name: Refresh AION2 coupon and Twitch Drops data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-rewards.yml'
+      - 'scripts/update_rewards.py'
+  schedule:
+    # Every six hours, off the top of the hour to reduce scheduling delays (UTC)
+    - cron: '17 1,7,13,19 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aion2-rewards-update
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run extraction tests
+        run: python -m unittest discover -s tests -v
+      - name: Collect public official announcements
+        run: python scripts/update_rewards.py
+      - name: Commit updated snapshot only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/rewards.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: refresh AION2 coupon and Drops public snapshot'
+            git push
+          fi

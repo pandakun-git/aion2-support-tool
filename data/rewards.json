@@ -1,0 +1,90 @@
+{
+  "schema": "aion2-rewards-v2",
+  "updated_at": null,
+  "attempted_at": null,
+  "sources": {
+    "steam": {
+      "ok": false,
+      "last_success_at": null,
+      "error": null,
+      "label": "Steam公式API・未初回取得"
+    },
+    "lounge": {
+      "ok": false,
+      "last_success_at": null,
+      "error": null,
+      "label": "PURPLE Lounge・未初回取得"
+    },
+    "x_public": {
+      "ok": false,
+      "last_success_at": null,
+      "error": null,
+      "label": "日本公式X公開投稿・未初回取得"
+    }
+  },
+  "coupons": [
+    {
+      "code": "DAEVADRESSUP",
+      "expires": null,
+      "expiry_note": "2026年11月25日 メンテナンス開始前（時刻未確定）",
+      "region": "日本公式AION2アカウント告知・グローバル版",
+      "reward": "外形箱(10回)×3、キャラクター外見変更券(7日)×1、デザイン利用券×5",
+      "source": "https://x.com/AION2_JP",
+      "confidence": "公式アカウント公開投稿（11/11）／事前確認データ"
+    }
+  ],
+  "drops": [
+    {
+      "id": "ludra-2026-11",
+      "title": "ルドラ覚醒記念 Twitch Drops",
+      "start": "2026-11-04T23:00:00+09:00",
+      "end": "2026-11-18T16:59:00+09:00",
+      "claim": null,
+      "region": "AION2グローバル版",
+      "source": "https://steamcommunity.com/app/3393110/allnews/?l=japanese",
+      "rewards": [
+        [
+          "1時間",
+          "Battle Support Chest ×1"
+        ],
+        [
+          "2時間",
+          "外形箱（10回）×3"
+        ],
+        [
+          "3時間",
+          "神秘的なペット箱 ×3"
+        ],
+        [
+          "4時間",
+          "カスタマイズ箱 ×1"
+        ],
+        [
+          "6時間",
+          "魂の書箱 ×1"
+        ],
+        [
+          "8時間",
+          "オードエネルギー ×6"
+        ],
+        [
+          "10時間",
+          "コンテンツ利用券選択箱 ×1"
+        ],
+        [
+          "12時間",
+          "ドット眼鏡 ×1"
+        ],
+        [
+          "13時間",
+          "希少セオストーン箱 ×2"
+        ],
+        [
+          "14時間",
+          "黒い編笠 ×1"
+        ]
+      ],
+      "note": "最大14時間の視聴報酬。詳細は公式告知・Twitch受取画面で確認"
+    }
+  ]
+}
