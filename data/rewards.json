@@ -1,25 +1,35 @@
 {
   "schema": "aion2-rewards-v2",
-  "updated_at": null,
-  "attempted_at": null,
+  "updated_at": "2026-11-16T02:15:43Z",
+  "attempted_at": "2026-11-16T02:15:43Z",
   "sources": {
     "steam": {
-      "ok": false,
-      "last_success_at": null,
+      "ok": true,
+      "last_success_at": "2026-11-16T02:15:43Z",
       "error": null,
-      "label": "Steam公式API・未初回取得"
+      "found_coupons": 0,
+      "found_drops": 0,
+      "label": "Steam公式API/RSS"
     },
     "lounge": {
       "ok": false,
       "last_success_at": null,
-      "error": null,
+      "error": "No public Lounge feed links available",
       "label": "PURPLE Lounge・未初回取得"
     },
     "x_public": {
       "ok": false,
       "last_success_at": null,
-      "error": null,
+      "error": "HTTP Error 502: Bad Gateway",
       "label": "日本公式X公開投稿・未初回取得"
+    },
+    "nc_global": {
+      "ok": true,
+      "last_success_at": "2026-11-16T02:15:43Z",
+      "error": null,
+      "found_coupons": 2,
+      "found_drops": 2,
+      "label": "AION2公式掲示板"
     }
   },
   "coupons": [
@@ -31,17 +41,27 @@
       "reward": "外形箱(10回)×3、キャラクター外見変更券(7日)×1、デザイン利用券×5",
       "source": "https://x.com/AION2_JP",
       "confidence": "公式アカウント公開投稿（11/11）／事前確認データ"
+    },
+    {
+      "code": "AION2SPOOKYDAEVA",
+      "expires": "2026-10-30T20:00:00Z",
+      "expiry_note": "日本時間の公式記載による期限",
+      "region": "日本語グローバル版（対象サーバーは告知を確認）",
+      "reward": "公式告知で内容を確認",
+      "source": "https://aion2.plaync.com/ja-jp/board/notice/view?articleId=6ae4f740577e8c01355e0270",
+      "confidence": "AION2 Global公式掲示板",
+      "published_title": "[お知らせ] ハロウィンサプライズプレゼント！"
     }
   ],
   "drops": [
     {
       "id": "ludra-2026-11",
-      "title": "ルドラ覚醒記念 Twitch Drops",
-      "start": "2026-11-04T23:00:00+09:00",
-      "end": "2026-11-18T16:59:00+09:00",
+      "title": "Ludra Awakens on November 4th (Updated 10/30)",
+      "start": "2026-11-04T14:00:00Z",
+      "end": "2026-11-18T07:59:00Z",
       "claim": null,
       "region": "AION2グローバル版",
-      "source": "https://steamcommunity.com/app/3393110/allnews/?l=japanese",
+      "source": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6adbaeb06cfe4756db5b8efb",
       "rewards": [
         [
           "1時間",
@@ -84,7 +104,7 @@
           "黒い編笠 ×1"
         ]
       ],
-      "note": "最大14時間の視聴報酬。詳細は公式告知・Twitch受取画面で確認"
+      "note": "視聴報酬・受取期限は公式告知で確認（自動収集）"
     }
   ]
 }
