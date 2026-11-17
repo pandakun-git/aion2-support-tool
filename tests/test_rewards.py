@@ -63,4 +63,5 @@ class WorkflowTests(unittest.TestCase):
    self.assertEqual(result,2)
    data=__import__('json').loads(snapshot.read_text())
    self.assertEqual(data['updated_at'],'2026-11-14T00:00:00Z')
-   self.assertEqual(len(data['coupons']),1)
+   self.assertEqual(data['coupons'],base['coupons'])
+   self.assertEqual(data['drops'],base['drops'])
