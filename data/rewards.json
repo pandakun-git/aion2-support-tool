@@ -1,11 +1,11 @@
 {
   "schema": "aion2-rewards-v2",
-  "updated_at": "2026-11-16T02:15:43Z",
-  "attempted_at": "2026-11-16T02:15:43Z",
+  "updated_at": "2026-11-17T05:53:39Z",
+  "attempted_at": "2026-11-17T05:53:39Z",
   "sources": {
     "steam": {
       "ok": true,
-      "last_success_at": "2026-11-16T02:15:43Z",
+      "last_success_at": "2026-11-17T05:53:39Z",
       "error": null,
       "found_coupons": 0,
       "found_drops": 0,
@@ -20,12 +20,12 @@
     "x_public": {
       "ok": false,
       "last_success_at": null,
-      "error": "HTTP Error 502: Bad Gateway",
+      "error": "list indices must be integers or slices, not str",
       "label": "日本公式X公開投稿・未初回取得"
     },
     "nc_global": {
       "ok": true,
-      "last_success_at": "2026-11-16T02:15:43Z",
+      "last_success_at": "2026-11-17T05:53:39Z",
       "error": null,
       "found_coupons": 2,
       "found_drops": 2,
