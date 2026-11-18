@@ -1,11 +1,11 @@
 {
   "schema": "aion2-rewards-v2",
-  "updated_at": "2026-11-17T16:52:43Z",
-  "attempted_at": "2026-11-17T16:52:43Z",
+  "updated_at": "2026-11-18T01:36:54Z",
+  "attempted_at": "2026-11-18T01:36:54Z",
   "sources": {
     "steam": {
       "ok": true,
-      "last_success_at": "2026-11-17T16:52:43Z",
+      "last_success_at": "2026-11-18T01:36:54Z",
       "error": null,
       "found_coupons": 0,
       "found_drops": 0,
@@ -25,7 +25,7 @@
     },
     "nc_global": {
       "ok": true,
-      "last_success_at": "2026-11-17T16:52:43Z",
+      "last_success_at": "2026-11-18T01:36:54Z",
       "error": null,
       "found_coupons": 2,
       "found_drops": 2,
