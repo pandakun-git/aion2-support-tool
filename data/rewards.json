@@ -1,11 +1,11 @@
 {
   "schema": "aion2-rewards-v2",
-  "updated_at": "2026-11-18T01:36:54Z",
-  "attempted_at": "2026-11-18T01:36:54Z",
+  "updated_at": "2026-11-18T16:27:38Z",
+  "attempted_at": "2026-11-18T16:27:38Z",
   "sources": {
     "steam": {
       "ok": true,
-      "last_success_at": "2026-11-18T01:36:54Z",
+      "last_success_at": "2026-11-18T16:27:38Z",
       "error": null,
       "found_coupons": 0,
       "found_drops": 0,
@@ -25,10 +25,10 @@
     },
     "nc_global": {
       "ok": true,
-      "last_success_at": "2026-11-18T01:36:54Z",
+      "last_success_at": "2026-11-18T16:27:38Z",
       "error": null,
-      "found_coupons": 2,
-      "found_drops": 2,
+      "found_coupons": 3,
+      "found_drops": 1,
       "label": "AION2公式掲示板"
     }
   },
@@ -51,17 +51,27 @@
       "source": "https://aion2.plaync.com/ja-jp/board/notice/view?articleId=6ae4f740577e8c01355e0270",
       "confidence": "AION2 Global公式掲示板",
       "published_title": "[お知らせ] ハロウィンサプライズプレゼント！"
+    },
+    {
+      "code": "THANKSFROMAION2",
+      "expires": "2027-03-03T07:00:00Z",
+      "expiry_note": "日本時間の公式記載による期限",
+      "region": "日本語グローバル版（対象サーバーは告知を確認）",
+      "reward": "公式告知で内容を確認",
+      "source": "https://aion2.plaync.com/ja-jp/board/notice/view?articleId=6afd7720add8ebf0b13a7332",
+      "confidence": "AION2 Global公式掲示板",
+      "published_title": "[お知らせ]「最優秀賞」「人気ゲーム賞」受賞記念クーポンのご案内"
     }
   ],
   "drops": [
     {
       "id": "ludra-2026-11",
-      "title": "Ludra Awakens on November 4th (Updated 10/30)",
+      "title": "[お知らせ] 11月4日(水)ルドラアップデート事前案内(11/10 10:30修正)",
       "start": "2026-11-04T14:00:00Z",
       "end": "2026-11-18T07:59:00Z",
       "claim": null,
       "region": "AION2グローバル版",
-      "source": "https://aion2.plaync.com/en-us/board/notice/view?articleId=6adbaeb06cfe4756db5b8efb",
+      "source": "https://aion2.plaync.com/ja-jp/board/notice/view?articleId=6adc5e2bd430490e63f6159a",
       "rewards": [
         [
           "1時間",
