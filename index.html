@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AION2 探索マップ・ペット図鑑・魂確保・装備厳選｜総合サポートツール v3.9</title>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AION2 探索マップ・ペット図鑑・魂確保・装備厳選｜総合サポートツール v4.1</title>
 <meta name="google-site-verification" content="DdaA07dU4inn1bF9PNhdNlLZDJ0oPIqvxg0ufLt_kpo" />
 <meta name="description" content="AION2の非公式・無料サポートツール。魔族アルトガルド・天族ベルテロンの探索マップ、キューブ候補地点、ペット魂確保Lv管理、武器強化シミュレーター、イベントタイマーをPC・スマホで利用できます。">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -395,7 +395,71 @@ body:not([data-tab="settings"]) .settingsAdvanced{display:none!important}
 .enhanceAdvanced>.enhanceCard{margin:12px 0}
 .enhanceAdvanced>details.enhanceCard{margin:12px 0}
 @media(max-width:720px){.homeFootnote{margin-top:8px}.helpHero .eyebrow,.gearHero .gearKicker{font-size:10px}}
-</style><link rel="manifest" href="./manifest.webmanifest"><meta name="theme-color" content="#10283a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" href="./icon-180.png"></head><body data-tab="home"><header><div><div class="eyebrow">閲覧中心の外部マップ · ゲーム連携なし</div><h1><span>AION2</span> 総合サポートツール <span style="font-size:11px;color:#a3c0cf">v3.9</span></h1></div><div class="topbadges"><div class="badge">🛡️ ゲーム内部へのアクセスなし</div><div class="badge">🗺️ 出現地点の確認専用</div><div class="badge" id="factionBadge">魔族・アルトガルド</div></div></header>
+
+/* v4.1: Global crafting planner, data from Japanese Global recipes (Nov 2026). */
+body:not([data-tab="craft"]) #craftPanel{display:none!important}
+body[data-tab="craft"] .layout,body[data-tab="craft"] .homeDashboard,body[data-tab="craft"] #catalogPanel,body[data-tab="craft"] #globalSearchPanel,body[data-tab="craft"] #gearPanel,body[data-tab="craft"] #enhancePanel,body[data-tab="craft"] #dungeonPanel,body[data-tab="craft"] #helpPanel{display:none!important}
+#craftPanel{max-width:1180px;margin:0 auto;padding:20px 18px 50px;color:#eaf5ff;min-height:60vh;font-size:14px}
+#craftPanel *{box-sizing:border-box}
+.craftPathSelect{border:1px solid #3c7383;border-radius:12px;padding:12px 13px;margin:12px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;min-width:0}
+.craftPathSelect legend{padding:0 8px;color:#dbedf3;font-size:13px;font-weight:800}
+.craftPathItem{display:flex;align-items:center;gap:9px;background:#14384b;border:1px solid #547384;border-radius:10px;padding:11px 12px;cursor:pointer;line-height:1.55;font-size:12px;min-width:0}
+.craftPathItem:has(input:checked){background:#214e53;border-color:#73d5c0;color:#fff;font-weight:800}
+.craftPathItem:has(input:disabled){opacity:.55;cursor:not-allowed}
+.craftPathItem input{accent-color:#5dddc1;flex:0 0 auto}
+.craftPathInfo{margin:0 0 12px}
+.craftPathSummary{padding:13px 16px;border:1px solid #447d84;background:linear-gradient(105deg,#183f4e,#142d42);border-radius:12px;line-height:1.6}
+.craftPathSummary p{font-size:12px;color:#e0ecf2;margin:5px 0}
+.craftPathSummary .craftPathFoot{font-size:11px;color:#b8d8e0}
+.craftRouteBadge{display:inline-block;border-radius:7px;padding:4px 9px;font-size:13px;font-weight:800}
+.craftRouteBadge.isBound{background:#3b3564;color:#e9e0ff;border:1px solid #a193e0}
+.craftRouteBadge.isNormal{background:#254c65;color:#cfeeff;border:1px solid #6facc9}
+.craftPathCaution{color:#ffe0a4!important}
+@media(max-width:750px){.craftPathSelect{grid-template-columns:1fr}.craftPathItem{padding:10px}}
+
+.craftHero{display:block!important;padding:21px 23px;border:1px solid #49818e;background:linear-gradient(115deg,#174357,#16263d);border-radius:15px;margin-bottom:14px}
+.craftHero h2{font-size:24px;color:#ffdc90;margin:0 0 7px}
+.craftHero p{margin:0;color:#c1dbe3;line-height:1.7}
+.craftControls{padding:17px;border:1px solid #35596d;border-radius:14px;background:#102a3d;margin-bottom:14px}
+.craftFields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.craftField{display:flex;flex-direction:column;gap:5px;min-width:0}
+.craftField label{font-size:12px;font-weight:750;color:#bdd9e2}
+.craftField select,.craftField input{background:#071d2e!important;color:#fff!important;border:1px solid #507084!important;border-radius:9px!important;padding:11px!important;width:100%;font-size:14px;min-width:0}
+.craftOptions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:14px;color:#d1e6ef;font-size:12px}
+.craftOptions label{display:flex;gap:6px;align-items:center;cursor:pointer}
+.craftOptions input{accent-color:#5bd0bc}
+.craftResults{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.craftStat{padding:14px;border:1px solid #3e6676;border-radius:13px;background:#163448}
+.craftStat small{display:block;color:#b9d0dd;margin-bottom:5px}
+.craftStat strong{font-size:19px;color:#f9d993}
+.craftNote{background:#242a37;border:1px solid #665e4a;color:#f4deb4;border-radius:11px;padding:12px 14px;margin:10px 0;line-height:1.65;font-size:12px}
+.craftBlock{background:#0c2538;border:1px solid #3c6474;border-radius:14px;padding:15px;margin:12px 0}
+.craftBlock h3{font-size:18px;color:#e1f4f9;margin:0 0 9px}
+.craftBlock p{color:#bbcfda;font-size:12px;line-height:1.7;margin:5px 0 11px}
+.craftRows{display:grid;gap:6px}
+.craftRow{display:grid;grid-template-columns:minmax(0,1fr) 84px 82px 93px;gap:8px;align-items:center;padding:7px 9px;border:1px solid #304a5a;border-radius:9px;background:#102d40}
+.craftRowHead{font-size:11px;font-weight:800;background:#1d4454;color:#cbe5ec}
+.craftMatName{overflow-wrap:anywhere;font-size:13px}
+.craftCount{text-align:right;color:#ffe0a3;font-weight:750;font-variant-numeric:tabular-nums}
+.craftHave{text-align:center}
+.craftHave input{max-width:100%;width:75px;padding:8px 5px!important;border-radius:7px!important;background:#071d2d!important;border:1px solid #527687!important;color:white!important;text-align:right;font-size:13px!important}
+.craftNeed{text-align:right;font-weight:800;color:#f5d5a2;font-variant-numeric:tabular-nums}
+.craftNeed.craftDone{color:#64dcc9}
+.craftLegend{display:flex;gap:9px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:12px}
+.craftButton{cursor:pointer;background:#245b66!important;color:white!important;border:1px solid #62a7b4!important;padding:9px 13px!important;border-radius:9px!important;font-size:12px!important}
+.craftButton:disabled{opacity:.45;cursor:not-allowed}
+.craftStage{border:1px solid #35586b;border-radius:11px;margin-top:8px;background:#142d3e;overflow:hidden}
+.craftStage summary{list-style:revert;cursor:pointer;padding:13px;font-weight:750;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.craftStage summary span{color:#a9c9d5;font-size:12px;flex:0 0 auto}
+.craftStage table{width:100%;border-collapse:collapse;font-size:12px}
+.craftStage td{padding:7px 12px;border-top:1px solid #28485d}
+.craftStage td:last-child{text-align:right;white-space:nowrap;color:#ffdda5}
+.craftStage .craftInfo{padding:8px 12px;color:#b9d0dd;font-size:12px}
+.craftSources a{color:#78dcd8;text-decoration:underline;text-underline-offset:2px}
+.craftEmpty{padding:15px;border:1px dashed #3b7e7f;border-radius:9px;color:#6be5ce}
+@media(max-width:750px){#craftPanel{padding:12px 10px 30px}.craftHero{padding:15px}.craftHero h2{font-size:20px}.craftFields{grid-template-columns:repeat(2,minmax(0,1fr))}.craftResults{grid-template-columns:repeat(2,minmax(0,1fr))}.craftResults .craftStat:first-child{grid-column:1/-1}.craftRow{grid-template-columns:minmax(0,1fr) 51px 57px 54px;gap:4px;padding:7px 5px}.craftRowHead{font-size:10px}.craftMatName{font-size:11px}.craftHave input{width:52px;font-size:11px!important;padding:6px 2px!important}.craftNeed,.craftCount{font-size:12px}.craftStage summary{font-size:12px}.craftStage summary span{font-size:11px}}
+
+</style><link rel="manifest" href="./manifest.webmanifest"><meta name="theme-color" content="#10283a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" href="./icon-180.png"></head><body data-tab="home"><header><div><div class="eyebrow">閲覧中心の外部マップ · ゲーム連携なし</div><h1><span>AION2</span> 総合サポートツール <span style="font-size:11px;color:#a3c0cf">v4.1</span></h1></div><div class="topbadges"><div class="badge">🛡️ ゲーム内部へのアクセスなし</div><div class="badge">🗺️ 出現地点の確認専用</div><div class="badge" id="factionBadge">魔族・アルトガルド</div></div></header>
 <div id="appBootNotice" role="status" style="margin:10px 14px;padding:12px 14px;border:1px solid #d99a3b;background:#44331e;color:#ffe3b5;border-radius:10px;font-size:13px;line-height:1.65">⚠️ まだアプリが起動していません。iPhoneの「ファイル」アプリやChatGPT内のHTMLプレビューではJavaScriptが動かず、項目が「読込中」のままになることがあります。通常のSafariからアクセスできるHTTPSページで開いてください。</div>
 <nav id="appTabs" class="appTabs" aria-label="上部メニュー">
  <button type="button" data-tab="home">🏠 ホーム</button>
@@ -410,6 +474,7 @@ body:not([data-tab="settings"]) .settingsAdvanced{display:none!important}
   <div class="navMorePanel" id="navMorePanel">
    <button type="button" data-tab="search">🔎 総合検索</button>
    <button type="button" data-tab="enhance">⚒️ 武器強化</button>
+   <button type="button" data-tab="craft">🔨 製作試算</button>
    <button type="button" data-tab="dungeons">⚔️ ダンジョン</button>
    <button type="button" data-tab="settings">⚙️ 設定</button>
    <button type="button" data-tab="help">❔ ヘルプ</button>
@@ -452,6 +517,38 @@ body:not([data-tab="settings"]) .settingsAdvanced{display:none!important}
 <div class="hubSearchBar"><input type="search" id="globalQuery" placeholder="例：アルマドン／Armadon／バクロン" autocomplete="off"><button type="button" id="globalClear">消去</button></div><div id="globalResults" class="globalResults" aria-live="polite">検索語を入力すると候補を表示します。</div>
 </section>
 
+<section id="craftPanel" aria-label="製作武器シミュレーター">
+  <header class="craftHero">
+    <h2 id="craftTitle">🔨 製作武器シミュレーター</h2>
+    <p id="craftIntro">所持している武器からIL102の製作武器まで。必要な素材と手持ち不足分を計算します。</p>
+  </header>
+  <div class="craftControls">
+    <div class="craftFields">
+      <div class="craftField"><label for="craftFaction" id="craftFactionLabel">種族</label><select id="craftFaction"><option value="asmo">魔族</option><option value="elyos">天族</option></select></div>
+      <div class="craftField"><label for="craftWeapon" id="craftWeaponLabel">武器の種類</label><select id="craftWeapon"><option value="mace">メイス</option><option value="greatsword">グレートソード</option><option value="longsword">ロングソード</option><option value="dagger">ダガー</option><option value="guarder">ガーダー</option><option value="bow">ボウ</option><option value="staff">ワンド</option><option value="book">マジックブック</option><option value="orb">オーブ</option></select></div>
+      <div class="craftField"><label for="craftStart" id="craftStartLabel">所持している製作武器</label><select id="craftStart"></select></div>
+      <div class="craftField"><label for="craftMasterOwned" id="craftMasterOwnedLabel">所持している「達人の光る武器」</label><input type="number" id="craftMasterOwned" min="0" max="9999" step="1" value="0"></div>
+    </div>
+    <div class="craftOptions">
+      <label><input type="checkbox" id="craftOwnMaster" checked> <span id="craftMasterLabel">達人の光る素材武器も自作する（期待値の概算を加算）</span></label>
+      <label><input type="checkbox" id="craftExpandDragon"> <span id="craftExpandDragonLabel">龍族加工材を「精髄＋加工剤」に展開</span></label>
+    </div>
+    <fieldset class="craftPathSelect" id="craftPathSelect">
+      <legend id="craftPathLegend">初段（乾龍王／真龍王）の製作方法</legend>
+      <label class="craftPathItem" for="craftNormal"><input id="craftNormal" name="craftPath" type="radio" value="normal" checked><span id="craftNormalLabel">🎲 通常製作（失敗あり・COMBOあり）</span></label>
+      <label class="craftPathItem" for="craftCertain"><input id="craftCertain" name="craftPath" type="radio" value="bound"><span id="craftCertainLabel">🔒 確定製作（刻印・100%・COMBOなし）</span></label>
+    </fieldset>
+  </div>
+  <div id="craftPathInfo" class="craftPathInfo" aria-live="polite"></div>
+  <div class="craftResults" id="craftStats"></div>
+  <div class="craftNote" id="craftWarning"></div>
+  <div class="craftBlock">
+    <div class="craftLegend"><h3 id="craftMaterialsTitle">📦 必要素材と不足数</h3><div><button type="button" class="craftButton" id="craftCopy">📋 素材リストをコピー</button> <button type="button" class="craftButton" id="craftReset">手持ちをリセット</button></div></div>
+    <p id="craftMaterialsCaption"></p><div class="craftRows" id="craftMaterials"></div>
+  </div>
+  <div class="craftBlock"><h3 id="craftStepsTitle">🛠️ 残りの製作工程</h3><p id="craftStepsCaption"></p><div id="craftStages"></div></div>
+  <details class="craftBlock craftSources"><summary id="craftSourcesTitle">データの出典・計算上の注意</summary><div id="craftSourcesBody"></div></details>
+</section>
 <section id="gearPanel" class="gearBilingual" aria-label="装備オプション厳選ガイド" lang="ja">
   <header class="gearHero"><div class="gearKicker">装備オプションを比較</div><h2 id="gearTitle">⚔️ クラス別・装備オプション厳選ガイド</h2><p id="gearIntro">クラスとPvE／PvPを選択。部位ごとに狙いたい魂刻印と、妥協できる候補を比較できます。</p></header>
   <div class="gearDisclaimer" id="gearDisclaimer">⚠️ 日本語Global版の部位別出現候補から厳選した編集上の優先順位です。スキルLv.+1は特化・役割に応じて変動し、上位者の採用率とは別評価です。</div>
@@ -523,7 +620,7 @@ body:not([data-tab="settings"]) .settingsAdvanced{display:none!important}
    <div class="row"><button type="button" id="analyticsConsentHelp">解析の同意設定を開く</button><span class="smalllabel" id="analyticsHelpStatus">解析は未設定です</span></div>
   </section>
   <section class="helpCard"><h3>🆕 更新履歴</h3>
-   <div class="updateItem latest" id="gearUpdateLog"><div class="updateBadge">NEW · v3.9</div><strong>画面整理・誤表示修正</strong><p>スマホの上部メニューを整理。古いバージョン表記と天族キューブの説明を修正し、各画面の補足を折りたたみに統合。既存機能は維持。</p></div>
+   <div class="updateItem latest" id="gearUpdateLog"><div class="updateBadge">NEW · v4.1</div><strong>製作シミュレーター：確定製作（刻印）対応</strong><p>通常製作と11月4日追加の100%確定製作を比較。初段の失敗・COMBO・取引可否、継承製作、必要素材の集計を明確化。装備・マップなど既存機能を維持。</p></div>
    <div class="updateItem"><div class="updateBadge">v3.8</div><strong>クーポン・Twitch Dropsの定期確認</strong><p>GitHub側で6時間ごとに公開情報を確認し、サイト表示時に保存データを自動読込。取得元の失敗は別途表示。</p></div>
    <div class="updateItem"><div class="updateBadge">v3.7</div><strong>異なるスキルLv＋1を個別に推奨</strong><p>リング・防具の複数スキル＋1に対応。PvE/PvP、3/4/5枠の表示を維持。</p></div>
    <details class="helpOldVersions"><summary>📂 過去の更新履歴を表示</summary><div class="updateItem"><div class="updateBadge">v3.4</div>
@@ -1428,7 +1525,7 @@ el('enhanceOne').onclick=()=>{runAttempt(state,true);paint();};el('enhanceAll').
 (()=>{'use strict';
  const el=id=>document.getElementById(id);
  const TAB_KEY='aion2_active_tab_v23';
- const validTabs=new Set(['home','map','pets','catalog','search','enhance','gear','dungeons','events','benefits','settings','help']);
+ const validTabs=new Set(['home','map','pets','catalog','search','enhance','gear','craft','dungeons','events','benefits','settings','help']);
  let tab='home';try{const saved=localStorage.getItem(TAB_KEY);if(validTabs.has(saved))tab=saved;}catch(e){}
  function tabGo(next){if(!validTabs.has(next))return;tab=next;document.body.dataset.tab=next;
   document.querySelectorAll('#appTabs button[data-tab]').forEach(b=>{const selected=b.dataset.tab===tab;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;});
@@ -1440,7 +1537,7 @@ el('enhanceOne').onclick=()=>{runAttempt(state,true);paint();};el('enhanceAll').
  document.querySelectorAll('#appTabs button[data-tab]').forEach(b=>b.addEventListener('click',()=>tabGo(b.dataset.tab)));
   const nav=document.getElementById('appTabs'),moreToggle=document.getElementById('navMoreToggle');
   if(nav&&moreToggle){
-   const secondary=new Set(['search','enhance','dungeons','settings','help']);
+   const secondary=new Set(['search','enhance','craft','dungeons','settings','help']);
    const syncMore=()=>{
     const active=secondary.has(document.body.dataset.tab);
     moreToggle.classList.toggle('hasActive',active);
@@ -1488,7 +1585,7 @@ el('enhanceOne').onclick=()=>{runAttempt(state,true);paint();};el('enhanceAll').
  try{if(!localStorage.getItem(GUIDE_KEY))setTimeout(openGuide,450)}catch(e){/* local preview */}
  const kind=$('feedbackKind'),title=$('feedbackTitle'),body=$('feedbackBody'),platform=$('feedbackPlatform'),link=$('feedbackSubmit'),message=$('feedbackMessage');
  const base='https://github.com/pandakun-git/aion2-support-tool/issues/new';
- function populate(){const t=title.value.trim(),b=body.value.trim();const kindName={bug:'不具合',idea:'機能要望',other:'ご意見'}[kind.value]||'ご意見';const desc=['## 内容',b||'（詳細を記入してください）','','## 利用端末',platform.value,'','## ツールのバージョン','v3.9','','※この報告は公開されます。'].join('\n');const params=new URLSearchParams({title:`[${kindName}] ${t||'件名を入力してください'}`,body:desc});link.href=base+'?'+params.toString();}
+ function populate(){const t=title.value.trim(),b=body.value.trim();const kindName={bug:'不具合',idea:'機能要望',other:'ご意見'}[kind.value]||'ご意見';const desc=['## 内容',b||'（詳細を記入してください）','','## 利用端末',platform.value,'','## ツールのバージョン','v4.1','','※この報告は公開されます。'].join('\n');const params=new URLSearchParams({title:`[${kindName}] ${t||'件名を入力してください'}`,body:desc});link.href=base+'?'+params.toString();}
  [kind,title,body,platform].forEach(e=>e.addEventListener('input',populate));populate();
  link.addEventListener('click',e=>{if(!title.value.trim()||!body.value.trim()){e.preventDefault();message.textContent='⚠️ 件名と内容の両方を入力してください。';(!title.value.trim()?title:body).focus();return;}if(title.value.trim().length>80||body.value.trim().length>400){e.preventDefault();message.textContent='⚠️ 入力文字数が多すぎます。';return;}populate();message.textContent='✅ GitHubの投稿画面を開きます。内容を確認し、GitHub上で「Submit new issue」を押すと公開されます。';});
 })();
@@ -2549,6 +2646,89 @@ sync();
  render();
  window.aionGearGuideV37={_test:{classes:classInfo.map(x=>x.id),slots:slots.map(x=>x[0]),pools,skillPlans,skillEN,pick:(slot,id,mode)=>{const old=state.mode;try{state.mode=mode;return pick(slot,classInfo.find(x=>x.id===id))}finally{state.mode=old}},count:(slot,v)=>{const old=state.variant;try{state.variant=v;return countFor(slot)}finally{state.variant=old}}}};
  window.aionGearGuideV36=window.aionGearGuideV37; window.aionGearGuideV35=window.aionGearGuideV37; window.aionGearGuideV34=window.aionGearGuideV37; // compatibility for prior smoke tests
+})();
+</script>
+<script>
+/* v4.1 Global Japanese crafting simulator: recipe-only math, no game API. */
+(()=>{'use strict';
+ const $=id=>document.getElementById(id);
+ const JP={
+  pathLegend:'最初の乾龍王／真龍王の製作方法',pathNormal:'🎲 通常製作（失敗あり・COMBOあり）',pathBound:'🔒 確定製作（刻印・100%・COMBOなし）',pathNormalInfo:'成功率により材料を消費して失敗する可能性あり。COMBO成功なら「光る」初段を直接獲得できる場合があります。',pathBoundInfo:'2026/11/4追加。初段は同じ素材で100%成功し、COMBOなし。完成品は刻印・取引不可。',pathSameMats:'初段1回分の材料数は通常製作と同じです。違いは成功率・COMBO・完成品の取引可否です。',pathAlready:'所持済みの武器からの計算です。初段の製作方法は不要で、残りの継承製作は別途計算します。',pathMasterNote:'「達人の光る武器」の自作と龍族素材の加工は、この100%保証の対象外です。',pathNormalTitle:'初段：通常製作',pathBoundTitle:'初段：確定製作（刻印）',pathChance:'確率製作・COMBOあり',pathGuaranteed:'成功率100%・COMBOなし・取引不可',pathStageTransfer:'継承製作：前段階の武器を使用。成功率100%。継承元の武器は別の追加材料として重複計上しません。',
+  title:'🔨 製作武器シミュレーター',intro:'所持している武器からIL102の製作武器まで。必要素材・手持ち・不足数を確認できます。',faction:'種族',weapon:'武器の種類',start:'所持している製作武器',none:'素材から（製作武器なし）',masterOwned:'所持している「達人の光る武器」',ownMaster:'達人の光る素材武器も自作する（概算）',expandDragon:'龍族加工材を「精髄＋加工剤」に展開',certain:'🔒 確定製作（刻印・100%・COMBOなし）',materials:'📦 必要素材と不足数',copy:'📋 素材リストをコピー',reset:'手持ちをリセット',steps:'🛠️ 残りの製作工程',sources:'データの出典・計算上の注意',name:'素材名',total:'必要数',have:'手持ち',missing:'不足',target:'完成目標',remaining:'残り工程',master:'追加で必要な「達人の光る武器」',complete:'すでに目標の装備です。残り必要素材はありません。',sample:'資料の参考期待値',hybrid:'上位工程は1回ずつ成功・下位素材武器の自作分は参考期待値を按分',perAttempt:'上位工程は各1回成功・COMBOなし（「達人の光る武器」は既製品扱い）',rawWarn:'「素材から」の期待値は熟練度・成功率・COMBOに左右されます。表の数は必要量を保証するものではありません。',otherWarn:'これは各工程を1回で成功させ、COMBOによる段階飛ばしがない場合の必要数です。失敗・再挑戦分は別途必要です。',hybridWarn:'下位「達人の光る武器」については資料の期待値を1本あたりに按分した概算です。上位工程は各1回成功として計算するため、全工程の厳密な期待値ではありません。',expandWarn:'龍族加工品は1回の加工で成功すると仮定して精髄と加工剤に換算しています。加工失敗分は含みません。',masterDiscountWarn:'所持している達人の光る武器の分は、資料の期待値を比例補正した概算です。',certainWarn:'11月4日追加の100%成功レシピは最初の乾龍王／真龍王だけに適用。COMBOは起きず、完成武器は刻印・取引不可です。達人の光る武器を自作するときの失敗や加工失敗は別途考慮してください。',fromEstimate:'最初からの全工程の資料に基づく参考値（専門Lv50・素材製作の失敗除外）',direct:'1回成功ルートの素材',directNote:'次の表は必要工程を1回ずつ行う場合のレシピ合計です。「達人の光る素材武器」が別途必要で、表示数には失敗や素材の自己製作は含みません。',stageSpecial:'継承製作：前段階の製作武器が必要。成功率100%。前段階の武器は別途追加材料として計上しません。',stageFirst:'通常製作：失敗・COMBOあり（下記は1回分の材料）。',stageFirstBound:'確定製作（刻印）：100%成功、COMBOなし、取引不可（下記は1回分の材料）。',noMaster:'達人の光る素材武器は別途入手（必要量を素材換算せず表示）',yesMaster:'達人の光る素材武器も素材から製作する前提の概算',sourceTitle:'情報源・計算対象',variant:'素材を集める目安として利用してください。ゲーム内レシピが更新された場合はそちらを優先してください。',note:'ギーナ手数料、精製・龍族素材加工の追加素材、再挑戦分は別途必要です。',confirmReset:'保存した所持素材数を削除しますか？',successCopy:'素材リストをコピーしました',failedCopy:'クリップボードにコピーできませんでした',masterNote:'達人の光る素材武器は乾龍王・黒龍王・闇龍王の各工程で原則1本ずつ使用します。所持しているものは「手持ち」で入力してください。',statusNo:'（自作しない）',sourceFoot:'出典：AION2 Times（2026年11月15日更新）、Shugo.GG製作レシピ（2026年11月時点）、11月4日の日本語グローバル版パッチノート。',simple:'参考見積り',raw:'素材から',try:'1回成功想定',average:'期待値（概算）'
+ };
+ const EN={pathLegend:'Initial Star / True Dragon Lord crafting method',pathNormal:'🎲 Regular craft (can fail; COMBO possible)',pathBound:'🔒 Guaranteed craft (bound; 100%; no COMBO)',pathNormalInfo:'Can fail and consume ingredients. A successful COMBO may grant the Splendent first-tier weapon directly.',pathBoundInfo:'Introduced Nov 4, 2026. The initial craft uses the same ingredients, succeeds 100%, has no COMBO, and produces non-tradeable bound gear.',pathSameMats:'The two first-tier recipes require the same materials for one attempt; only success, COMBO and tradeability differ.',pathAlready:'You already own a Dragon Lord weapon; the first-tier method does not apply. Remaining transfer steps are calculated separately.',pathMasterNote:'Crafting Splendent Master weapons and processing dragon materials are not protected by this 100% guarantee.',pathNormalTitle:'First tier: regular craft',pathBoundTitle:'First tier: guaranteed bound craft',pathChance:'Chance-based; COMBO possible',pathGuaranteed:'100% success; no COMBO; non-tradeable',pathStageTransfer:'Transfer crafting uses the previous stage weapon, succeeds 100%, and does not count that weapon twice as an extra ingredient.',title:'🔨 Crafting Weapon Planner',intro:'Plan materials from your current crafted weapon to the IL102 top-tier weapon.',faction:'Faction',weapon:'Weapon type',start:'Current crafted weapon',none:'Starting from materials (no dragon weapon)',masterOwned:'Owned Splendent Master weapons',ownMaster:'Craft the required Splendent Master weapons too (estimate)',expandDragon:'Expand dragon materials into essence + reagent',certain:'🔒 Guaranteed craft (bound; 100%; no COMBO)',materials:'📦 Materials and shortages',copy:'📋 Copy material list',reset:'Reset inventory',steps:'🛠️ Remaining crafting steps',sources:'Sources and calculation limits',name:'Material',total:'Required',have:'Owned',missing:'Short',target:'Target',remaining:'Remaining steps',master:'Extra Splendent Master weapons',complete:'You already have the top crafted weapon. No remaining costs.',sample:'Source-based estimated average',hybrid:'One success per dragon stage + proportional estimate for base weapons',perAttempt:'One success per dragon stage, no COMBO (Master weapons treated as provided)',rawWarn:'The from-scratch estimate depends on mastery, success and COMBO. Quantities are not guaranteed.',otherWarn:'Each step assumes one successful attempt with no COMBO skip. Crafting failure requires more materials.',hybridWarn:'Base-weapon materials are a proportional estimate derived from full-route averages. Upper stages assume one successful attempt, so this is not a rigorous full-route expected value.',expandWarn:'Processed dragon parts are expanded at one successful processing attempt. Processing failures are excluded.',masterDiscountWarn:'Owned Splendent Master weapons are subtracted using a proportional estimate.',certainWarn:'The Nov 4 guaranteed recipe only applies to the first Star / True Dragon Lord craft: 100% success, no COMBO, bound result. Splendent Master weapon crafting and material processing may still fail.',fromEstimate:'From-scratch reference average (mastery Lv50; excludes material-subcraft failures)',direct:'Single-success material list',directNote:'Totals for one successful attempt at every remaining step. Splendent Master weapons are separately required. Failures and sub-crafting are excluded.',stageSpecial:'Transfer crafting needs the previous Dragon Lord weapon. It succeeds 100%, and the previous weapon is not counted as another additional ingredient.',stageFirst:'Regular craft: chance of failure/COMBO; ingredients for one attempt.',stageFirstBound:'Guaranteed craft (bound): 100% success, no COMBO, non-tradeable; ingredients for one attempt.',noMaster:'Required Splendent Master weapons are listed as separate materials',yesMaster:'Includes estimated materials to craft the required Splendent Master weapons',sourceTitle:'Sources and limits',variant:'Use as a planning guide. In-game recipes take precedence over this snapshot.',note:'Kina fees, processing dragon materials into refined forms, and retries are excluded.',confirmReset:'Clear all saved inventory quantities?',successCopy:'Material list copied',failedCopy:'Copy failed',masterNote:'One Splendent Master weapon is generally used for each regular Dragon Lord tier. Enter items you own in the Owned field.',statusNo:'(not crafting base weapons)',sourceFoot:'Sources: AION2 Times (updated Nov 15, 2026), Shugo.GG recipes (Nov 2026), official Nov 4 patch notes.',simple:'Estimated',raw:'From materials',try:'One-success path',average:'Expected amount'};
+ const stages={asmo:['乾龍王','光る乾龍王','黒龍王','光る黒龍王','闇龍王','光る闇龍王'],elyos:['真龍王','光る真龍王','白龍王','光る白龍王','冥龍王','光る冥龍王']};
+ const stagesEn={asmo:['Star Dragon Lord','Splendent Star Dragon Lord','Black Dragon Lord','Splendent Black Dragon Lord','Ebony Dragon Lord','Splendent Ebony Dragon Lord'],elyos:['True Dragon Lord','Splendent True Dragon Lord','White Dragon Lord','Splendent White Dragon Lord','Dusk Dragon Lord','Splendent Dusk Dragon Lord']};
+ const il=[62,70,78,86,94,102];
+ const weaponData={mace:['メイス','Mace','metal'],greatsword:['グレートソード','Greatsword','metal'],longsword:['ロングソード','Longsword','metal'],dagger:['ダガー','Dagger','metal'],guarder:['ガーダー','Guarder','metal'],bow:['ボウ','Bow','wood'],staff:['ワンド','Staff','wood'],book:['マジックブック','Spellbook','magic'],orb:['オーブ','Orb','magic']};
+ const namesEn={'達人の最上級精錬石':'Master’s Superior Refining Stone','怒りの思念':'Rage Thought','怒りの意志':'Rage Will','怒りの自我':'Rage Ego','煌めくオード':'Brilliant Aether','龍族の精髄':'Draconian Essence','ジルコンのハンマー(刻印)':'Zircon Hammer (bound)','ラピスラズリのハンマー(刻印)':'Lapis Lazuli Hammer (bound)','ムーンストーンのハンマー(刻印)':'Moonstone Hammer (bound)','下級龍の鱗強化剤(刻印)':'Lesser Dragon Scale Strengthener (bound)','中級龍の鱗強化剤(刻印)':'Intermediate Dragon Scale Strengthener (bound)','上級龍の鱗強化剤(刻印)':'Greater Dragon Scale Strengthener (bound)','精錬石':'Refining Stone','オード':'Aether','職人の精錬石':'Artisan Refining Stone','高純度のオード':'High-purity Aether','達人の精錬石':'Master Refining Stone','純粋なオード':'Pure Aether','オリハルコン鉱石':'Orichalcum Ore','オリハルコン融解剤':'Orichalcum Flux','高純度のオリハルコン鉱石':'High-purity Orichalcum Ore','純粋なオリハルコン鉱石':'Pure Orichalcum Ore','煌めくオリハルコン鉱石':'Brilliant Orichalcum Ore','アスバタの木':'Asvata Wood','ユグドラシルの木':'Yggdrasil Wood','紙やすり':'Sandpaper','精霊石':'Spirit Stone','触媒剤':'Catalyst','高純度のアスバタの木':'High-purity Asvata Wood','高純度のユグドラシルの木':'High-purity Yggdrasil Wood','純粋なアスバタの木':'Pure Asvata Wood','純粋なユグドラシルの木':'Pure Yggdrasil Wood','煌めくアスバタの木':'Brilliant Asvata Wood','煌めくユグドラシルの木':'Brilliant Yggdrasil Wood','高純度のルビーの原石':'High-purity Ruby Ore','高純度のサファイアの原石':'High-purity Sapphire Ore','純粋なルビーの原石':'Pure Ruby Ore','純粋なサファイアの原石':'Pure Sapphire Ore','煌めくルビーの原石':'Brilliant Ruby Ore','煌めくサファイアの原石':'Brilliant Sapphire Ore'};
+ for(const adj of ['分厚い','硬い','堅固な']){const enAdj={'分厚い':'Thick','硬い':'Hard','堅固な':'Sturdy'}[adj];namesEn['精錬された'+adj+'龍族の角']='Refined '+enAdj+' Draconian Horn';namesEn['強化された'+adj+'龍族の鱗']='Reinforced '+enAdj+' Draconian Scale';}
+ const expectedStandard=[1619,810,1349,540,293,351,176,65,105,52,17,32,40,57,20,22,25,39,25];
+ const expectedGuarder=[1629,814,1357,543,294,353,177,66,105,53,17,32,40,57,20,22,25,39,25];
+ const fmt=n=>Number(n||0).toLocaleString('ja-JP');const esc=v=>String(v).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\u0027':'&#39;'}[ch]));
+ function isEn(){return $('uiLanguage')?.value==='en'}
+ function t(){return isEn()?EN:JP}
+ function wname(key){return weaponData[key][isEn()?1:0]}
+ function gearName(f,k,i){return (isEn()?stagesEn[f]:stages[f])[i]+' '+wname(k)}
+ function strings(f,k){const fam=weaponData[k][2];const metal=fam==='metal';const wood=fam==='wood';const base=wood?(f==='asmo'?'アスバタの木':'ユグドラシルの木'):metal?'オリハルコン鉱石':'精霊石';const special=k==='book'?'ルビーの原石':k==='orb'?'サファイアの原石':base;const mid=wood?'紙やすり':metal?'オリハルコン融解剤':'触媒剤';const h='高純度の'+special,p='純粋な'+special,sh='煌めく'+special;const dr=metal?'精錬された':'強化された',tail=metal?'龍族の角':'龍族の鱗';const dragon=['分厚い','硬い','堅固な'].map(x=>dr+x+tail);
+ const master=metal?'達人の光るオリハルコンの'+weaponData[k][0]:wood?'達人の光る'+(f==='asmo'?'アスバタ':'ユグドラシル')+'の'+weaponData[k][0]:'達人の光る真実の'+weaponData[k][0];return {base,mid,h,p,sh,dragon,master};}
+ function labels(c){return [c.base,c.mid,'精錬石','オード','職人の精錬石',c.h,'高純度のオード','達人の精錬石',c.p,'純粋なオード','達人の最上級精錬石',...c.dragon,'怒りの思念','怒りの意志','怒りの自我',c.sh,'煌めくオード'];}
+ const counts={
+  0:[['master',1],['達人の最上級精錬石',4],['dragon0',22],['怒りの思念',10],['sh',9],['煌めくオード',5]],
+  1:[['dragon0',11],['怒りの思念',4]],
+  2:[['master',1],['達人の最上級精錬石',5],['dragon1',29],['怒りの思念',3],['怒りの意志',15],['sh',12],['煌めくオード',7]],
+  3:[['dragon1',15],['怒りの意志',5],['sh',1],['煌めくオード',2]],
+  4:[['master',1],['達人の最上級精錬石',6],['dragon2',41],['怒りの思念',3],['怒りの意志',3],['怒りの自我',20],['sh',15],['煌めくオード',9]],
+  5:[['達人の最上級精錬石',2],['dragon2',21],['怒りの自我',7],['sh',2],['煌めくオード',3]]
+ };
+ const invKey='aion2_crafting_materials_v40';let inventory={};try{const p=JSON.parse(localStorage.getItem(invKey)||'{}');if(p&&typeof p==='object')inventory=p}catch(e){};
+ function save(){try{localStorage.setItem(invKey,JSON.stringify(inventory))}catch(e){}}
+ const stateKey='aion2_craft_plan_v40';let settings={f:'asmo',k:'mace',start:-1,ownMaster:true,expandDragon:false,certain:false};try{const p=JSON.parse(localStorage.getItem(stateKey)||'{}');if(p&&typeof p==='object')settings={...settings,...p}}catch(e){};
+ function keep(){try{localStorage.setItem(stateKey,JSON.stringify(settings))}catch(e){}}
+ function concrete(step,c){return counts[step].map(([k,v])=>[k==='master'?c.master:k==='sh'?c.sh:k==='dragon0'?c.dragon[0]:k==='dragon1'?c.dragon[1]:k==='dragon2'?c.dragon[2]:k,v]);}
+ function sum(items){const m=new Map();for(const [name,n] of items)m.set(name,(m.get(name)||0)+n);return m}
+ function plan(){const c=strings(settings.f,settings.k),remaining=Array.from({length:6},(_,i)=>i).filter(i=>i>settings.start),rows=remaining.flatMap(i=>concrete(i,c));const one=sum(rows),masterNeed=one.get(c.master)||0;const ownedMaster=Math.min(masterNeed,Math.max(0,Number(inventory[c.master]||0)));const mastersToMake=masterNeed-ownedMaster;const standard=settings.k==='guarder'?expectedGuarder:expectedStandard;const nm=labels(c);let result=new Map();let mode='';
+ if(settings.start===5){mode='none';}
+ else if(settings.start===-1&&!settings.certain&&settings.ownMaster){mode='published';result=sum(nm.map((name,i)=>[name,i<10?Math.max(0,Math.ceil(standard[i]*(1-ownedMaster/3))):standard[i]]));}
+ else if(settings.ownMaster){mode='hybrid';result=new Map(one);result.delete(c.master);for(let i=0;i<10;i++)result.set(nm[i],(result.get(nm[i])||0)+Math.ceil(standard[i]*mastersToMake/3));}
+ else{mode='single';result=one;}
+ if(settings.expandDragon){const regs=weaponData[settings.k][2]==='metal'?['ジルコンのハンマー(刻印)','ラピスラズリのハンマー(刻印)','ムーンストーンのハンマー(刻印)']:['下級龍の鱗強化剤(刻印)','中級龍の鱗強化剤(刻印)','上級龍の鱗強化剤(刻印)'];for(let i=0;i<3;i++){const num=result.get(c.dragon[i])||0;result.delete(c.dragon[i]);if(num>0){result.set('龍族の精髄',(result.get('龍族の精髄')||0)+2*num);result.set(regs[i],(result.get(regs[i])||0)+num)}}}
+ return {c,remaining,one,result,masterNeed,mastersToMake,mode};}
+ function enName(s,c){if(!isEn())return s;if(s===c.master)return 'Splendent Master '+wname(settings.k);return namesEn[s]||s;}
+ function populate(){if(!weaponData[settings.k])settings.k='mace';if(!['asmo','elyos'].includes(settings.f))settings.f='asmo';settings.start=Number.isFinite(Number(settings.start))?Math.max(-1,Math.min(5,Number(settings.start))):-1;$('craftFaction').value=settings.f;$('craftWeapon').value=settings.k;$('craftOwnMaster').checked=!!settings.ownMaster;$('craftExpandDragon').checked=!!settings.expandDragon;$('craftCertain').checked=!!settings.certain;$('craftNormal').checked=!settings.certain;$('craftCertain').disabled=settings.start>=0;$('craftNormal').disabled=settings.start>=0;$('craftStart').innerHTML='<option value="-1">'+esc(t().none)+'</option>'+stages[settings.f].map((x,i)=>'<option value="'+i+'">'+esc(gearName(settings.f,settings.k,i))+' / IL '+il[i]+'</option>').join('');$('craftStart').value=String(settings.start);$('craftMasterOwned').value=String(Math.max(0,Number(inventory[strings(settings.f,settings.k).master]||0)));}
+ function updateTexts(){const z=t();for(const [id,key] of [['craftTitle','title'],['craftIntro','intro'],['craftFactionLabel','faction'],['craftWeaponLabel','weapon'],['craftStartLabel','start'],['craftMasterOwnedLabel','masterOwned'],['craftMasterLabel','ownMaster'],['craftExpandDragonLabel','expandDragon'],['craftCertainLabel','certain'],['craftNormalLabel','pathNormal'],['craftPathLegend','pathLegend'],['craftMaterialsTitle','materials'],['craftCopy','copy'],['craftReset','reset'],['craftStepsTitle','steps'],['craftSourcesTitle','sources']])$(id).textContent=z[key];
+ const navCraft=document.querySelector('#appTabs button[data-tab="craft"]');if(navCraft)navCraft.textContent=isEn()?'🔨 Crafting':'🔨 製作試算';
+ for(const opt of $('craftFaction').options)opt.textContent=opt.value==='asmo'?(isEn()?'Asmodian':'魔族'):(isEn()?'Elyos':'天族');for(const opt of $('craftWeapon').options)opt.textContent=wname(opt.value);}
+ function render(){updateTexts();populate();const p=plan(),z=t(),nowTier=settings.start<0?z.none:gearName(settings.f,settings.k,settings.start),target=gearName(settings.f,settings.k,5),n=p.remaining.length;
+ const firstIsRelevant=settings.start<0;
+ const chosen=!!settings.certain;
+ const routeTitle=chosen?z.pathBoundTitle:z.pathNormalTitle;
+ const routeDesc=chosen?z.pathBoundInfo:z.pathNormalInfo;
+ $('craftPathInfo').innerHTML=firstIsRelevant
+  ?'<div class="craftPathSummary"><div class="craftRouteBadge '+(chosen?'isBound':'isNormal')+'">'+esc(routeTitle)+'</div><p>'+esc(routeDesc)+'</p><p class="craftPathFoot">'+esc(z.pathSameMats)+'</p>'+(chosen&&settings.ownMaster?'<p class="craftPathFoot craftPathCaution">'+esc(z.pathMasterNote)+'</p>':'')+'</div>'
+  :'<div class="craftPathSummary"><p>'+esc(z.pathAlready)+'</p></div>';
+ $('craftStats').innerHTML='<div class="craftStat"><small>'+esc(z.target)+'</small><strong>'+esc(target)+'</strong><small>IL 102</small></div><div class="craftStat"><small>'+esc(z.remaining)+'</small><strong>'+n+' / 6</strong><small>'+esc(nowTier)+'</small></div><div class="craftStat"><small>'+esc(z.master)+'</small><strong>'+p.masterNeed+' '+(isEn()?'items':'本')+'</strong><small>'+esc(z.masterNote)+'</small></div>';
+ const warnings=[];if(n===0)warnings.push(z.complete);else if(p.mode==='published')warnings.push(z.rawWarn);else if(p.mode==='hybrid')warnings.push(z.hybridWarn);else warnings.push(z.otherWarn);if(settings.expandDragon)warnings.push(z.expandWarn);if(p.mode==='published'&&p.mastersToMake<p.masterNeed)warnings.push(z.masterDiscountWarn);if(settings.certain&&settings.start<0)warnings.push(z.certainWarn);$('craftWarning').textContent=warnings.join('　');
+ let caption=p.mode==='published'?z.fromEstimate:p.mode==='hybrid'?z.hybrid:p.mode==='single'?z.perAttempt:z.complete;
+ if(n)caption+='。'+z.note+' '+(settings.ownMaster?z.yesMaster:z.noMaster);if(settings.certain&&settings.start<0&&n)caption+='。'+z.pathGuaranteed;
+ $('craftMaterialsCaption').textContent=caption;
+ const list=[...p.result.entries()].filter(([_,value])=>value>0);const initialHeaders='<div class="craftRow craftRowHead"><span>'+esc(z.name)+'</span><span style="text-align:right">'+esc(z.total)+'</span><span style="text-align:center">'+esc(z.have)+'</span><span style="text-align:right">'+esc(z.missing)+'</span></div>';
+ $('craftMaterials').innerHTML=list.length?initialHeaders+list.map(([name,value])=>{const owned=Math.max(0,Number(inventory[name]||0)),missing=Math.max(0,value-owned);return '<div class="craftRow"><div class="craftMatName">'+esc(enName(name,p.c))+'</div><div class="craftCount">'+fmt(value)+(p.mode==='published'||p.mode==='hybrid'?' ≈':'')+'</div><div class="craftHave"><input type="number" min="0" max="99999999" step="1" data-craft-mat="'+esc(name)+'" value="'+owned+'" aria-label="'+esc(enName(name,p.c)+' '+z.have)+'"></div><div class="craftNeed '+(missing===0?'craftDone':'')+'">'+fmt(missing)+'</div></div>'}).join(''):'<div class="craftEmpty">'+esc(z.complete)+'</div>';
+ $('craftStepsCaption').textContent=n?z.directNote:'';
+ $('craftStages').innerHTML=n?p.remaining.map(i=>{const arr=concrete(i,p.c);return '<details class="craftStage"><summary>'+esc(gearName(settings.f,settings.k,i))+'<span>IL '+il[i]+' · '+esc(isEn()?'Step '+(i+1):'第'+(i+1)+'段階')+'</span></summary><div class="craftInfo">'+esc(i===0?(settings.certain?z.stageFirstBound:z.stageFirst):z.stageSpecial)+'</div><table><tbody>'+arr.map(([name,v])=>'<tr><td>'+esc(enName(name,p.c))+'</td><td>× '+fmt(v)+'</td></tr>').join('')+'</tbody></table></details>'}).join(''):'<div class="craftEmpty">'+esc(z.complete)+'</div>';
+ $('craftSourcesBody').innerHTML='<p>'+esc(z.sourceFoot)+'</p><p>'+esc(z.variant)+'</p><p>'+esc(z.note)+'</p><p class="craftSources"><a href="https://shugo.gg/ja/crafting" target="_blank" rel="noopener noreferrer">Shugo.GG – '+(isEn()?'recipes':'製作レシピ')+'</a>　／　<a href="https://aion2-times.com/aion2-crafted-gear/" target="_blank" rel="noopener noreferrer">AION2 Times – '+(isEn()?'full-route average':'素材からの期待値')+'</a>　／　<a href="https://wikily.gg/ja/aion-2/patches/notice-patch-notes-nov-3-pst-nov-4-cet" target="_blank" rel="noopener noreferrer">'+(isEn()?'Nov 4 patch notes':'11月4日更新')+'</a></p>';
+ window.aionCraftPlanner={calculate:()=>plan(),materials:()=>[...plan().result.entries()],settings:()=>({...settings})};}
+ for(const [id,key] of [['craftFaction','f'],['craftWeapon','k']])$(id).addEventListener('change',e=>{settings[key]=e.target.value;keep();render()});
+ $('craftStart').addEventListener('change',e=>{settings.start=Number(e.target.value);keep();render()});
+ $('craftOwnMaster').addEventListener('change',e=>{settings.ownMaster=e.target.checked;keep();render()});
+ $('craftExpandDragon').addEventListener('change',e=>{settings.expandDragon=e.target.checked;keep();render()});
+ for(const [id,guaranteed] of [['craftNormal',false],['craftCertain',true]])$(id).addEventListener('change',e=>{if(!e.target.checked)return;settings.certain=guaranteed;keep();render()});
+ $('craftMaterials').addEventListener('change',e=>{const name=e.target?.dataset?.craftMat;if(!name)return;inventory[name]=Math.min(99999999,Math.max(0,parseInt(e.target.value,10)||0));save();render()});
+ $('craftMasterOwned').addEventListener('change',e=>{const c=strings(settings.f,settings.k);inventory[c.master]=Math.min(9999,Math.max(0,parseInt(e.target.value,10)||0));save();render()});
+ $('craftReset').addEventListener('click',()=>{if(window.confirm(t().confirmReset)){inventory={};save();render()}});
+ $('craftCopy').addEventListener('click',async()=>{const p=plan(),lines=[gearName(settings.f,settings.k,5),'---',...([...p.result.entries()].map(([name,v])=>`${enName(name,p.c)}: ${fmt(v)} / ${t().missing} ${fmt(Math.max(0,v-(inventory[name]||0)))}`))];lines.splice(1,0,(settings.start>=0?t().pathAlready:(settings.certain?t().pathBoundTitle:t().pathNormalTitle)));const data=lines.join('\n');try{await navigator.clipboard.writeText(data);$('craftCopy').textContent=t().successCopy;setTimeout(()=>render(),1600)}catch(e){window.prompt(t().failedCopy,data)}});
+ $('uiLanguage')?.addEventListener('change',()=>setTimeout(render,0));
+ populate();render();
 })();
 </script>
 </body></html>
