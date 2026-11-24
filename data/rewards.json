@@ -1,11 +1,11 @@
 {
   "schema": "aion2-rewards-v2",
-  "updated_at": "2026-11-24T00:50:01Z",
-  "attempted_at": "2026-11-24T00:50:01Z",
+  "updated_at": "2026-11-24T10:54:38Z",
+  "attempted_at": "2026-11-24T10:54:38Z",
   "sources": {
     "steam": {
       "ok": true,
-      "last_success_at": "2026-11-24T00:50:01Z",
+      "last_success_at": "2026-11-24T10:54:38Z",
       "error": null,
       "found_coupons": 0,
       "found_drops": 0,
@@ -20,15 +20,15 @@
     "x_public": {
       "ok": false,
       "last_success_at": null,
-      "error": "HTTP Error 429: Too Many Requests",
+      "error": "list indices must be integers or slices, not str",
       "label": "日本公式X公開投稿・未初回取得"
     },
     "nc_global": {
       "ok": true,
-      "last_success_at": "2026-11-24T00:50:01Z",
+      "last_success_at": "2026-11-24T10:54:38Z",
       "error": null,
       "found_coupons": 3,
-      "found_drops": 1,
+      "found_drops": 0,
       "label": "AION2公式掲示板"
     }
   },
